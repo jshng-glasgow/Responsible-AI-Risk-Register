@@ -9,8 +9,53 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  add-to-register:
-    if: github.event.label.name == 'new risk'
+  add-to-register-direct:
+    if: github.event.label.name == 'new risk' && vars.WORKSHOP_AUTO_PUBLISH_NEW_RISKS == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Synchronise with latest default branch
+        run: git pull --ff-only origin "${{ github.event.repository.default_branch }}"
+
+      - name: Debug issue body
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: echo "$ISSUE_BODY"
+
+      - name: Parse issue and append to CSV
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: python .github/scripts/issue_to_csv.py
+
+      - name: Commit directly to default branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add register/risks.csv
+          if git diff --cached --quiet; then
+            echo "No CSV changes detected"
+            exit 0
+          fi
+          git commit -m "Add risk from issue #${{ github.event.issue.number }}"
+          git push origin HEAD:${{ github.event.repository.default_branch }}
+
+  add-to-register-pr:
+    if: github.event.label.name == 'new risk' && vars.WORKSHOP_AUTO_PUBLISH_NEW_RISKS != 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write

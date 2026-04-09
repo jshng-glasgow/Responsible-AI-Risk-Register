@@ -94,6 +94,8 @@ This field is intended to help maintainers preserve provenance when risks are me
 
 The register is maintained by the SSI's Responsible AI in RSE study group. All edits to the register (e.g., new risks, updates to existing risks) are reviewed by the study group. The register is periodically reviewed to merge similar risks and remove redundancy.
 
+For workshop facilitation, maintainers can temporarily set the GitHub Actions repository variable `WORKSHOP_AUTO_PUBLISH_NEW_RISKS=true`. When enabled, issues labelled `new risk` are written directly to the default branch instead of opening a pull request. Issues labelled `risk update` continue to create pull requests for manual review.
+
 ## Data Usage and Confidentiality
 
 Contributions to this register are made publicly under CC BY 4.0 and may be used in future research. No personally identifying information should be included in contributions.
