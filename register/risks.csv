@@ -11,3 +11,4 @@ This risk has non-default tags,Very Low,Very Low,Very Low,,,,"Societal, Research
 Testing whether tags are rendered correctly.,Very Low,Very Low,Very Low,,,,,#146,#146,
 This risk should automatically generate a pull request as WORKSHOP_AUTO_PUBLISH_NEW_RISKS=true in repository variables.,Very Low,Very Low,Very Low,,,,,#148,#148,
 Let's see if the merging works as expected.,Very Low,Very Low,Very Low,,,,,#149,#149,
+Has it worked?,Very Low,Very Low,Very Low,,,,,#150,#150,
