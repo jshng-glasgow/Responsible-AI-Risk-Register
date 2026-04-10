@@ -2,18 +2,25 @@ name: Update an existing risk
 description: Update an existing row in the AI-RSE risk register
 labels: ["risk update"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to improve or revise an existing risk entry.
+
+        Enter the issue number for the risk you want to update, then fill in only the fields you want to change. Leave any other fields blank.
   - type: textarea
     id: issue_number
     attributes:
       label: Issue Number
-      description: The issue number of the existing risk to update (e.g. "#48")
+      description: Enter the issue number for the existing risk entry, for example `#48`. You can find this in the register's `Issue` field.
     validations:
       required: true
   - type: textarea
     id: risk
     attributes:
       label: Risk
-      description: Describe the nature of the risk
+      description: If you want to change the wording, describe the risk in practical terms. What could go wrong, who might be affected, and what the consequences could be?
+      placeholder: Leave blank if you are not proposing a change to the risk description.
     validations:
       required: false
   - type: dropdown
@@ -21,7 +28,7 @@ body:
     attributes:
       label: Likelihood
       options: [Very Low, Low, Medium, High, Very High, Unknown]
-      description: How likely is the risk to occur?
+      description: How likely is this risk to arise in normal research software practice?
     validations:
       required: false
   - type: dropdown
@@ -29,7 +36,7 @@ body:
     attributes:
       label: Severity
       options: [Very Low, Low, Medium, High, Very High, Unknown]
-      description: If the risk occurs, how severe would the impact be?
+      description: If this risk occurs, how serious would the consequences be?
     validations:
       required: false
   - type: dropdown
@@ -37,29 +44,29 @@ body:
     attributes:
       label: Reach
       options: [Very Low, Low, Medium, High, Very High, Unknown]
-      description: How widely would the effects of this risk be felt?
+      description: How widely would the effects of this risk be felt across people, projects, or institutions?
     validations:
       required: false
   - type: textarea
     id: mitigations
     attributes:
       label: Mitigations
-      description: Describe how the risk can be mitigated or avoided
+      description: Describe how the risk might be mitigated or avoided. For example, through policy, training, review practices, or technical safeguards.
   - type: textarea
     id: ownership
     attributes:
       label: Ownership
-      description: Who is responsible for managing this risk?
+      description: Who is responsible for managing this risk? For example, practitioners, team leads, institutions, funders, or tool developers.
   - type: textarea
     id: examples
     attributes:
       label: Examples
-      description: Provide relevant examples of best practice, or policies from institutions or organisations that have identified this risk and how to manage it. Include links where possible.
+      description: Provide relevant examples, case studies, incidents, or policies from institutions or organisations that have identified or managed this risk. Include links where possible.
   - type: dropdown
     id: tags
     attributes:
       label: Tags
-      description: Select any tags that apply to this risk
+      description: Select any tags that apply to this risk. Exact tagging can be refined later by maintainers.
       multiple: true
       options:
         - Economic

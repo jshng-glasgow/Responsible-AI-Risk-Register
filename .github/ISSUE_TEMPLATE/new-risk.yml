@@ -2,11 +2,20 @@ name: Propose a new risk
 description: Suggest a new row for the AI-RSE risk register
 labels: ["new risk"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to propose a new risk for the register.
+
+        Please check whether a similar risk is already listed before submitting. If you want to revise an existing entry instead, use the **Update an existing risk** form.
+
+        You do not need to complete every optional field for your contribution to be useful.
   - type: textarea
     id: risk
     attributes:
       label: Risk
-      description: Describe the nature of the risk
+      description: Describe the risk in practical terms. What could go wrong, who might be affected, and what the consequences could be?
+      placeholder: AI-generated code may be adopted without sufficient review, leading to subtle errors in research software and reduced confidence in outputs.
     validations:
       required: true
   - type: dropdown
@@ -14,7 +23,7 @@ body:
     attributes:
       label: Likelihood
       options: [Very Low, Low, Medium, High, Very High, Unknown]
-      description: How likely is the risk to occur?
+      description: How likely is this risk to arise in normal research software practice?
     validations:
       required: true
   - type: dropdown
@@ -22,7 +31,7 @@ body:
     attributes:
       label: Severity
       options: [Very Low, Low, Medium, High, Very High, Unknown]
-      description: If the risk occurs, how severe would the impact be?
+      description: If this risk occurs, how serious would the consequences be?
     validations:
       required: true
   - type: dropdown
@@ -30,29 +39,29 @@ body:
     attributes:
       label: Reach
       options: [Very Low, Low, Medium, High, Very High, Unknown]
-      description: How widely would the effects of this risk be felt?
+      description: How widely would the effects of this risk be felt across people, projects, or institutions?
     validations:
       required: true
   - type: textarea
     id: mitigations
     attributes:
       label: Mitigations
-      description: Describe how the risk can be mitigated or avoided
+      description: Describe how the risk might be mitigated or avoided. For example, through policy, training, review practices, or technical safeguards.
   - type: textarea
     id: ownership
     attributes:
       label: Ownership
-      description: Who is responsible for managing this risk?
+      description: Who is responsible for managing this risk? For example, practitioners, team leads, institutions, funders, or tool developers.
   - type: textarea
     id: examples
     attributes:
       label: Examples
-      description: Provide relevant examples of best practice, or policies from institutions or organisations that have identified this risk and how to manage it. Include links where possible.
+      description: Provide relevant examples, case studies, incidents, or policies from institutions or organisations that have identified or managed this risk. Include links where possible.
   - type: dropdown
     id: tags
     attributes:
       label: Tags
-      description: Select any tags that apply to this risk
+      description: Select any tags that apply to this risk. Exact tagging can be refined later by maintainers.
       multiple: true
       options:
         - Economic
