@@ -15,7 +15,6 @@ body:
     attributes:
       label: Risk
       description: Describe the risk in practical terms. What could go wrong, who might be affected, and what the consequences could be?
-      placeholder: AI-generated code may be adopted without sufficient review, leading to subtle errors in research software and reduced confidence in outputs.
     validations:
       required: true
   - type: dropdown
