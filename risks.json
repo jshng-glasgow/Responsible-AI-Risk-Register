@@ -26,28 +26,5 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/121"
       }
     ]
-  },
-  {
-    "Risk": "AI use by domain scientists to develop research software cuts out RSE participation. Easy availability of AI coding tools may result in domain scientists developing software tools and pipelines without asking for RSE support / input, potentially creating large technical debts once AI generated code-bases fail",
-    "Likelihood": "Medium",
-    "Severity": "Medium",
-    "Reach": "Medium",
-    "Mitigations": "- Ensure RSE units are visible and accessible in organisations and barriers for access are low, especially for high-level consultations.\r\n- Clear institutional guidelines about software review requirements with humans in the loop",
-    "Ownership": "RSEs, Institutions, Managers",
-    "Examples": "",
-    "Tags": "Governance, Software Sustainability",
-    "Issue": "#123",
-    "Updates": "#123",
-    "Maintainer Notes": "",
-    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/123",
-    "update_refs": [
-      "#123"
-    ],
-    "update_urls": [
-      {
-        "label": "#123",
-        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/123"
-      }
-    ]
   }
 ]
