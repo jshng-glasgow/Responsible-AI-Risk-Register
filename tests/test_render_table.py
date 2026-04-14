@@ -39,7 +39,9 @@ class TestRenderTable:
             assert soup.find(id="register-root") is not None
             assert soup.find(id="search-input") is not None
             assert soup.find(id="tag-filter") is not None
-            assert soup.find("script", src="./app.js") is not None
+            app_script = soup.find("script", src=lambda src: src and src.startswith("./app.js?v="))
+            assert app_script is not None
+            assert "REGISTER_ASSET_VERSION" in html_content
 
             assert len(json_content) == 2
             assert json_content[0]["Risk"] == "Test risk"

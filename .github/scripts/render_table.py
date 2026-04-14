@@ -1,3 +1,4 @@
+import hashlib
 import json
 import os
 
@@ -91,7 +92,10 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         </article>
     </template>
 
-    <script src="./app.js"></script>
+    <script>
+        window.REGISTER_ASSET_VERSION = "{asset_version}";
+    </script>
+    <script src="./app.js?v={asset_version}"></script>
 </body>
 </html>
 """
@@ -123,17 +127,23 @@ def serialise_records(dataframe):
     return records
 
 
+def build_asset_version(records):
+    payload = json.dumps(records, sort_keys=True, ensure_ascii=False).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()[:12]
+
+
 if __name__ == "__main__":
     os.makedirs(DOCS_DIR, exist_ok=True)
 
     dataframe = pd.read_csv(CSV_PATH).fillna("")
     records = serialise_records(dataframe)
+    asset_version = build_asset_version(records)
 
     with open(JSON_PATH, "w", encoding="utf-8") as json_file:
         json.dump(records, json_file, indent=2, ensure_ascii=False)
 
     with open(HTML_PATH, "w", encoding="utf-8") as html_file:
-        html_file.write(HTML_TEMPLATE)
+        html_file.write(HTML_TEMPLATE.format(asset_version=asset_version))
 
     print(f"Generated {HTML_PATH}")
     print(f"Generated {JSON_PATH}")
