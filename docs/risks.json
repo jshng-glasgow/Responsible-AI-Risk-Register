@@ -28,173 +28,25 @@
     ]
   },
   {
-    "Risk": "AI use by domain scientists to develop research software cuts out RSE participation. Easy availability of AI coding tools may result in domain scientists developing software tools and pipelines without asking for RSE support / input, potentially creating large technical debts once AI generated code-bases fail",
-    "Likelihood": "Medium",
-    "Severity": "Medium",
-    "Reach": "Medium",
-    "Mitigations": "- Ensure RSE units are visible and accessible in organisations and barriers for access are low, especially for high-level consultations.\n- Clear institutional guidelines about software review requirements with humans in the loop",
-    "Ownership": "RSEs, Institutions, Managers",
-    "Examples": "",
-    "Tags": "Governance, Software Sustainability",
-    "Issue": "#123",
-    "Updates": "#123",
-    "Maintainer Notes": "",
-    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/123",
-    "update_refs": [
-      "#123"
-    ],
-    "update_urls": [
-      {
-        "label": "#123",
-        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/123"
-      }
-    ]
-  },
-  {
-    "Risk": "Over use of AI might cause environmental collapse.",
-    "Likelihood": "Medium",
-    "Severity": "High",
-    "Reach": "Very High",
-    "Mitigations": "",
-    "Ownership": "",
-    "Examples": "Link to good practice",
-    "Tags": "Environmental",
-    "Issue": "#125",
-    "Updates": "#125, #127",
-    "Maintainer Notes": "",
-    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/125",
-    "update_refs": [
-      "#125",
-      "#127"
-    ],
-    "update_urls": [
-      {
-        "label": "#125",
-        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/125"
-      },
-      {
-        "label": "#127",
-        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/127"
-      }
-    ]
-  },
-  {
-    "Risk": "Testing new fields",
+    "Risk": "Overuse of AI can lead to environmental challenges such as energy depletion and water use.",
     "Likelihood": "High",
     "Severity": "Very High",
-    "Reach": "Medium",
-    "Mitigations": "This can be mitigated by...",
-    "Ownership": "Owned by the XYZ community",
-    "Examples": "Community ABC addressed it by...",
-    "Tags": "Professional, Software Sustainability",
-    "Issue": "#131",
-    "Updates": "#131",
-    "Maintainer Notes": "",
-    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/131",
-    "update_refs": [
-      "#131"
-    ],
-    "update_urls": [
-      {
-        "label": "#131",
-        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/131"
-      }
-    ]
-  },
-  {
-    "Risk": "Adding new risk to test front end.",
-    "Likelihood": "Very Low",
-    "Severity": "Very Low",
-    "Reach": "Very Low",
-    "Mitigations": "",
-    "Ownership": "",
+    "Reach": "Very High",
+    "Mitigations": "RSEs should aim to reduce reliance on AI and use smaller local models.",
+    "Ownership": "RSEs, Governments, AI tool makers.",
     "Examples": "",
-    "Tags": "Economic",
-    "Issue": "#135",
-    "Updates": "#135",
+    "Tags": "Environmental, Societal, Economic",
+    "Issue": "#151",
+    "Updates": "#151",
     "Maintainer Notes": "",
-    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/135",
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/151",
     "update_refs": [
-      "#135"
+      "#151"
     ],
     "update_urls": [
       {
-        "label": "#135",
-        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/135"
-      }
-    ]
-  },
-  {
-    "Risk": "This risk will be tagged",
-    "Likelihood": "Very Low",
-    "Severity": "Very Low",
-    "Reach": "Very Low",
-    "Mitigations": "",
-    "Ownership": "",
-    "Examples": "",
-    "Tags": "",
-    "Issue": "#137",
-    "Updates": "#137",
-    "Maintainer Notes": "",
-    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/137",
-    "update_refs": [
-      "#137"
-    ],
-    "update_urls": [
-      {
-        "label": "#137",
-        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/137"
-      }
-    ]
-  },
-  {
-    "Risk": "This risk has some tags!",
-    "Likelihood": "Very Low",
-    "Severity": "Very Low",
-    "Reach": "Very Low",
-    "Mitigations": "",
-    "Ownership": "",
-    "Examples": "",
-    "Tags": "Societal, Professional, Economic, Governance",
-    "Issue": "#140",
-    "Updates": "#140, #142",
-    "Maintainer Notes": "",
-    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/140",
-    "update_refs": [
-      "#140",
-      "#142"
-    ],
-    "update_urls": [
-      {
-        "label": "#140",
-        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/140"
-      },
-      {
-        "label": "#142",
-        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/142"
-      }
-    ]
-  },
-  {
-    "Risk": "This risk has non-default tags",
-    "Likelihood": "Very Low",
-    "Severity": "Very Low",
-    "Reach": "Very Low",
-    "Mitigations": "",
-    "Ownership": "",
-    "Examples": "",
-    "Tags": "Societal, Research Integrity, Epistemic, Ethical, Equity",
-    "Issue": "#144",
-    "Updates": "#144",
-    "Maintainer Notes": "",
-    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/144",
-    "update_refs": [
-      "#144"
-    ],
-    "update_urls": [
-      {
-        "label": "#144",
-        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/144"
+        "label": "#151",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/151"
       }
     ]
   }
