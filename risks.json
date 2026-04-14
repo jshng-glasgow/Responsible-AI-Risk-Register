@@ -1,6 +1,7 @@
 [
   {
-    "Risk": "Over-use of AI might lead to a degredation in software skills for RSE professionals. This could have unintended consequences on code quality, research integrity and critical review capabilities.",
+    "Issue Title": "Skill degradation from over-use of AI",
+    "Description": "Over-use of AI might lead to a degredation in software skills for RSE professionals. This could have unintended consequences on code quality, research integrity and critical review capabilities.",
     "Likelihood": "Medium",
     "Severity": "Medium",
     "Reach": "High",
@@ -28,7 +29,8 @@
     ]
   },
   {
-    "Risk": "Overuse of AI can lead to environmental challenges such as energy depletion and water use.",
+    "Issue Title": "Environmental costs of AI overuse",
+    "Description": "Overuse of AI can lead to environmental challenges such as energy depletion and water use.",
     "Likelihood": "High",
     "Severity": "Very High",
     "Reach": "Very High",
@@ -51,7 +53,8 @@
     ]
   },
   {
-    "Risk": "This is a test risk",
+    "Issue Title": "This is a test risk",
+    "Description": "This is a test risk",
     "Likelihood": "Very Low",
     "Severity": "Very Low",
     "Reach": "Very Low",
@@ -74,7 +77,8 @@
     ]
   },
   {
-    "Risk": "Testing",
+    "Issue Title": "Testing",
+    "Description": "Testing",
     "Likelihood": "Very Low",
     "Severity": "Very Low",
     "Reach": "Very Low",
@@ -97,7 +101,8 @@
     ]
   },
   {
-    "Risk": "Testing 1-2-1-2",
+    "Issue Title": "Testing 1-2-1-2",
+    "Description": "Testing 1-2-1-2",
     "Likelihood": "Very Low",
     "Severity": "Very Low",
     "Reach": "Very Low",
