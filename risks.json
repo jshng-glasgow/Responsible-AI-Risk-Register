@@ -72,5 +72,28 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/152"
       }
     ]
+  },
+  {
+    "Risk": "Testing",
+    "Likelihood": "Very Low",
+    "Severity": "Very Low",
+    "Reach": "Very Low",
+    "Mitigations": "",
+    "Ownership": "",
+    "Examples": "",
+    "Tags": "",
+    "Issue": "#153",
+    "Updates": "#153",
+    "Maintainer Notes": "",
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/153",
+    "update_refs": [
+      "#153"
+    ],
+    "update_urls": [
+      {
+        "label": "#153",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/153"
+      }
+    ]
   }
 ]
