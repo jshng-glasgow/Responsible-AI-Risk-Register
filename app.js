@@ -233,7 +233,8 @@ function render() {
 
 async function init() {
   try {
-    const response = await fetch("./risks.json");
+    const assetVersion = window.REGISTER_ASSET_VERSION || "dev";
+    const response = await fetch(`./risks.json?v=${encodeURIComponent(assetVersion)}`, { cache: "no-store" });
     allRecords = await response.json();
 
     populateFilter(likelihoodFilter, new Set(allRecords.map((record) => record["Likelihood"]).filter(Boolean)));
