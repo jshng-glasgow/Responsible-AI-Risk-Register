@@ -1,7 +1,7 @@
 import pandas as pd
 import sys
 
-REQUIRED_COLUMNS = ["Risk", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags", "Issue", "Updates", "Maintainer Notes"]
+REQUIRED_COLUMNS = ["Issue Title", "Description", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags", "Issue", "Updates", "Maintainer Notes"]
 VALID_LEVELS = {"Very Low", "Low", "Medium", "High", "Very High", "Unknown"}
 
 def validate():
@@ -19,7 +19,7 @@ def validate():
         errors.append(f"Missing columns: {missing}")
 
     # Check required fields aren't empty
-    for col in ["Risk", "Likelihood", "Severity", "Reach"]:
+    for col in ["Issue Title", "Description", "Likelihood", "Severity", "Reach"]:
         if col in df.columns and df[col].isnull().any():
             errors.append(f"Column '{col}' has empty values")
 

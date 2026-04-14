@@ -11,9 +11,9 @@ body:
 
         You do not need to complete every optional field for your contribution to be useful.
   - type: textarea
-    id: risk
+    id: description
     attributes:
-      label: Risk
+      label: Description
       description: Describe the risk in practical terms. What could go wrong, who might be affected, and what the consequences could be?
     validations:
       required: true

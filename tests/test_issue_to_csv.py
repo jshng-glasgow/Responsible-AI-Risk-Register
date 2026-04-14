@@ -11,7 +11,7 @@ from issue_to_csv import combine_tags, parse_issue, split_tags, upsert_csv
 
 class TestIssueToCSV:
     def test_parse_issue_complete(self):
-        body = """### Risk
+        body = """### Description
 Test risk description
 
 ### Likelihood
@@ -39,7 +39,7 @@ Economic, Environmental
 Local Practice
 """
         values = parse_issue(body)
-        assert values["Risk"] == "Test risk description"
+        assert values["Description"] == "Test risk description"
         assert values["Likelihood"] == "High"
         assert values["Severity"] == "Medium"
         assert values["Reach"] == "Low"
@@ -49,7 +49,7 @@ Local Practice
         assert values["Tags"] == "Economic, Environmental, Local Practice"
 
     def test_parse_issue_no_response(self):
-        body = """### Risk
+        body = """### Description
 Test risk
 
 ### Likelihood
@@ -76,7 +76,7 @@ _No response_
 ### Other Tags
 """
         values = parse_issue(body)
-        assert values["Risk"] == "Test risk"
+        assert values["Description"] == "Test risk"
         assert values["Likelihood"] == ""
         assert values["Severity"] == "Medium"
         assert values["Reach"] == "Unknown"
@@ -96,7 +96,7 @@ _No response_
 
         with patch("issue_to_csv.CSV_PATH", str(test_csv)):
             values = {
-                "Risk": "Test risk",
+                "Description": "Test risk",
                 "Likelihood": "High",
                 "Severity": "Medium",
                 "Reach": "Low",
@@ -105,11 +105,12 @@ _No response_
                 "Examples": "Examples",
                 "Tags": "Environmental, Training and Development",
             }
-            upsert_csv(values, "123")
+            upsert_csv(values, "123", "Test issue title")
 
             df = pd.read_csv(str(test_csv))
             assert len(df) == 1
-            assert df.iloc[0]["Risk"] == "Test risk"
+            assert df.iloc[0]["Description"] == "Test risk"
+            assert df.iloc[0]["Issue Title"] == "Test issue title"
             assert df.iloc[0]["Issue"] == "#123"
             assert df.iloc[0]["Updates"] == "#123"
             assert df.iloc[0]["Reach"] == "Low"
@@ -120,7 +121,8 @@ _No response_
         test_csv = tmp_path / "risks.csv"
         existing_df = pd.DataFrame(
             {
-                "Risk": ["Existing risk"],
+                "Issue Title": [""],
+                "Description": ["Existing risk"],
                 "Likelihood": ["Low"],
                 "Severity": ["High"],
                 "Reach": ["Medium"],
@@ -137,7 +139,7 @@ _No response_
 
         with patch("issue_to_csv.CSV_PATH", str(test_csv)):
             values = {
-                "Risk": "Existing risk revised",
+                "Description": "Existing risk revised",
                 "Likelihood": "High",
                 "Severity": "Medium",
                 "Reach": "Very High",
@@ -146,11 +148,12 @@ _No response_
                 "Examples": "New examples",
                 "Tags": "Research Integrity",
             }
-            upsert_csv(values, "124")
+            upsert_csv(values, "124", "Existing issue title")
 
             df = pd.read_csv(str(test_csv))
             assert len(df) == 1
-            assert df.iloc[0]["Risk"] == "Existing risk revised"
+            assert df.iloc[0]["Description"] == "Existing risk revised"
+            assert df.iloc[0]["Issue Title"] == "Existing issue title"
             assert df.iloc[0]["Issue"] == "#124"
             assert df.iloc[0]["Updates"] == "#124"
             assert df.iloc[0]["Reach"] == "Very High"

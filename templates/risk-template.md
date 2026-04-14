@@ -1,8 +1,11 @@
-# Risk Submission Template
+# Register Submission Template
 
 Use this template to propose a new risk for the SSI Generative AI Risk Register.
 
-## Risk Description
+## Issue Title
+[Provide a short title for the issue]
+
+## Description
 [Describe the nature of the risk — who does it affect? What are the potential outcomes?]
 
 ## Likelihood

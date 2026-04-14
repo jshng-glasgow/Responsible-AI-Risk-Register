@@ -95,8 +95,8 @@ function sortRecords(records) {
   const multiplier = direction === "desc" ? -1 : 1;
 
   return [...records].sort((left, right) => {
-    if (field === "risk") {
-      return left["Risk"].localeCompare(right["Risk"]) * multiplier;
+    if (field === "description") {
+      return left["Description"].localeCompare(right["Description"]) * multiplier;
     }
 
     if (field === "issue") {
@@ -107,7 +107,7 @@ function sortRecords(records) {
     const rightValue = CATEGORY_ORDER[right[capitalize(field)]] ?? -1;
 
     if (leftValue === rightValue) {
-      return left["Risk"].localeCompare(right["Risk"]);
+      return left["Description"].localeCompare(right["Description"]);
     }
 
     return (leftValue - rightValue) * multiplier;
@@ -180,7 +180,7 @@ function renderRecord(record) {
   const title = fragment.querySelector(".card-title");
   const grid = fragment.querySelector(".card-grid");
 
-  title.textContent = record["Risk"];
+  title.textContent = record["Issue Title"] || record["Description"];
   meta.append(
     createBadge(`${record["Likelihood"] || "Unknown"} Likelihood`, record["Likelihood"] || "Unknown"),
     createBadge(`${record["Severity"] || "Unknown"} Severity`, record["Severity"] || "Unknown"),
@@ -190,6 +190,8 @@ function renderRecord(record) {
   tags.forEach((tag) => meta.append(createBadge(tag, "tag")));
 
   const fields = [
+    buildRow("Issue Title", (container) => appendTextOrPlaceholder(container, record["Issue Title"])),
+    buildRow("Description", (container) => appendTextOrPlaceholder(container, record["Description"])),
     buildRow("Likelihood", (container) => appendTextOrPlaceholder(container, record["Likelihood"])),
     buildRow("Severity", (container) => appendTextOrPlaceholder(container, record["Severity"])),
     buildRow("Reach", (container) => appendTextOrPlaceholder(container, record["Reach"])),

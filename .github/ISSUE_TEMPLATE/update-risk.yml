@@ -16,11 +16,11 @@ body:
     validations:
       required: true
   - type: textarea
-    id: risk
+    id: description
     attributes:
-      label: Risk
+      label: Description
       description: If you want to change the wording, describe the risk in practical terms. What could go wrong, who might be affected, and what the consequences could be?
-      placeholder: Leave blank if you are not proposing a change to the risk description.
+      placeholder: Leave blank if you are not proposing a change to the description.
     validations:
       required: false
   - type: dropdown

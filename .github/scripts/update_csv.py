@@ -5,7 +5,7 @@ import sys
 import pandas as pd
 
 
-FIELDS = ["Issue Number", "Risk", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags", "Other Tags"]
+FIELDS = ["Issue Number", "Description", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags", "Other Tags"]
 CSV_PATH = "register/risks.csv"
 
 
@@ -57,7 +57,7 @@ def update_csv_row(values, issue_number):
 
     row_index = risk_register[row_mask].index[0]
 
-    for field in ["Risk", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags"]:
+    for field in ["Description", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags"]:
         if values.get(field) is not None:
             risk_register.loc[row_index, field] = values[field]
 

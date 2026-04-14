@@ -4,7 +4,7 @@ import re
 import sys
 
 
-FIELDS = ["Risk", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags", "Other Tags"]
+FIELDS = ["Description", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags", "Other Tags"]
 CSV_PATH = "register/risks.csv"
 
 
@@ -39,16 +39,17 @@ def combine_tags(selected_tags, other_tags):
     return ", ".join(tags)
 
 
-def upsert_csv(values, issue_number):
+def upsert_csv(values, issue_number, issue_title):
     issue_ref = f"#{issue_number}"
-    fieldnames = ["Risk", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags", "Issue", "Updates", "Maintainer Notes"]
+    fieldnames = ["Issue Title", "Description", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags", "Issue", "Updates", "Maintainer Notes"]
     rows = []
 
     if os.path.exists(CSV_PATH):
         with open(CSV_PATH, newline="", encoding="utf-8") as existing_file:
             rows = list(csv.DictReader(existing_file))
 
-    row_data = {field: values.get(field, "") for field in ["Risk", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags"]}
+    row_data = {field: values.get(field, "") for field in ["Description", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags"]}
+    row_data["Issue Title"] = issue_title or ""
     row_data["Issue"] = issue_ref
     row_data["Updates"] = issue_ref
     row_data["Maintainer Notes"] = ""
@@ -76,12 +77,13 @@ def upsert_csv(values, issue_number):
 if __name__ == "__main__":
     body = os.environ.get("ISSUE_BODY", "")
     issue_number = os.environ.get("ISSUE_NUMBER", "")
+    issue_title = os.environ.get("ISSUE_TITLE", "")
 
     values = parse_issue(body)
 
-    if not values.get("Risk"):
-        print("Could not parse risk from issue body - skipping")
+    if not values.get("Description"):
+        print("Could not parse description from issue body - skipping")
         sys.exit(1)
 
-    upsert_csv(values, issue_number)
+    upsert_csv(values, issue_number, issue_title)
     print(f"Synced risk from issue #{issue_number} to register")
