@@ -147,5 +147,29 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/157"
       }
     ]
+  },
+  {
+    "Issue Title": "Testing update to UI",
+    "Description": "Is it still adding \"Issue Title\" as a visible field?",
+    "Likelihood": "Very Low",
+    "Severity": "Very Low",
+    "Reach": "Very Low",
+    "Mitigations": "",
+    "Ownership": "",
+    "Examples": "",
+    "Tags": "",
+    "Issue": "#158",
+    "Updates": "#158",
+    "Maintainer Notes": "",
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/158",
+    "update_refs": [
+      "#158"
+    ],
+    "update_urls": [
+      {
+        "label": "#158",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/158"
+      }
+    ]
   }
 ]
