@@ -190,7 +190,6 @@ function renderRecord(record) {
   tags.forEach((tag) => meta.append(createBadge(tag, "tag")));
 
   const fields = [
-    buildRow("Issue Title", (container) => appendTextOrPlaceholder(container, record["Issue Title"])),
     buildRow("Description", (container) => appendTextOrPlaceholder(container, record["Description"])),
     buildRow("Likelihood", (container) => appendTextOrPlaceholder(container, record["Likelihood"])),
     buildRow("Severity", (container) => appendTextOrPlaceholder(container, record["Severity"])),
