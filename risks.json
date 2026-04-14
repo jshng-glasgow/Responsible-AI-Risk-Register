@@ -26,5 +26,28 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/121"
       }
     ]
+  },
+  {
+    "Risk": "Overuse of AI can lead to environmental challenges such as energy depletion and water use.",
+    "Likelihood": "High",
+    "Severity": "Very High",
+    "Reach": "Very High",
+    "Mitigations": "RSEs should aim to reduce reliance on AI and use smaller local models.",
+    "Ownership": "RSEs, Governments, AI tool makers.",
+    "Examples": "",
+    "Tags": "Environmental, Societal, Economic",
+    "Issue": "#151",
+    "Updates": "#151",
+    "Maintainer Notes": "",
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/151",
+    "update_refs": [
+      "#151"
+    ],
+    "update_urls": [
+      {
+        "label": "#151",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/151"
+      }
+    ]
   }
 ]
