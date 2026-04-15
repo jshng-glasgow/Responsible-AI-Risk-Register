@@ -27,5 +27,29 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/121"
       }
     ]
+  },
+  {
+    "Issue Title": "New Risk",
+    "Description": "This is a new risk",
+    "Likelihood": "Very High",
+    "Severity": "Very Low",
+    "Reach": "Very Low",
+    "Mitigations": "This would prevent the risk.",
+    "Ownership": "",
+    "Examples": "",
+    "Tags": "",
+    "Issue": "#164",
+    "Updates": "#164",
+    "Maintainer Notes": "",
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/164",
+    "update_refs": [
+      "#164"
+    ],
+    "update_urls": [
+      {
+        "label": "#164",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/164"
+      }
+    ]
   }
 ]
