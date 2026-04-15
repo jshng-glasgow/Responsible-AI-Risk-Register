@@ -27,6 +27,58 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/121"
       }
     ]
+  },
+  {
+    "Issue Title": "Using AI with niche software packages",
+    "Description": "My work uses lots of highly specialized software that AI struggles to understand. This can affect the integrity of my scientific outputs.",
+    "Likelihood": "High",
+    "Severity": "Very High",
+    "Reach": "Low",
+    "Mitigations": "Ensure any AI code outputs are reviewed by human expert RSE.",
+    "Ownership": "RSEs within my field, Funders, Project Leads.",
+    "Examples": "",
+    "Tags": "Societal",
+    "Issue": "#159",
+    "Updates": "#159, #161",
+    "Maintainer Notes": "",
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/159",
+    "update_refs": [
+      "#159",
+      "#161"
+    ],
+    "update_urls": [
+      {
+        "label": "#159",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/159"
+      },
+      {
+        "label": "#161",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/161"
+      }
+    ]
+  },
+  {
+    "Issue Title": "Test risk",
+    "Description": "This is a test",
+    "Likelihood": "Very Low",
+    "Severity": "Very Low",
+    "Reach": "Very Low",
+    "Mitigations": "",
+    "Ownership": "",
+    "Examples": "",
+    "Tags": "",
+    "Issue": "#163",
+    "Updates": "#163",
+    "Maintainer Notes": "",
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/163",
+    "update_refs": [
+      "#163"
+    ],
+    "update_urls": [
+      {
+        "label": "#163",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/163"
+      }
+    ]
   }
-
 ]
