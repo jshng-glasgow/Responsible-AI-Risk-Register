@@ -65,14 +65,14 @@ body:
       options:
         - Economic
         - Environmental
-        - Professional
-        - Training and Development
-        - Research Integrity
-        - Privacy and Security
-        - Equity
-        - Societal
+        - Equity and Fairness
         - Governance
+        - People and Professional Practice
+        - Privacy and Security
+        - Research Integrity
         - Software Sustainability
+        - Training and Development
+        - Wider Societal Impacts
   - type: textarea
     id: other_tags
     attributes:

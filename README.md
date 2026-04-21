@@ -17,7 +17,7 @@ Risks need not be applicable to all RSEs in all fields. If there are risks that 
 
 Details of how to contribute are in [CONTRIBUTING.md](CONTRIBUTING.md). Contributions can be made with or without a GitHub account.
 
-To propose a new risk, go to the "Issues" tab and select "New issue" and "Propose new risk". See below for detailed information about each field. If you don't have a GitHub account, then a risk can be added manually using this [Microsoft form](#).
+To propose a new risk, go to the "Issues" tab and select "New issue" and "Propose new risk". See below for detailed information about each field. If you don't have a GitHub account, then a risk can be added manually using this [Microsoft form](https://forms.office.com/e/NAYjcGiF7i).
 
 If you would like to be recognised as a contributor to the register, please add your name to [CONTRIBUTORS.md](CONTRIBUTORS.md) via a pull request.
 
