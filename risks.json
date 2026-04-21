@@ -27,5 +27,29 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/121"
       }
     ]
+  },
+  {
+    "Issue Title": "New Risk",
+    "Description": "This is a new risk",
+    "Likelihood": "Medium",
+    "Severity": "Very High",
+    "Reach": "High",
+    "Mitigations": "",
+    "Ownership": "",
+    "Examples": "",
+    "Tags": "Governance, Environmental, Software Sustainability, Custom Tag",
+    "Issue": "#167",
+    "Updates": "#167",
+    "Maintainer Notes": "",
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/167",
+    "update_refs": [
+      "#167"
+    ],
+    "update_urls": [
+      {
+        "label": "#167",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/167"
+      }
+    ]
   }
 ]
