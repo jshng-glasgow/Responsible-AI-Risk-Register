@@ -77,14 +77,14 @@ The current standard tags are:
 
 * **Economic**: Risks relating to cost, resourcing, procurement, funding, or wider economic impacts of AI-led development.
 * **Environmental**: Risks relating to energy use, emissions, water consumption, resource extraction, or other environmental harms.
-* **Professional**: Risks affecting the role, identity, autonomy, recognition, or working conditions of RSEs and related professionals.
-* **Training and Development**: Risks relating to skills erosion, learning pathways, mentoring, onboarding, or the development of future capability.
-* **Research Integrity**: Risks to the correctness, reproducibility, provenance, transparency, or reliability of research software and outputs.
-* **Privacy and Security**: Risks involving confidential data, sensitive code, insecure generated software, access control, or other privacy and security harms.
-* **Equity**: Risks that create or worsen exclusion, unequal access, unfair burden, or biased outcomes across individuals or groups.
-* **Societal**: Risks with broader consequences for communities, public trust, public institutions, or society beyond a single team or project.
+* **Equity and Fiarness**: Risks that create or worsen exclusion, unequal access, unfair burden, or biased outcomes across individuals or groups.
 * **Governance**: Risks relating to oversight, accountability, policy, regulation, institutional processes, or decision-making responsibilities.
+* **People and Professional Practice**: Risks affecting the role, identity, autonomy, recognition, or working conditions of RSEs and related professionals.
+* **Privacy and Security**: Risks involving confidential data, sensitive code, insecure generated software, access control, or other privacy and security harms.
+* **Research Integrity**: Risks to the correctness, reproducibility, provenance, transparency, or reliability of research software and outputs.
 * **Software Sustainability**: Risks to the long-term maintainability, supportability, portability, documentation, or resilience of research software.
+* **Training and Development**: Risks relating to skills erosion, learning pathways, mentoring, onboarding, or the development of future capability.
+* **Wider Societal Impacts**: Risks with broader consequences for communities, public trust, public institutions, or society beyond a single team or project.
 
 **Issue**: (Not editable) A unique identifier for the risk, which can be used to reference it when submitting updates.
 
