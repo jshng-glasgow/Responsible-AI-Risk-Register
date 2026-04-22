@@ -75,5 +75,29 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/168"
       }
     ]
+  },
+  {
+    "Issue Title": "AI-generated code may introduce plausible but incorrect logic",
+    "Description": "AI-generated code may introduce plausible but incorrect statistical, methodological, or domain-specific logic that is hard to detect during routine review, particularly when the code appears fluent and functional. Because AI-assisted coding is increasingly used across many areas of research software development, these errors could affect a wide range of projects, leading to unreliable software behaviour, invalid analyses, or incorrect research conclusions.",
+    "Likelihood": "High",
+    "Severity": "High",
+    "Reach": "Very High",
+    "Mitigations": "Require human review by someone with relevant domain knowledge. Use human verified tests that check substantive correctness rather than only syntax or execution. Document where AI-assisted code has been used in research software development.",
+    "Ownership": "RSEs, researchers, project leads, institutions",
+    "Examples": "",
+    "Tags": "Software Sustainability, Research Integrity, People and Professional Practice, Training and Development",
+    "Issue": "#169",
+    "Updates": "#169",
+    "Maintainer Notes": "",
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/169",
+    "update_refs": [
+      "#169"
+    ],
+    "update_urls": [
+      {
+        "label": "#169",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/169"
+      }
+    ]
   }
 ]
