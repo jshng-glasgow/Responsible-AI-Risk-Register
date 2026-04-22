@@ -51,5 +51,29 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/167"
       }
     ]
+  },
+  {
+    "Issue Title": "AI reduces code quality",
+    "Description": "Using AI for coding may reduce the quality of research software.",
+    "Likelihood": "Medium",
+    "Severity": "Medium",
+    "Reach": "High",
+    "Mitigations": "Use AI carefully",
+    "Ownership": "RSEs",
+    "Examples": "",
+    "Tags": "Research Integrity, Software Sustainability",
+    "Issue": "#168",
+    "Updates": "#168",
+    "Maintainer Notes": "",
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/168",
+    "update_refs": [
+      "#168"
+    ],
+    "update_urls": [
+      {
+        "label": "#168",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/168"
+      }
+    ]
   }
 ]
