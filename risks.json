@@ -8,10 +8,13 @@
     "Mitigations": "Require human review by someone with relevant domain knowledge. Use human verified tests that check substantive correctness rather than only syntax or execution. Document where AI-assisted code has been used in research software development.",
     "Ownership": "RSEs, researchers, project leads, institutions",
     "Examples": "",
+    "Related Risks": "",
     "Tags": "Software Sustainability, Research Integrity, People and Professional Practice, Training and Development",
     "Issue": "#169",
     "Updates": "#169",
     "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
     "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/169",
     "update_refs": [
       "#169"
