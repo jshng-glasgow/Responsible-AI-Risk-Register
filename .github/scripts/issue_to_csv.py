@@ -1,3 +1,5 @@
+"""Sync a newly submitted risk issue into the risk register CSV."""
+
 import csv
 import os
 import re
@@ -9,6 +11,7 @@ CSV_PATH = "register/risks.csv"
 
 
 def parse_issue(body):
+    """Extract supported issue form fields from a GitHub issue body."""
     values = {}
     sections = body.split("### ")
     for section in sections:
@@ -25,6 +28,7 @@ def parse_issue(body):
 
 
 def split_tags(raw_value):
+    """Split comma- or newline-separated tag input into clean tag values."""
     if not raw_value or raw_value in ("_No response_", "No changes"):
         return []
     parts = re.split(r",|\n", raw_value)
@@ -32,6 +36,7 @@ def split_tags(raw_value):
 
 
 def combine_tags(selected_tags, other_tags):
+    """Merge selected and free-text tags while preserving input order."""
     tags = []
     for tag in split_tags(selected_tags) + split_tags(other_tags):
         if tag not in tags:
@@ -40,6 +45,7 @@ def combine_tags(selected_tags, other_tags):
 
 
 def upsert_csv(values, issue_number, issue_title):
+    """Insert or update the matching risk row for the submitted issue."""
     issue_ref = f"#{issue_number}"
     fieldnames = ["Issue Title", "Description", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags", "Issue", "Updates", "Maintainer Notes"]
     rows = []

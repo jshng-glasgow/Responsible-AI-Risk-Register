@@ -1,3 +1,5 @@
+"""Validate the risk register CSV schema and supported categorical values."""
+
 import pandas as pd
 import sys
 
@@ -5,6 +7,7 @@ REQUIRED_COLUMNS = ["Issue Title", "Description", "Likelihood", "Severity", "Rea
 VALID_LEVELS = {"Very Low", "Low", "Medium", "High", "Very High", "Unknown"}
 
 def validate():
+    """Check the register CSV for required columns and valid field contents."""
     errors = []
     
     try:

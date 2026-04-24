@@ -1,3 +1,5 @@
+"""Apply issue-based updates to an existing row in the risk register CSV."""
+
 import os
 import re
 import sys
@@ -10,6 +12,7 @@ CSV_PATH = "register/risks.csv"
 
 
 def split_tags(raw_value):
+    """Split comma- or newline-separated tag input into clean tag values."""
     if not raw_value or raw_value in ("_No response_", "No changes", "None"):
         return []
     parts = re.split(r",|\n", raw_value)
@@ -17,6 +20,7 @@ def split_tags(raw_value):
 
 
 def combine_tags(selected_tags, other_tags):
+    """Merge selected and free-text tags while preserving input order."""
     tags = []
     for tag in split_tags(selected_tags) + split_tags(other_tags):
         if tag not in tags:
@@ -25,6 +29,7 @@ def combine_tags(selected_tags, other_tags):
 
 
 def parse_issue(body):
+    """Extract update form values from the GitHub issue body."""
     values = {}
     sections = body.split("### ")
     for section in sections:
@@ -43,6 +48,7 @@ def parse_issue(body):
 
 
 def update_csv_row(values, issue_number):
+    """Update the referenced risk row and append the new update issue link."""
     file_exists = os.path.exists(CSV_PATH)
     if values["Issue Number"] and not file_exists:
         print(f"Trying to update issue #{values['Issue Number']} but CSV doesn't exist - skipping")

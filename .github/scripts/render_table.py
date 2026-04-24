@@ -1,3 +1,5 @@
+"""Render the published HTML shell and JSON payload for the risk register."""
+
 import hashlib
 import json
 import os
@@ -102,18 +104,21 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
 
 def build_issue_url(issue_ref):
+    """Return the GitHub issue URL for a ``#123`` style reference."""
     if not issue_ref or not isinstance(issue_ref, str) or not issue_ref.startswith("#"):
         return None
     return f"https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/{issue_ref[1:]}"
 
 
 def normalise_text(value):
+    """Convert DataFrame values into serialisable strings."""
     if pd.isna(value):
         return ""
     return str(value)
 
 
 def serialise_records(dataframe):
+    """Convert the risk register DataFrame into JSON-ready records."""
     records = []
     for row in dataframe.to_dict(orient="records"):
         clean_row = {key: normalise_text(value) for key, value in row.items()}
@@ -128,6 +133,7 @@ def serialise_records(dataframe):
 
 
 def build_asset_version(records):
+    """Create a stable short hash used to bust cached frontend assets."""
     payload = json.dumps(records, sort_keys=True, ensure_ascii=False).encode("utf-8")
     return hashlib.sha256(payload).hexdigest()[:12]
 
