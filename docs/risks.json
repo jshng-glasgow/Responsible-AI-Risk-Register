@@ -25,5 +25,39 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/169"
       }
     ]
+  },
+  {
+    "Issue Title": "Testing related risks",
+    "Description": "This will test the new \"related risk\" function.",
+    "Likelihood": "Very Low",
+    "Severity": "Very Low",
+    "Reach": "Very Low",
+    "Mitigations": "",
+    "Ownership": "",
+    "Examples": "",
+    "Related Risks": "#169",
+    "Tags": "",
+    "Issue": "#170",
+    "Updates": "#170",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#169"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#169",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/169"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/170",
+    "update_refs": [
+      "#170"
+    ],
+    "update_urls": [
+      {
+        "label": "#170",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/170"
+      }
+    ]
   }
 ]
