@@ -62,6 +62,11 @@ body:
     attributes:
       label: Examples
       description: Provide relevant examples, case studies, incidents, or policies from institutions or organisations that have identified or managed this risk. Include links where possible.
+  - type: textarea
+    id: related_risks
+    attributes:
+      label: Related Risks
+      description: Optionally add or revise related issue numbers for overlapping risks. Use values like `#12` or `#12, #48`. Leave blank if you are not proposing a change.
   - type: dropdown
     id: tags
     attributes:

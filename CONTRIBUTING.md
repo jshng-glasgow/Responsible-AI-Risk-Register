@@ -43,6 +43,7 @@ This route is useful if you want to:
 - suggest a change to likelihood, severity, or reach;
 - add or improve mitigations;
 - add examples or evidence;
+- link the risk to overlapping entries;
 - suggest improved tagging.
 
 As with new risks, update proposals can be discussed publicly through issue comments before being incorporated into the register.

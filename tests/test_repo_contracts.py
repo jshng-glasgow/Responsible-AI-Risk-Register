@@ -21,6 +21,7 @@ class TestIssueTemplateContracts:
             "Mitigations",
             "Ownership",
             "Examples",
+            "Related Risks",
             "Tags",
             "Other Tags",
         ]:
@@ -40,6 +41,7 @@ class TestIssueTemplateContracts:
             "Mitigations",
             "Ownership",
             "Examples",
+            "Related Risks",
             "Tags",
             "Other Tags",
         ]:

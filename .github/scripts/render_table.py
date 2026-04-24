@@ -117,17 +117,22 @@ def normalise_text(value):
     return str(value)
 
 
+def serialise_issue_refs(value):
+    """Convert a comma-separated issue list into label and URL objects."""
+    refs = [ref.strip() for ref in value.split(",") if ref.strip()]
+    return refs, [{"label": ref, "url": build_issue_url(ref)} for ref in refs]
+
+
 def serialise_records(dataframe):
     """Convert the risk register DataFrame into JSON-ready records."""
     records = []
     for row in dataframe.to_dict(orient="records"):
         clean_row = {key: normalise_text(value) for key, value in row.items()}
+        clean_row["related_risk_refs"], clean_row["related_risk_urls"] = serialise_issue_refs(
+            clean_row.get("Related Risks", "")
+        )
         clean_row["issue_url"] = build_issue_url(clean_row.get("Issue", ""))
-        clean_row["update_refs"] = [ref.strip() for ref in clean_row.get("Updates", "").split(",") if ref.strip()]
-        clean_row["update_urls"] = [
-            {"label": ref, "url": build_issue_url(ref)}
-            for ref in clean_row["update_refs"]
-        ]
+        clean_row["update_refs"], clean_row["update_urls"] = serialise_issue_refs(clean_row.get("Updates", ""))
         records.append(clean_row)
     return records
 

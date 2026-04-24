@@ -197,6 +197,7 @@ function renderRecord(record) {
     buildRow("Mitigations", (container) => appendTextOrPlaceholder(container, record["Mitigations"])),
     buildRow("Ownership", (container) => appendTextOrPlaceholder(container, record["Ownership"])),
     buildRow("Examples", (container) => appendTextOrPlaceholder(container, record["Examples"])),
+    buildRow("Related Risks", (container) => appendIssueLinks(container, record["related_risk_urls"])),
     buildRow("Tags", (container) => appendTextOrPlaceholder(container, record["Tags"])),
     buildRow("Issue", (container) => {
       appendIssueLinks(container, record["issue_url"] ? [{ label: record["Issue"], url: record["issue_url"] }] : []);

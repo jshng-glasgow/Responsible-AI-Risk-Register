@@ -7,8 +7,21 @@ import sys
 import pandas as pd
 
 
-FIELDS = ["Issue Number", "Description", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags", "Other Tags"]
+FIELDS = [
+    "Issue Number",
+    "Description",
+    "Likelihood",
+    "Severity",
+    "Reach",
+    "Mitigations",
+    "Ownership",
+    "Examples",
+    "Related Risks",
+    "Tags",
+    "Other Tags",
+]
 CSV_PATH = "register/risks.csv"
+ISSUE_REF_PATTERN = re.compile(r"#?\d+")
 
 
 def split_tags(raw_value):
@@ -17,6 +30,20 @@ def split_tags(raw_value):
         return []
     parts = re.split(r",|\n", raw_value)
     return [part.strip() for part in parts if part.strip()]
+
+
+def normalise_issue_refs(raw_value):
+    """Convert issue references into a deduplicated ``#123`` comma-separated list."""
+    if not raw_value or raw_value in ("_No response_", "No changes", "None"):
+        return None
+
+    refs = []
+    for match in ISSUE_REF_PATTERN.findall(raw_value):
+        ref = f"#{match.lstrip('#')}"
+        if ref not in refs:
+            refs.append(ref)
+
+    return ", ".join(refs) if refs else None
 
 
 def combine_tags(selected_tags, other_tags):
@@ -41,6 +68,7 @@ def parse_issue(body):
         if field in FIELDS:
             values[field] = None if content in ("_No response_", "", "None", "No changes") else content
 
+    values["Related Risks"] = normalise_issue_refs(values.get("Related Risks"))
     combined_tags = combine_tags(values.get("Tags"), values.get("Other Tags"))
     values["Tags"] = combined_tags if combined_tags else None
     values.pop("Other Tags", None)
@@ -63,7 +91,17 @@ def update_csv_row(values, issue_number):
 
     row_index = risk_register[row_mask].index[0]
 
-    for field in ["Description", "Likelihood", "Severity", "Reach", "Mitigations", "Ownership", "Examples", "Tags"]:
+    for field in [
+        "Description",
+        "Likelihood",
+        "Severity",
+        "Reach",
+        "Mitigations",
+        "Ownership",
+        "Examples",
+        "Related Risks",
+        "Tags",
+    ]:
         if values.get(field) is not None:
             risk_register.loc[row_index, field] = values[field]
 

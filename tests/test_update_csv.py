@@ -7,7 +7,7 @@ import pytest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".github", "scripts"))
 
-from update_csv import combine_tags, parse_issue, update_csv_row
+from update_csv import combine_tags, normalise_issue_refs, parse_issue, update_csv_row
 
 
 class TestUpdateCSV:
@@ -36,6 +36,10 @@ Updated owner
 ### Examples
 Updated examples
 
+### Related Risks
+12
+#27
+
 ### Tags
 Economic, Governance
 
@@ -51,6 +55,7 @@ Lab Practice
         assert values["Mitigations"] == "Updated mitigations"
         assert values["Ownership"] == "Updated owner"
         assert values["Examples"] == "Updated examples"
+        assert values["Related Risks"] == "#12, #27"
         assert values["Tags"] == "Economic, Governance, Lab Practice"
 
     def test_parse_issue_none_values(self):
@@ -77,6 +82,9 @@ None
 ### Examples
 Examples
 
+### Related Risks
+No changes
+
 ### Tags
 No changes
 
@@ -91,10 +99,14 @@ No changes
         assert values["Mitigations"] is None
         assert values["Ownership"] is None
         assert values["Examples"] == "Examples"
+        assert values["Related Risks"] is None
         assert values["Tags"] is None
 
     def test_combine_tags_deduplicates(self):
         assert combine_tags("Economic, Governance", "Governance, Lab Practice") == "Economic, Governance, Lab Practice"
+
+    def test_normalise_issue_refs_deduplicates_and_formats(self):
+        assert normalise_issue_refs("12, #12\n48") == "#12, #48"
 
     def test_update_csv_row_success(self, tmp_path):
         test_csv = tmp_path / "risks.csv"
@@ -108,6 +120,7 @@ No changes
                 "Mitigations": ["Original mitigations"],
                 "Ownership": ["Original owner"],
                 "Examples": ["Original examples"],
+                "Related Risks": ["#77"],
                 "Tags": ["Environmental"],
                 "Issue": ["#123"],
                 "Updates": ["#123"],
@@ -126,6 +139,7 @@ No changes
                 "Mitigations": None,
                 "Ownership": "Updated owner",
                 "Examples": None,
+                "Related Risks": "#77, #80",
                 "Tags": "Governance, Software Sustainability",
             }
             update_csv_row(values, "999")
@@ -140,6 +154,7 @@ No changes
             assert df.iloc[0]["Mitigations"] == "Original mitigations"
             assert df.iloc[0]["Ownership"] == "Updated owner"
             assert df.iloc[0]["Examples"] == "Original examples"
+            assert df.iloc[0]["Related Risks"] == "#77, #80"
             assert df.iloc[0]["Tags"] == "Governance, Software Sustainability"
             assert pd.isna(df.iloc[0]["Maintainer Notes"]) or df.iloc[0]["Maintainer Notes"] == ""
             assert "#999" in str(df.iloc[0]["Updates"])
@@ -156,6 +171,7 @@ No changes
                 "Mitigations": ["Original mitigations"],
                 "Ownership": ["Original owner"],
                 "Examples": ["Original examples"],
+                "Related Risks": [""],
                 "Tags": [""],
                 "Issue": ["#123"],
                 "Updates": ["#123"],
@@ -189,6 +205,7 @@ No changes
                 "Mitigations": ["Original mitigations"],
                 "Ownership": ["Original owner"],
                 "Examples": [None],
+                "Related Risks": [None],
                 "Tags": [""],
                 "Issue": ["#123"],
                 "Updates": ["#123"],
@@ -207,6 +224,7 @@ No changes
                 "Mitigations": None,
                 "Ownership": None,
                 "Examples": "https://example.com/skills",
+                "Related Risks": None,
                 "Tags": None,
             }
             update_csv_row(values, "999")
@@ -228,6 +246,7 @@ No changes
                 "Mitigations": ["Initial mitigations"],
                 "Ownership": ["Owner"],
                 "Examples": ["Example"],
+                "Related Risks": ["#90"],
                 "Tags": ["Governance"],
                 "Issue": ["#50"],
                 "Updates": ["#50"],
@@ -246,6 +265,7 @@ No changes
                 "Mitigations": None,
                 "Ownership": None,
                 "Examples": None,
+                "Related Risks": None,
                 "Tags": None,
             }
             update_csv_row(values_1, "100")
@@ -259,6 +279,7 @@ No changes
                 "Mitigations": None,
                 "Ownership": None,
                 "Examples": None,
+                "Related Risks": None,
                 "Tags": None,
             }
             update_csv_row(values_2, "200")
@@ -280,6 +301,7 @@ No changes
                 "Mitigations": ["Initial mitigations"],
                 "Ownership": ["Owner"],
                 "Examples": ["Example"],
+                "Related Risks": [""],
                 "Tags": [""],
                 "Issue": ["#50"],
                 "Updates": ["#50, #100"],
@@ -298,6 +320,7 @@ No changes
                 "Mitigations": None,
                 "Ownership": None,
                 "Examples": None,
+                "Related Risks": None,
                 "Tags": None,
             }
             update_csv_row(values, "100")

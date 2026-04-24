@@ -29,5 +29,8 @@ Use this template to propose a new risk for the SSI Generative AI Risk Register.
 ## Examples
 [Optional: Provide relevant examples, policies, or links]
 
+## Related Risks
+[Optional: List issue numbers for overlapping or similar risks, for example #12 or #12, #48]
+
 ## Your Name
 [Optional: For contributor recognition]
