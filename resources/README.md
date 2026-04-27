@@ -110,3 +110,12 @@ Copy and paste this block for each new item:
 
 ## Other
 ...
+
+### [This is a test resource](https://example.com/resource)
+
+- Organisation / authors: Test org
+- Year: 2025
+- Type: Other
+- Relevance: To test the function
+- Tags: Tag1, Tag2, Tag3
+- Notes: Note 1
