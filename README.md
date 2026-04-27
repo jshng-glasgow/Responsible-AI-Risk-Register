@@ -104,6 +104,10 @@ For workshop facilitation, maintainers can temporarily set the GitHub Actions re
 
 Contributions to this register are made publicly under CC BY 4.0 and may be used in future research. No personally identifying information should be included in contributions.
 
+## AI Assistance Disclosure
+
+This repository was developed with assistance from OpenAI Codex. AI-assisted contributions, including code, tests, and documentation, have been reviewed, tested, and approved by an experienced human software engineer for correctness, security, and fitness for purpose.
+
 ## Citation
 
 Please cite as:

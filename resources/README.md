@@ -106,3 +106,6 @@ Copy and paste this block for each new item:
 - Relevance: Discusses the ways in which JOSS, and the open-source software community more broadly, are adapting to generative AI. 
 - Tags:
 - Notes:
+
+## Other
+...
