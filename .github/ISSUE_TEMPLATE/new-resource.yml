@@ -1,0 +1,66 @@
+name: Propose a new resource
+description: Suggest a resource to add to the resources list
+labels: ["new resource"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to suggest a third-party resource for the register.
+
+        Please prefer stable links to the original publisher or organisation. Resources are normally added as links with short notes rather than as files stored in the repository.
+  - type: input
+    id: resource_title
+    attributes:
+      label: Resource Title
+      description: The title of the policy, paper, guidance, case study, report, or other resource.
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: A stable link to the original resource.
+      placeholder: https://example.org/resource
+    validations:
+      required: true
+  - type: input
+    id: organisation_authors
+    attributes:
+      label: Organisation / authors
+      description: The organisation, author, or authors responsible for the resource.
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      description: The publication year, or the most recent update year if more useful.
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      description: Select the closest resource type. Maintainers can refine this later if needed.
+      options:
+        - Policy
+        - Position paper
+        - Guidance
+        - Case study
+        - Report
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Relevance
+      description: Briefly explain why this resource is relevant to the AI-RSE risk register.
+    validations:
+      required: true
+  - type: textarea
+    id: tags
+    attributes:
+      label: Tags
+      description: Optional short tags or topics. Separate multiple entries with commas.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Optional extra context, such as related slides, local caveats, or access notes.

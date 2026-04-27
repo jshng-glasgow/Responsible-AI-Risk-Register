@@ -19,6 +19,8 @@ Details of how to contribute are in [CONTRIBUTING.md](CONTRIBUTING.md). Contribu
 
 To propose a new risk, go to the "Issues" tab and select "New issue" and "Propose new risk". See below for detailed information about each field. If you don't have a GitHub account, then a risk can be added manually using this [Microsoft form](https://forms.office.com/e/NAYjcGiF7i).
 
+To suggest a supporting resource, use the "Propose a new resource" issue form. Resource submissions are added to [resources/README.md](resources/README.md) as links with short notes.
+
 If you would like to be recognised as a contributor to the register, please add your name to [CONTRIBUTORS.md](CONTRIBUTORS.md) via a pull request.
 
 ## The Register
@@ -98,7 +100,7 @@ This field is intended to help maintainers preserve provenance when risks are me
 
 The register is maintained by the SSI's Responsible AI in RSE study group. All edits to the register (e.g., new risks, updates to existing risks) are reviewed by the study group. The register is periodically reviewed to merge similar risks and remove redundancy.
 
-For workshop facilitation, maintainers can temporarily set the GitHub Actions repository variable `WORKSHOP_AUTO_PUBLISH_NEW_RISKS=true`. When enabled, issues labelled `new risk` are written directly to the default branch instead of opening a pull request. Issues labelled `risk update` continue to create pull requests for manual review.
+For workshop facilitation, maintainers can temporarily set the GitHub Actions repository variable `WORKSHOP_AUTO_PUBLISH_NEW_RISKS=true`. When enabled, issues labelled `new risk` or `new resource` are written directly to the default branch instead of opening a pull request. Issues labelled `risk update` continue to create pull requests for manual review.
 
 ## Data Usage and Confidentiality
 

@@ -48,6 +48,23 @@ class TestIssueTemplateContracts:
             assert f"label: {label}" in template
             assert f'"{label}"' in script
 
+    def test_new_resource_template_matches_resource_to_readme_parser_fields(self):
+        template = read_text(".github/ISSUE_TEMPLATE/new-resource.yml")
+        script = read_text(".github/scripts/resource_to_readme.py")
+
+        for label in [
+            "Resource Title",
+            "URL",
+            "Organisation / authors",
+            "Year",
+            "Type",
+            "Relevance",
+            "Tags",
+            "Notes",
+        ]:
+            assert f"label: {label}" in template
+            assert f'"{label}"' in script
+
 
 class TestWorkflowContracts:
     def test_workshop_direct_publish_regenerates_and_deploys_site(self):
@@ -78,3 +95,12 @@ class TestWorkflowContracts:
         assert "pytest tests/" in workflow
         for dependency in ["pandas", "pytest", "beautifulsoup4"]:
             assert dependency in requirements
+
+    def test_resource_issue_workflow_uses_prs_except_in_workshop_mode(self):
+        workflow = read_text(".github/workflows/resource-to-readme.yml")
+
+        assert "github.event.label.name == 'new resource'" in workflow
+        assert "WORKSHOP_AUTO_PUBLISH_NEW_RISKS == 'true'" in workflow
+        assert "python .github/scripts/resource_to_readme.py" in workflow
+        assert "git add resources/README.md" in workflow
+        assert "peter-evans/create-pull-request@v6" in workflow

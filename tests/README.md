@@ -17,6 +17,7 @@ pytest tests/
 ## Test Coverage
 
 - `test_issue_to_csv.py`: Tests parsing GitHub issue bodies and appending new risks to the CSV.
+- `test_resource_to_readme.py`: Tests parsing resource issue bodies and adding resources to the resources README.
 - `test_update_csv.py`: Tests parsing and updating existing risks in the CSV.
 - `test_validate_csv.py`: Tests validation of the risks CSV file.
 - `test_render_table.py`: Tests generation of HTML table from the CSV.

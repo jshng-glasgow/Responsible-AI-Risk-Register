@@ -1,0 +1,90 @@
+name: Issue to Resource Entry
+
+on:
+  issues:
+    types: [labeled]
+
+concurrency:
+  group: resource-update
+  cancel-in-progress: false
+
+jobs:
+  add-resource-direct:
+    if: github.event.label.name == 'new resource' && vars.WORKSHOP_AUTO_PUBLISH_NEW_RISKS == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Synchronise with latest default branch
+        run: git pull --ff-only origin "${{ github.event.repository.default_branch }}"
+
+      - name: Debug issue body
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: echo "$ISSUE_BODY"
+
+      - name: Parse issue and update resources
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: python .github/scripts/resource_to_readme.py
+
+      - name: Commit directly to default branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resources/README.md
+          if git diff --cached --quiet; then
+            echo "No resource changes detected"
+            exit 0
+          fi
+          git commit -m "Add resource from issue #${{ github.event.issue.number }}"
+          git push origin HEAD:${{ github.event.repository.default_branch }}
+
+  add-resource-pr:
+    if: github.event.label.name == 'new resource' && vars.WORKSHOP_AUTO_PUBLISH_NEW_RISKS != 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Debug issue body
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: echo "$ISSUE_BODY"
+
+      - name: Parse issue and update resources
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: python .github/scripts/resource_to_readme.py
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Add resource from issue #${{ github.event.issue.number }}"
+          title: "Add resource: ${{ github.event.issue.title }}"
+          body: "Automatically generated from issue #${{ github.event.issue.number }}"
+          branch: "resource/issue-${{ github.event.issue.number }}"
+          labels: "auto-generated"

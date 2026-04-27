@@ -6,6 +6,7 @@ As a default, add resources here as links with short notes rather than storing P
 
 ## How to use this folder
 
+- To suggest a resource through GitHub, open a new issue and select **Propose a new resource**.
 - Add one entry per resource using the template below.
 - Group similar resources under the relevant heading, or add a new heading if needed.
 - Prefer links to the original publisher or organisation.

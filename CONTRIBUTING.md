@@ -1,6 +1,6 @@
 # Contributing to the SSI Generative AI Risk Register
 
-Thank you for contributing to this register. This document explains how to propose new risks, suggest updates to existing risks, take part in discussion, and how contributions are reviewed.
+Thank you for contributing to this register. This document explains how to propose new risks, suggest updates to existing risks, suggest resources, take part in discussion, and how contributions are reviewed.
 
 ## Who can contribute?
 
@@ -74,7 +74,19 @@ Anonymous or private submissions may be lightly edited by maintainers for:
 
 The aim of this route is to support private submission without losing the benefits of public community discussion wherever possible.
 
-### 4. Discuss a risk
+### 4. Propose a new resource (GitHub)
+
+To suggest a policy, position paper, guidance document, case study, report, or related resource:
+
+1. Go to the **Issues** tab.
+2. Click **New Issue**.
+3. Select **Propose a new resource**.
+4. Fill in the form, including a stable link and a short note explaining why the resource is relevant.
+5. Submit the issue.
+
+In most cases, resource proposals are turned into a pull request that adds a link and short notes to [resources/README.md](resources/README.md). During workshop facilitation, maintainers may enable workshop auto-publishing so new resource issues are added directly to the default branch.
+
+### 5. Discuss a risk
 
 Discussion is an important part of this project.
 
