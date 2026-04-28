@@ -25,5 +25,32 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/169"
       }
     ]
+  },
+  {
+    "Issue Title": "Proprietary code leakage",
+    "Description": "When using agents in an IDE, it's possible that the agent has access to proprietary code.",
+    "Likelihood": "High",
+    "Severity": "High",
+    "Reach": "High",
+    "Mitigations": "Not having proprietary code open in the IDE, so that the scope for the agent is limited.",
+    "Ownership": "Individual software engineers and project managers.",
+    "Examples": "",
+    "Related Risks": "",
+    "Tags": "Privacy and Security",
+    "Issue": "#173",
+    "Updates": "#173",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/173",
+    "update_refs": [
+      "#173"
+    ],
+    "update_urls": [
+      {
+        "label": "#173",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/173"
+      }
+    ]
   }
 ]
