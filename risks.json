@@ -52,5 +52,39 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/173"
       }
     ]
+  },
+  {
+    "Issue Title": "AI-generated tests may miss edge cases",
+    "Description": "AI generated tests may appear to be complete and may pass test coverage metrics. However, important edge cases may be missed, such as the inputs of invalid data. Errors in tests can result in serious uncaught bugs, resulting in invalid analyses, error-prone code execution, or brittle software. Negative consequences may not be immediately apparent, and may emerge at a much later day. This could affect any project that uses automated tests.",
+    "Likelihood": "Very High",
+    "Severity": "High",
+    "Reach": "Very High",
+    "Mitigations": "Tests should require human review, and effort should be taken to think about edge cases. Tests should reflect the real-world uses of any functionality. Document when tests have been AI-generated.",
+    "Ownership": "RSEs, researchers, project leads, institutions",
+    "Examples": "",
+    "Related Risks": "#169",
+    "Tags": "Privacy and Security, Research Integrity, Software Sustainability, Training and Development, People and Professional Practice",
+    "Issue": "#174",
+    "Updates": "#174",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#169"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#169",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/169"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/174",
+    "update_refs": [
+      "#174"
+    ],
+    "update_urls": [
+      {
+        "label": "#174",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/174"
+      }
+    ]
   }
 ]
