@@ -194,5 +194,39 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/181"
       }
     ]
+  },
+  {
+    "Issue Title": "Copyright infrigement",
+    "Description": "Using copyrighted works to train models may infringe reproduction rights, especially if the model memorises protected content.\nExample: Making a commercial software which has used GPL's licenced code. \nEvidence to be added.",
+    "Likelihood": "High",
+    "Severity": "Very High",
+    "Reach": "Very High",
+    "Mitigations": "- Being able to restrict what the model uses as a source of training / context / source of truth (such as in RAG).",
+    "Ownership": "- Institutions +++\n- Project managers ++",
+    "Examples": "",
+    "Related Risks": "#173",
+    "Tags": "Privacy and Security, Research Integrity, Wider Societal Impacts, Governance",
+    "Issue": "#180",
+    "Updates": "#180",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#173"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#173",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/173"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/180",
+    "update_refs": [
+      "#180"
+    ],
+    "update_urls": [
+      {
+        "label": "#180",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/180"
+      }
+    ]
   }
 ]
