@@ -113,5 +113,32 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/185"
       }
     ]
+  },
+  {
+    "Issue Title": "Developing research software code that only AI understands",
+    "Description": "Some research software developed with AI may not be understood by any humans.  This means that the code will be very difficult to debug and build upon if AI becomes unavailable or cannot do the debugging. Also, if no one understands exactly how the code is built, researchers cannot be 100% sure what the code is doing, and therefore cannot be 100% sure that any results produced with the software are valid.",
+    "Likelihood": "Very High",
+    "Severity": "Very High",
+    "Reach": "Unknown",
+    "Mitigations": "- Have regular code reviews and ensure that the code is understood\n- RSEs continue to develop software engineering skills rather than relying on AI in place of this\n- Write documentation, explaining how the code works.  If AI is used to generate the docs, a human should ensure they are correct regularly.\n- Institutions should introduce rules or guidance about ensuring understanding of research code.  This could also be required by funders.",
+    "Ownership": "RSEs, researchers, team leads, institutions, funders",
+    "Examples": "",
+    "Related Risks": "",
+    "Tags": "People and Professional Practice, Software Sustainability, Research Integrity, Privacy and Security",
+    "Issue": "#183",
+    "Updates": "#183",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/183",
+    "update_refs": [
+      "#183"
+    ],
+    "update_urls": [
+      {
+        "label": "#183",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/183"
+      }
+    ]
   }
 ]
