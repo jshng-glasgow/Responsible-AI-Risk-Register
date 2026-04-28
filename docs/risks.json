@@ -267,5 +267,32 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/178"
       }
     ]
+  },
+  {
+    "Issue Title": "AI-generated code review hallucinating issues can waste the team's time",
+    "Description": "AI-generated code review highlights many issues and vulnerabilities in code submissions. These can offer good insights into potential problems in the code's implementations, and can catch issues that a human reviewer may miss, but they can also hallucinate problems with perfectly fine implementations. This can lead to extended review periods and a lot of wasted time trying to hunt and squash bugs that are not genuinely there.",
+    "Likelihood": "Medium",
+    "Severity": "Low",
+    "Reach": "Low",
+    "Mitigations": "Considering the severity of the issues discussed by the AI review, and whether the time investment of the team to squash them is worthwhile",
+    "Ownership": "",
+    "Examples": "",
+    "Related Risks": "",
+    "Tags": "Research Integrity",
+    "Issue": "#177",
+    "Updates": "#177",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/177",
+    "update_refs": [
+      "#177"
+    ],
+    "update_urls": [
+      {
+        "label": "#177",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/177"
+      }
+    ]
   }
 ]
