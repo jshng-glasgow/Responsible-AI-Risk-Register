@@ -140,5 +140,32 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/183"
       }
     ]
+  },
+  {
+    "Issue Title": "The use of AI may create a divide between those who can and can't afford it",
+    "Description": "The costs involved in using generative AI to create software may create or exacerbate differences in what is achievable by different groups of people due to their, or their institutions', economic circumstances. These differences will likely compound existing inequalities and are likely to disproportionately impact \"minority\" groups and the global south.",
+    "Likelihood": "High",
+    "Severity": "Very High",
+    "Reach": "Very High",
+    "Mitigations": "",
+    "Ownership": "",
+    "Examples": "",
+    "Related Risks": "",
+    "Tags": "Equity and Fairness, Economic",
+    "Issue": "#182",
+    "Updates": "#182",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/182",
+    "update_refs": [
+      "#182"
+    ],
+    "update_urls": [
+      {
+        "label": "#182",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/182"
+      }
+    ]
   }
 ]
