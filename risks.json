@@ -294,5 +294,44 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/177"
       }
     ]
+  },
+  {
+    "Issue Title": "AI-generated code can lead to a reduced logical development and design thinking ability of the author",
+    "Description": "AI-generated code can lead to a reduced agency of the author due to lesser mental involvement in the software design decision-making process.",
+    "Likelihood": "Medium",
+    "Severity": "Medium",
+    "Reach": "High",
+    "Mitigations": "Get user testing often, use rubberducking, and initiate a project after having a discussion with people working in those domains.",
+    "Ownership": "educators, institutions, and tool developers",
+    "Examples": "For example, when someone is developing a software that is assisted by GenAI, and the GenAI LLM offers them multiple options to go ahead with as a next step, the developer might use something that feels easy or intuitive, familiar, or something for which the GenAI gives a complete code.",
+    "Related Risks": "#181, #183",
+    "Tags": "Training and Development",
+    "Issue": "#175",
+    "Updates": "#175",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#181",
+      "#183"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#181",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/181"
+      },
+      {
+        "label": "#183",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/183"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/175",
+    "update_refs": [
+      "#175"
+    ],
+    "update_urls": [
+      {
+        "label": "#175",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/175"
+      }
+    ]
   }
 ]
