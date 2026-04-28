@@ -9,7 +9,7 @@ This register has been developed by the Software Sustainability Institute's Resp
 
 ## Scope
 
-This register is intended to capture concerns around the use of generative AI in the development of research software. While there are valid concerns around the use of AI more generally as an analytic tool, or of generative AI in other areas of science, these are best addressed through discussion with the wider academic community.
+This register is intended to capture risks in the use of generative AI in the development of research software. While there are valid concerns around the use of AI more generally as an analytic tool, or of generative AI in other areas of science, these are best addressed through discussion with the wider academic community.
 
 Risks need not be applicable to all RSEs in all fields. If there are risks that are specific to your work then please include them — you may be surprised how relevant they are to others!
 
