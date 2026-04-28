@@ -86,5 +86,32 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/174"
       }
     ]
+  },
+  {
+    "Issue Title": "Personal data entered into an online LLM",
+    "Description": "Clinicians and medical researchers are using online LLMs such as Chat-GPT, Claude, and Gemini more and more to facilitate their administration and research analyses. However, they often use (personal) data obtained from patients and/or participants that may be traceable to specific individuals, such as names, dates of birth, addresses, medical history, visitations, and other data found in medical records. These data may be accidently submitted to an online LLM, knowlingly or unknowingly leaking personal data to a third party. Within the EU, this violates the GDPR and goes against good clinical practice (GCP). The ultimate consequences of leaking this kind of personal data are unclear, and may only affect a single or handful of people, but the imediate result is the violation of a patient or participant's right to have ownership over their data. This should be avoided at all costs.",
+    "Likelihood": "Medium",
+    "Severity": "High",
+    "Reach": "Medium",
+    "Mitigations": "Proper training of medical researchers and clinicians by raising AI literacy can help to prevent this kind of data breaches from occuring. Implementing a policy to forbid the use of AI tools when analysing data or performing adminstrative tasks are unhelpful as it offers no guarantee of preveting this risk. Instead aim for providing safe (local) alternatives or clear policy on the safe use of AI tools.",
+    "Ownership": "The researcher or clinician are responsible in principle, held to account by their research insitute or department heads.",
+    "Examples": "This kind of risk is difficult to monitor as it could happen silently without any party involved being aware. The frequency is therefore difficult to determine, and examples are sparse (but will be added to the list in the future).",
+    "Related Risks": "",
+    "Tags": "Privacy and Security, Research Integrity, People and Professional Practice",
+    "Issue": "#185",
+    "Updates": "#185",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/185",
+    "update_refs": [
+      "#185"
+    ],
+    "update_urls": [
+      {
+        "label": "#185",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/185"
+      }
+    ]
   }
 ]
