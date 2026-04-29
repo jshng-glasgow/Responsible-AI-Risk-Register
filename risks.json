@@ -367,5 +367,39 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/187"
       }
     ]
+  },
+  {
+    "Issue Title": "False positive test behaviour (not testing ground truth behaviour)",
+    "Description": "When AI tools are used to create research software inclusive of the underlying tests, there is risk that the tests don't test for the correct intended behaviour, and therefore if they 'pass' they correspond to a false positive result.\n\nConsequently the software which is believed to be behaving as intended to some extent as judged by the tests (as governed by their coverage and assumed robustness, etc.), and therefore is relied upon, can in fact not be working as intended which can cause issues of accuracy, quality etc. and can mean breaking changes may be missed in the case of regression testing.",
+    "Likelihood": "Medium",
+    "Severity": "Medium",
+    "Reach": "Unknown",
+    "Mitigations": "* robust (ideally human) review of any testing added or updated to a codebase;\n* diversity of testing approaches (unit, integration, acceptance, UI if applicable, etc. ) and infrastructure (automated/CI vs. human-run suites) to fortify validation of correct/intended behaviour.",
+    "Ownership": "RSEs, institutions, code owners, tool developers",
+    "Examples": "",
+    "Related Risks": "#174",
+    "Tags": "Software Sustainability",
+    "Issue": "#188",
+    "Updates": "#188",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#174"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#174",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/174"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/188",
+    "update_refs": [
+      "#188"
+    ],
+    "update_urls": [
+      {
+        "label": "#188",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/188"
+      }
+    ]
   }
 ]
