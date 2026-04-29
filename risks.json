@@ -401,5 +401,32 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/188"
       }
     ]
+  },
+  {
+    "Issue Title": "Generated code less performant/effiicent & hardware-aware",
+    "Description": "Code generated with AI tools may be offered as a plausible solution based on only (or not much more than) being functional, without consideration for the performance/efficiency and the underlying hardware the code is run on - that is, it can often generate code which is computationally naive.\n\nAs a consequence, such code and contributions can slow the tool/library in question and in turn cause it to be inefficient, badly scaling, or having bottlenecks, leading to the need for more power hence higher cost and GHG emissions.",
+    "Likelihood": "High",
+    "Severity": "Medium",
+    "Reach": "Medium",
+    "Mitigations": "* thoroughly review AI-generated code for performance aspects including suitability for the underlying hardware it will be run on (if known);\n* measure, profile and optimise code continuously on intended hardware to validate performance.",
+    "Ownership": "RSEs, RSE managers, team leads, project leads, institutions",
+    "Examples": "",
+    "Related Risks": "",
+    "Tags": "Software Sustainability",
+    "Issue": "#189",
+    "Updates": "#189",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/189",
+    "update_refs": [
+      "#189"
+    ],
+    "update_urls": [
+      {
+        "label": "#189",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/189"
+      }
+    ]
   }
 ]
