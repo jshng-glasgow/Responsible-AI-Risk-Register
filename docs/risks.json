@@ -333,5 +333,39 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/175"
       }
     ]
+  },
+  {
+    "Issue Title": "Accumulation/scaling of technical debt",
+    "Description": "Use of AI to develop (research) software can over time lead to (by itself, or scaling of existing) large-scale structural issues or fragility in codebases (technical debt), especially when used in a piecemeal manner without considerable care to align with a system's/tool's long-term design, architecture and scope, or without supervision or review of a human with significant domain knowledge concerning the tool.",
+    "Likelihood": "Medium",
+    "Severity": "Medium",
+    "Reach": "High",
+    "Mitigations": "* robust review and quality control of code changes;\n* unit tests written by a human or at least another tool independently;\n* mandatory code review for any AI contributions, ideally by someone with domain knowledge and contextual awareness of the codebase and its usage and goals;\n* enforced patterns for architecture/design and scope of the codebase in question;\n* apply any AI-generated code in small, self-contained units and not larger (by code line count) or broader (in functionality) PRs;\n* prompt engineering good practice so that prompts include, as well as queries to generate code to solve a problem, definition of the underlying codebase details such as scopes, aims, design, relevant data model(s) or standards, schemas, interfaces etc.",
+    "Ownership": "Team leads, RSEs, researchers, institutions, funders",
+    "Examples": "",
+    "Related Risks": "#183",
+    "Tags": "Software Sustainability",
+    "Issue": "#187",
+    "Updates": "#187",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#183"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#183",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/183"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/187",
+    "update_refs": [
+      "#187"
+    ],
+    "update_urls": [
+      {
+        "label": "#187",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/187"
+      }
+    ]
   }
 ]
