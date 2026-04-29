@@ -428,5 +428,32 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/189"
       }
     ]
+  },
+  {
+    "Issue Title": "Experience bottleneck from loss of entry-level RSE roles",
+    "Description": "The capabilities of (even free) GenAI mean that there's a general workplace trend for teams reducing their intake at entry-level and/or more junior roles to cut costs, which could feasibly affect RSE and aligned roles and be a trend specifically across the RSE workforce, too.\n\nThis loss could lead to various issues, but the risk highlighted here in particular is the experience bottleneck whereby fewer junior RSEs being in the workforce in the present leads to fewer mid-level and in turn senior RSEs in the future (because generally people progress from junior to mid-level etc. in their career rather than transitioning in as more senior from some other career). In short, there is the risk of a reduced pipeline of experienced RSEs in future.",
+    "Likelihood": "Medium",
+    "Severity": "Medium",
+    "Reach": "High",
+    "Mitigations": "* reframing rather than eliminating entry-level/junior roles;\n* investing in structured career schemes starting at junior (e.g. graduate) level;\n* strengthen the RSE career ladder and recognition of the RSE role to support those below senior level in particular.",
+    "Ownership": "RSE managers, team leads, project leads, institutions",
+    "Examples": "",
+    "Related Risks": "",
+    "Tags": "People and Professional Practice, Equity and Fairness, Training and Development",
+    "Issue": "#190",
+    "Updates": "#190",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/190",
+    "update_refs": [
+      "#190"
+    ],
+    "update_urls": [
+      {
+        "label": "#190",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/190"
+      }
+    ]
   }
 ]
