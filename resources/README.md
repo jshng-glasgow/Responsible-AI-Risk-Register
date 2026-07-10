@@ -59,6 +59,16 @@ Copy and paste this block for each new item:
 - Tags:
 - Notes: You can add your signature to the paper to show your support for the key messages!
 
+### [Assistance for reading, not writing](https://x28newblog.wordpress.com/2026/06/25/assistance-for-reading-not-writing/)
+
+- Organisation / authors: Matthias Melcher (retired from Heidelberg University)
+- Year: 2026
+- Type: Position paper
+- Relevance: Argues (amongst others) that GenAI-assisted coding is less sustainable
+- Tags: 
+- Notes: 
+
+
 ## Guidance and Frameworks
 
 ### [Embracing AI with integrity](https://ukrio.org/wp-content/uploads/Embracing-AI-with-integrity.pdf)
@@ -109,4 +119,3 @@ Copy and paste this block for each new item:
 - Notes:
 
 ## Other
-
