@@ -19,7 +19,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SSI Generative AI Risk Register</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v={asset_version}">
 </head>
 <body>
     <main class="page-shell">
@@ -86,11 +86,19 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 
     <template id="risk-card-template">
         <article class="risk-card">
-            <div class="card-header">
-                <div class="card-meta"></div>
-                <h2 class="card-title"></h2>
-            </div>
-            <dl class="card-grid"></dl>
+            <details class="risk-details">
+                <summary class="card-summary">
+                    <span class="card-header">
+                        <span class="card-title" role="heading" aria-level="2"></span>
+                        <span class="card-meta"></span>
+                    </span>
+                    <span class="toggle-label" aria-hidden="true">
+                        <span class="when-collapsed">View details</span>
+                        <span class="when-expanded">Hide details</span>
+                    </span>
+                </summary>
+                <dl class="card-grid"></dl>
+            </details>
         </article>
     </template>
 
@@ -138,9 +146,14 @@ def serialise_records(dataframe):
 
 
 def build_asset_version(records):
-    """Create a stable short hash used to bust cached frontend assets."""
-    payload = json.dumps(records, sort_keys=True, ensure_ascii=False).encode("utf-8")
-    return hashlib.sha256(payload).hexdigest()[:12]
+    """Create a stable short hash used to bust cached data and frontend assets."""
+    digest = hashlib.sha256(json.dumps(records, sort_keys=True, ensure_ascii=False).encode("utf-8"))
+    for asset_name in ("app.js", "styles.css"):
+        asset_path = os.path.join(DOCS_DIR, asset_name)
+        if os.path.exists(asset_path):
+            with open(asset_path, "rb") as asset_file:
+                digest.update(asset_file.read())
+    return digest.hexdigest()[:12]
 
 
 if __name__ == "__main__":
