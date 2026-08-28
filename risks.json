@@ -455,5 +455,39 @@
         "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/190"
       }
     ]
+  },
+  {
+    "Issue Title": "Creates dependencies on deprecated libraries",
+    "Description": "AI may attempt to install deprecated packages or refer to deprecated apis. \nThe potential impact could be anything from the code not working as expected to the use of an insecure deprecated package version.",
+    "Likelihood": "Medium",
+    "Severity": "High",
+    "Reach": "High",
+    "Mitigations": "Using dependency checkers such as Dependabot. Any packages the AI installs should be cross checked by a human developer.",
+    "Ownership": "RSEs, Github Administrators",
+    "Examples": "",
+    "Related Risks": "#117",
+    "Tags": "Privacy and Security, Software Sustainability",
+    "Issue": "#196",
+    "Updates": "#196",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#117"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#117",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/117"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/196",
+    "update_refs": [
+      "#196"
+    ],
+    "update_urls": [
+      {
+        "label": "#196",
+        "url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/196"
+      }
+    ]
   }
 ]
