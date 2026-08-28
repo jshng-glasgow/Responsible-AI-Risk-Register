@@ -23,3 +23,8 @@ jobs:
 
       - name: Run tests
         run: pytest tests/ --tb=short
+
+      - name: Validate register data
+        run: |
+          python .github/scripts/validate_csv.py
+          python .github/scripts/validate_resources.py

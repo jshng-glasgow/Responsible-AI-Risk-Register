@@ -1,4 +1,4 @@
-name: Issue to Resource Entry
+name: Issue to Resource CSV
 
 on:
   issues:
@@ -30,28 +30,37 @@ jobs:
       - name: Synchronise with latest default branch
         run: git pull --ff-only origin "${{ github.event.repository.default_branch }}"
 
-      - name: Debug issue body
-        env:
-          ISSUE_BODY: ${{ github.event.issue.body }}
-        run: echo "$ISSUE_BODY"
-
       - name: Parse issue and update resources
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: python .github/scripts/resource_to_readme.py
+        run: python .github/scripts/resource_to_csv.py
+
+      - name: Install render dependencies
+        run: pip install pandas
+
+      - name: Validate and regenerate site data
+        run: |
+          python .github/scripts/validate_resources.py
+          python .github/scripts/render_table.py
 
       - name: Commit directly to default branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add resources/README.md
+          git add resources/resources.csv docs/index.html docs/resources.json
           if git diff --cached --quiet; then
             echo "No resource changes detected"
             exit 0
           fi
           git commit -m "Add resource from issue #${{ github.event.issue.number }}"
           git push origin HEAD:${{ github.event.repository.default_branch }}
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
 
   add-resource-pr:
     if: github.event.label.name == 'new resource' && vars.WORKSHOP_AUTO_PUBLISH_NEW_RISKS != 'true'
@@ -69,16 +78,11 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Debug issue body
-        env:
-          ISSUE_BODY: ${{ github.event.issue.body }}
-        run: echo "$ISSUE_BODY"
-
       - name: Parse issue and update resources
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: python .github/scripts/resource_to_readme.py
+        run: python .github/scripts/resource_to_csv.py
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6

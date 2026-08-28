@@ -84,7 +84,7 @@ To suggest a policy, position paper, guidance document, case study, report, or r
 4. Fill in the form, including a stable link and a short note explaining why the resource is relevant.
 5. Submit the issue.
 
-In most cases, resource proposals are turned into a pull request that adds a link and short notes to [resources/README.md](resources/README.md). During workshop facilitation, maintainers may enable workshop auto-publishing so new resource issues are added directly to the default branch.
+In most cases, resource proposals are turned into a pull request that adds a structured entry to [resources/resources.csv](resources/resources.csv). Accepted resources appear in the searchable Resources section of the live register. During workshop facilitation, maintainers may enable workshop auto-publishing so new resource issues are added directly to the default branch.
 
 ### 5. Discuss a risk
 

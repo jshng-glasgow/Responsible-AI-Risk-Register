@@ -26,13 +26,13 @@ body:
   - type: input
     id: organisation_authors
     attributes:
-      label: Organisation / authors
+      label: Organisation / Authors
       description: The organisation, author, or authors responsible for the resource.
   - type: input
     id: year
     attributes:
       label: Year
-      description: The publication year, or the most recent update year if more useful.
+      description: Enter one four-digit year for the latest substantive version, such as `2026`. Add earlier publication history to Notes.
   - type: dropdown
     id: type
     attributes:
@@ -54,11 +54,33 @@ body:
       description: Briefly explain why this resource is relevant to the AI-RSE risk register.
     validations:
       required: true
-  - type: textarea
+  - type: dropdown
     id: tags
     attributes:
       label: Tags
-      description: Optional short tags or topics. Separate multiple entries with commas.
+      description: Select any risk-register topics covered by this resource.
+      multiple: true
+      options:
+        - Economic
+        - Environmental
+        - Equity and Fairness
+        - Governance
+        - People and Professional Practice
+        - Privacy and Security
+        - Research Integrity
+        - Software Sustainability
+        - Training and Development
+        - Wider Societal Impacts
+  - type: textarea
+    id: other_tags
+    attributes:
+      label: Other Tags
+      description: If needed, add topics not listed above. Separate multiple entries with commas.
+  - type: textarea
+    id: related_risks
+    attributes:
+      label: Related Risks
+      description: Optionally list issue numbers for risks this resource helps address. Use values like `#12` or `#12, #48`.
   - type: textarea
     id: notes
     attributes:
