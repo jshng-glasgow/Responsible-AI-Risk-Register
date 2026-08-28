@@ -29,8 +29,8 @@ Some mitigations
 ### Ownership
 Test owner
 
-### Examples
-Test examples
+### Best Practice Examples
+Test best practice examples
 
 ### Related Risks
 #12, 48
@@ -48,7 +48,7 @@ Local Practice
         assert values["Reach"] == "Low"
         assert values["Mitigations"] == "Some mitigations"
         assert values["Ownership"] == "Test owner"
-        assert values["Examples"] == "Test examples"
+        assert values["Best Practice Examples"] == "Test best practice examples"
         assert values["Related Risks"] == "#12, #48"
         assert values["Tags"] == "Economic, Environmental, Local Practice"
 
@@ -71,8 +71,8 @@ Unknown
 ### Ownership
 _No response_
 
-### Examples
-Examples
+### Best Practice Examples
+Best practice examples
 
 ### Related Risks
 _No response_
@@ -89,9 +89,14 @@ _No response_
         assert values["Reach"] == "Unknown"
         assert values["Mitigations"] == ""
         assert values["Ownership"] == ""
-        assert values["Examples"] == "Examples"
+        assert values["Best Practice Examples"] == "Best practice examples"
         assert values["Related Risks"] == ""
         assert values["Tags"] == ""
+
+    def test_parse_issue_accepts_legacy_examples_label(self):
+        values = parse_issue("### Description\nTest risk\n\n### Examples\nLegacy example")
+
+        assert values["Best Practice Examples"] == "Legacy example"
 
     def test_split_tags_supports_commas_and_newlines(self):
         assert split_tags("Economic, Environmental\nGovernance") == ["Economic", "Environmental", "Governance"]
@@ -113,7 +118,7 @@ _No response_
                 "Reach": "Low",
                 "Mitigations": "Mitigations",
                 "Ownership": "Owner",
-                "Examples": "Examples",
+                "Best Practice Examples": "Best practice examples",
                 "Related Risks": "#20, #25",
                 "Tags": "Environmental, Training and Development",
             }
@@ -141,7 +146,7 @@ _No response_
                 "Reach": ["Medium"],
                 "Mitigations": ["Existing mitigations"],
                 "Ownership": ["Existing owner"],
-                "Examples": ["Existing examples"],
+                "Best Practice Examples": ["Existing best practice examples"],
                 "Related Risks": ["#11"],
                 "Tags": ["Environmental"],
                 "Issue": ["#124"],
@@ -159,7 +164,7 @@ _No response_
                 "Reach": "Very High",
                 "Mitigations": "New mitigations",
                 "Ownership": "New owner",
-                "Examples": "New examples",
+                "Best Practice Examples": "New best practice examples",
                 "Related Risks": "#11, #20",
                 "Tags": "Research Integrity",
             }

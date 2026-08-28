@@ -13,11 +13,12 @@ FIELDS = [
     "Reach",
     "Mitigations",
     "Ownership",
-    "Examples",
+    "Best Practice Examples",
     "Related Risks",
     "Tags",
     "Other Tags",
 ]
+LEGACY_FIELD_NAMES = {"Examples": "Best Practice Examples"}
 CSV_PATH = "register/risks.csv"
 ISSUE_REF_PATTERN = re.compile(r"#?\d+")
 
@@ -30,7 +31,7 @@ def parse_issue(body):
         if not section.strip():
             continue
         lines = section.strip().split("\n", 1)
-        field = lines[0].strip()
+        field = LEGACY_FIELD_NAMES.get(lines[0].strip(), lines[0].strip())
         content = lines[1].strip() if len(lines) > 1 else ""
         if field in FIELDS:
             values[field] = "" if content in ("_No response_", "") else content
@@ -82,7 +83,7 @@ def upsert_csv(values, issue_number, issue_title):
         "Reach",
         "Mitigations",
         "Ownership",
-        "Examples",
+        "Best Practice Examples",
         "Related Risks",
         "Tags",
         "Issue",
@@ -104,7 +105,7 @@ def upsert_csv(values, issue_number, issue_title):
             "Reach",
             "Mitigations",
             "Ownership",
-            "Examples",
+            "Best Practice Examples",
             "Related Risks",
             "Tags",
         ]

@@ -71,7 +71,7 @@ Please be as descriptive as possible when filling in the contributor-editable fi
 
 **Ownership**: (Optional) Who is responsible for addressing this risk? This might be practitioners, institutions, funders, government, or tool developers. It might be multiple people or groups.
 
-**Examples**: (Optional) Are there any examples of where this risk has been managed elsewhere? Please provide any relevant links or evidence if available.
+**Best Practice Examples**: (Optional) Are there examples of institutions or organisations handling this risk well? Please provide relevant links or evidence where available; this field is not for examples of the risk occurring.
 
 **Related Risks**: (Optional) Issue numbers for risks that overlap with, duplicate, or closely relate to this entry. This helps contributors and maintainers spot potential overlap without immediately merging submissions.
 

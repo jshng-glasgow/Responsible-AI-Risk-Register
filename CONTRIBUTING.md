@@ -42,7 +42,7 @@ This route is useful if you want to:
 - revise the wording of an existing risk;
 - suggest a change to likelihood, severity, or reach;
 - add or improve mitigations;
-- add examples or evidence;
+- add best practice examples or evidence;
 - link the risk to overlapping entries;
 - suggest improved tagging.
 
@@ -110,7 +110,7 @@ Useful contributions are usually:
 - **specific** — they describe a recognisable risk in research software practice;
 - **practical** — they explain what could go wrong, who might be affected, and why it matters;
 - **grounded** — they are based on experience, observation, or plausible emerging practice;
-- **actionable** — they include mitigations, owners, examples, or references where possible.
+- **actionable** — they include mitigations, owners, best practice examples, or references where possible.
 
 Concrete, practice-based submissions are especially valuable. You do not need to fill in every optional field for a contribution to be helpful.
 
@@ -119,7 +119,7 @@ Good first contributions include:
 - proposing a missing risk;
 - clarifying the wording of an existing risk;
 - suggesting a mitigation;
-- adding an example or supporting reference;
+- adding a best practice example or supporting reference;
 - proposing a better tag; or
 - commenting on an issue to refine an existing entry.
 

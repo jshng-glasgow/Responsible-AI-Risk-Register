@@ -39,7 +39,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <section class="controls-panel" aria-label="Register controls">
             <div class="control">
                 <label for="search-input">Search</label>
-                <input id="search-input" type="search" placeholder="Search titles, descriptions, mitigations, ownership, examples..." />
+                <input id="search-input" type="search" placeholder="Search titles, descriptions, mitigations, ownership, best practice examples..." />
             </div>
             <div class="control">
                 <label for="likelihood-filter">Likelihood</label>

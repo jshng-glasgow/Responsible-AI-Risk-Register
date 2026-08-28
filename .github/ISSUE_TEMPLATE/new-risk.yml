@@ -52,10 +52,10 @@ body:
       label: Ownership
       description: Who is responsible for managing this risk? For example, practitioners, team leads, institutions, funders, or tool developers.
   - type: textarea
-    id: examples
+    id: best_practice_examples
     attributes:
-      label: Examples
-      description: Provide relevant examples, case studies, incidents, or policies from institutions or organisations that have identified or managed this risk. Include links where possible.
+      label: Best Practice Examples
+      description: Provide examples of institutions or organisations handling this risk well, such as effective policies, safeguards, or management approaches. Include links where possible; do not use this field for examples of the risk occurring.
   - type: textarea
     id: related_risks
     attributes:

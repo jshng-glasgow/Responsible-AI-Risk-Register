@@ -33,8 +33,8 @@ Updated mitigations
 ### Ownership
 Updated owner
 
-### Examples
-Updated examples
+### Best Practice Examples
+Updated best practice examples
 
 ### Related Risks
 12
@@ -54,7 +54,7 @@ Lab Practice
         assert values["Reach"] == "Low"
         assert values["Mitigations"] == "Updated mitigations"
         assert values["Ownership"] == "Updated owner"
-        assert values["Examples"] == "Updated examples"
+        assert values["Best Practice Examples"] == "Updated best practice examples"
         assert values["Related Risks"] == "#12, #27"
         assert values["Tags"] == "Economic, Governance, Lab Practice"
 
@@ -79,8 +79,8 @@ No changes
 ### Ownership
 None
 
-### Examples
-Examples
+### Best Practice Examples
+Best practice examples
 
 ### Related Risks
 No changes
@@ -98,9 +98,14 @@ No changes
         assert values["Reach"] is None
         assert values["Mitigations"] is None
         assert values["Ownership"] is None
-        assert values["Examples"] == "Examples"
+        assert values["Best Practice Examples"] == "Best practice examples"
         assert values["Related Risks"] is None
         assert values["Tags"] is None
+
+    def test_parse_issue_accepts_legacy_examples_label(self):
+        values = parse_issue("### Issue Number\n#123\n\n### Examples\nLegacy example")
+
+        assert values["Best Practice Examples"] == "Legacy example"
 
     def test_combine_tags_deduplicates(self):
         assert combine_tags("Economic, Governance", "Governance, Lab Practice") == "Economic, Governance, Lab Practice"
@@ -119,7 +124,7 @@ No changes
                 "Reach": ["Medium"],
                 "Mitigations": ["Original mitigations"],
                 "Ownership": ["Original owner"],
-                "Examples": ["Original examples"],
+                "Best Practice Examples": ["Original best practice examples"],
                 "Related Risks": ["#77"],
                 "Tags": ["Environmental"],
                 "Issue": ["#123"],
@@ -138,7 +143,7 @@ No changes
                 "Reach": "Very High",
                 "Mitigations": None,
                 "Ownership": "Updated owner",
-                "Examples": None,
+                "Best Practice Examples": None,
                 "Related Risks": "#77, #80",
                 "Tags": "Governance, Software Sustainability",
             }
@@ -153,7 +158,7 @@ No changes
             assert df.iloc[0]["Reach"] == "Very High"
             assert df.iloc[0]["Mitigations"] == "Original mitigations"
             assert df.iloc[0]["Ownership"] == "Updated owner"
-            assert df.iloc[0]["Examples"] == "Original examples"
+            assert df.iloc[0]["Best Practice Examples"] == "Original best practice examples"
             assert df.iloc[0]["Related Risks"] == "#77, #80"
             assert df.iloc[0]["Tags"] == "Governance, Software Sustainability"
             assert pd.isna(df.iloc[0]["Maintainer Notes"]) or df.iloc[0]["Maintainer Notes"] == ""
@@ -170,7 +175,7 @@ No changes
                 "Reach": ["Medium"],
                 "Mitigations": ["Original mitigations"],
                 "Ownership": ["Original owner"],
-                "Examples": ["Original examples"],
+                "Best Practice Examples": ["Original best practice examples"],
                 "Related Risks": [""],
                 "Tags": [""],
                 "Issue": ["#123"],
@@ -204,7 +209,7 @@ No changes
                 "Reach": ["Medium"],
                 "Mitigations": ["Original mitigations"],
                 "Ownership": ["Original owner"],
-                "Examples": [None],
+                "Best Practice Examples": [None],
                 "Related Risks": [None],
                 "Tags": [""],
                 "Issue": ["#123"],
@@ -223,7 +228,7 @@ No changes
                 "Reach": None,
                 "Mitigations": None,
                 "Ownership": None,
-                "Examples": "https://example.com/skills",
+                "Best Practice Examples": "https://example.com/skills",
                 "Related Risks": None,
                 "Tags": None,
             }
@@ -231,7 +236,7 @@ No changes
 
             df = pd.read_csv(str(test_csv))
             assert len(df) == 1
-            assert df.iloc[0]["Examples"] == "https://example.com/skills"
+            assert df.iloc[0]["Best Practice Examples"] == "https://example.com/skills"
             assert df.iloc[0]["Updates"] == "#123, #999"
 
     def test_updates_column_tracking(self, tmp_path):
@@ -245,7 +250,7 @@ No changes
                 "Reach": ["Low"],
                 "Mitigations": ["Initial mitigations"],
                 "Ownership": ["Owner"],
-                "Examples": ["Example"],
+                "Best Practice Examples": ["Example"],
                 "Related Risks": ["#90"],
                 "Tags": ["Governance"],
                 "Issue": ["#50"],
@@ -264,7 +269,7 @@ No changes
                 "Reach": None,
                 "Mitigations": None,
                 "Ownership": None,
-                "Examples": None,
+                "Best Practice Examples": None,
                 "Related Risks": None,
                 "Tags": None,
             }
@@ -278,7 +283,7 @@ No changes
                 "Reach": None,
                 "Mitigations": None,
                 "Ownership": None,
-                "Examples": None,
+                "Best Practice Examples": None,
                 "Related Risks": None,
                 "Tags": None,
             }
@@ -300,7 +305,7 @@ No changes
                 "Reach": ["Low"],
                 "Mitigations": ["Initial mitigations"],
                 "Ownership": ["Owner"],
-                "Examples": ["Example"],
+                "Best Practice Examples": ["Example"],
                 "Related Risks": [""],
                 "Tags": [""],
                 "Issue": ["#50"],
@@ -319,7 +324,7 @@ No changes
                 "Reach": None,
                 "Mitigations": None,
                 "Ownership": None,
-                "Examples": None,
+                "Best Practice Examples": None,
                 "Related Risks": None,
                 "Tags": None,
             }

@@ -13,7 +13,7 @@ REQUIRED_COLUMNS = [
     "Reach",
     "Mitigations",
     "Ownership",
-    "Examples",
+    "Best Practice Examples",
     "Related Risks",
     "Tags",
     "Issue",

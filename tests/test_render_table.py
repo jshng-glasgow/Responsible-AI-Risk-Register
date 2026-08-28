@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 class TestRenderTable:
     def test_render_table_creates_html_and_json(self, tmp_path):
-        csv_content = """Issue Title,Description,Likelihood,Severity,Reach,Mitigations,Ownership,Examples,Related Risks,Tags,Issue,Updates,Maintainer Notes
+        csv_content = """Issue Title,Description,Likelihood,Severity,Reach,Mitigations,Ownership,Best Practice Examples,Related Risks,Tags,Issue,Updates,Maintainer Notes
 "Issue one","Test risk",High,Medium,Low,"Mitigation text","Owner","Examples","#3, #4","environmental, research integrity","#1","#1",""
 "Issue two","Another risk",Low,High,Very High,"Another mitigation","Another owner","Another examples","","training and skills","#2","#2, #5","Synthesised from issues #2 and #5"
 """
@@ -55,7 +55,7 @@ class TestRenderTable:
             os.chdir(original_cwd)
 
     def test_render_table_with_newlines(self, tmp_path):
-        csv_content = """Issue Title,Description,Likelihood,Severity,Reach,Mitigations,Ownership,Examples,Related Risks,Tags,Issue,Updates,Maintainer Notes
+        csv_content = """Issue Title,Description,Likelihood,Severity,Reach,Mitigations,Ownership,Best Practice Examples,Related Risks,Tags,Issue,Updates,Maintainer Notes
 "Issue one","Test risk\nwith newline",High,Medium,Low,"Mitigation\ntext","Owner","Examples","","environmental","#1","#1",""
 """
         csv_file = tmp_path / "register" / "risks.csv"

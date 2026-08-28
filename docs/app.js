@@ -13,7 +13,7 @@ const FIELD_LABELS = {
   "Reach": "Reach",
   "Mitigations": "Mitigations",
   "Ownership": "Ownership",
-  "Examples": "Examples",
+  "Best Practice Examples": "Best Practice Examples",
   "Issue": "Issue",
   "Updates": "Updates",
   "Maintainer Notes": "Maintainer Notes"
@@ -196,7 +196,7 @@ function renderRecord(record) {
     buildRow("Reach", (container) => appendTextOrPlaceholder(container, record["Reach"])),
     buildRow("Mitigations", (container) => appendTextOrPlaceholder(container, record["Mitigations"])),
     buildRow("Ownership", (container) => appendTextOrPlaceholder(container, record["Ownership"])),
-    buildRow("Examples", (container) => appendTextOrPlaceholder(container, record["Examples"])),
+    buildRow("Best Practice Examples", (container) => appendTextOrPlaceholder(container, record["Best Practice Examples"])),
     buildRow("Related Risks", (container) => appendIssueLinks(container, record["related_risk_urls"])),
     buildRow("Tags", (container) => appendTextOrPlaceholder(container, record["Tags"])),
     buildRow("Issue", (container) => {

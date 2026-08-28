@@ -26,8 +26,8 @@ Use this template to propose a new risk for the SSI Generative AI Risk Register.
 ## Ownership
 [Optional: Who is responsible for addressing this risk?]
 
-## Examples
-[Optional: Provide relevant examples, policies, or links]
+## Best Practice Examples
+[Optional: Provide examples of institutions or organisations handling this risk well, with links where possible]
 
 ## Related Risks
 [Optional: List issue numbers for overlapping or similar risks, for example #12 or #12, #48]
