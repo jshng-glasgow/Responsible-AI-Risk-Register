@@ -142,5 +142,21 @@
     "related_risk_refs": [],
     "related_risk_urls": [],
     "issue_url": null
+  },
+  {
+    "Resource Title": "Assertion Errors: Why AI-Generated Research Code Still Needs Epistemic Infrastructure",
+    "URL": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7185258",
+    "Organisation / Authors": "Joseph Shingleton, James Hetherington, Ana Basiri",
+    "Year": "2026",
+    "Type": "Position paper",
+    "Relevance": "The paper looks at the impact of AI in research software from an epistemological perspective. It provides a useful perspective for understanding the necessity for researchers to have a deep understanding of the code they develop, in a way that might be different to generic software engineers.",
+    "Tags": "Research Integrity, Wider Societal Impacts, People and Professional Practice, Epistemic",
+    "Related Risks": "",
+    "Notes": "This is a pre-print of an article currently under review.",
+    "Issue": "#200",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/200"
   }
 ]
