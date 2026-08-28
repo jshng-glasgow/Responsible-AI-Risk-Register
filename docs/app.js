@@ -191,6 +191,14 @@ function appendExternalLink(container, url, label) {
   container.append(anchor);
 }
 
+function buildRiskUpdateUrl(record) {
+  const url = new URL("https://github.com/jshng-glasgow/SSI-Responsible-AI-Risk-Register/issues/new");
+  url.searchParams.set("template", "update-risk.yml");
+  url.searchParams.set("issue_number", record["Issue"]);
+  url.searchParams.set("title", `Update risk ${record["Issue"]}: ${record["Issue Title"]}`);
+  return url.toString();
+}
+
 function buildRow(label, contentBuilder) {
   const term = document.createElement("dt");
   term.textContent = label;
@@ -208,8 +216,10 @@ function renderRecord(record) {
   const tagBadges = fragment.querySelector(".tag-badges");
   const title = fragment.querySelector(".card-title");
   const grid = fragment.querySelector(".card-grid");
+  const updateLink = fragment.querySelector(".update-button");
 
   title.textContent = record["Issue Title"] || record["Description"];
+  updateLink.href = buildRiskUpdateUrl(record);
   impactBadges.append(
     createBadge(`${record["Likelihood"] || "Unknown"} Likelihood`, record["Likelihood"] || "Unknown"),
     createBadge(`${record["Severity"] || "Unknown"} Severity`, record["Severity"] || "Unknown"),

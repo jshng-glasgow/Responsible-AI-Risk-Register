@@ -7,7 +7,9 @@ body:
       value: |
         Use this form to improve or revise an existing risk entry.
 
-        Enter the issue number for the risk you want to update, then fill in only the fields you want to change. Leave any other fields blank.
+        **This is a patch form:** only fields you explicitly change will be updated. Blank fields and **No changes** selections preserve the current register values.
+
+        The safest route is to open this form using **Propose an update** on the expanded risk card. The register entry will remain open in the original browser tab for comparison.
   - type: textarea
     id: issue_number
     attributes:
@@ -27,51 +29,69 @@ body:
     id: likelihood
     attributes:
       label: Likelihood
-      options: [Very Low, Low, Medium, High, Very High, Unknown]
-      description: How likely is this risk to arise in normal research software practice?
+      options: [No changes, Very Low, Low, Medium, High, Very High, Unknown]
+      default: 0
+      description: Select a new likelihood, or keep **No changes** to preserve the current value.
     validations:
-      required: false
+      required: true
   - type: dropdown
     id: severity
     attributes:
       label: Severity
-      options: [Very Low, Low, Medium, High, Very High, Unknown]
-      description: If this risk occurs, how serious would the consequences be?
+      options: [No changes, Very Low, Low, Medium, High, Very High, Unknown]
+      default: 0
+      description: Select a new severity, or keep **No changes** to preserve the current value.
     validations:
-      required: false
+      required: true
   - type: dropdown
     id: reach
     attributes:
       label: Reach
-      options: [Very Low, Low, Medium, High, Very High, Unknown]
-      description: How widely would the effects of this risk be felt across people, projects, or institutions?
+      options: [No changes, Very Low, Low, Medium, High, Very High, Unknown]
+      default: 0
+      description: Select a new reach, or keep **No changes** to preserve the current value.
     validations:
-      required: false
+      required: true
   - type: textarea
     id: mitigations
     attributes:
       label: Mitigations
       description: Describe how the risk might be mitigated or avoided. For example, through policy, training, review practices, or technical safeguards.
+      placeholder: Leave blank if you are not proposing a change to the mitigations.
   - type: textarea
     id: ownership
     attributes:
       label: Ownership
       description: Who is responsible for managing this risk? For example, practitioners, team leads, institutions, funders, or tool developers.
+      placeholder: Leave blank if you are not proposing a change to the ownership.
   - type: textarea
     id: best_practice_examples
     attributes:
       label: Best Practice Examples
       description: Provide examples of institutions or organisations handling this risk well, such as effective policies, safeguards, or management approaches. Include links where possible; do not use this field for examples of the risk occurring.
+      placeholder: Leave blank if you are not proposing a change to the best practice examples.
   - type: textarea
     id: related_risks
     attributes:
       label: Related Risks
       description: Optionally add or revise related issue numbers for overlapping risks. Use values like `#12` or `#12, #48`. Leave blank if you are not proposing a change.
   - type: dropdown
+    id: tags_action
+    attributes:
+      label: Tags Action
+      description: Changing tags replaces the complete tag list, so choose this explicitly.
+      options:
+        - No changes
+        - Replace with selected tags
+        - Clear all tags
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
     id: tags
     attributes:
       label: Tags
-      description: Select any tags that apply to this risk. Exact tagging can be refined later by maintainers.
+      description: Used only when **Tags Action** is set to **Replace with selected tags**. Select every tag that should remain on the risk.
       multiple: true
       options:
         - Economic
@@ -89,4 +109,5 @@ body:
     attributes:
       label: Other Tags
       description: If needed, add any other tags not listed above. Separate multiple entries with commas.
+      placeholder: Leave blank unless you are replacing the current tags and need an additional tag.
 

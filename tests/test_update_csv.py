@@ -7,7 +7,7 @@ import pytest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".github", "scripts"))
 
-from update_csv import combine_tags, normalise_issue_refs, parse_issue, update_csv_row
+from update_csv import combine_tags, format_update_summary, normalise_issue_refs, parse_issue, update_csv_row
 
 
 class TestUpdateCSV:
@@ -109,6 +109,37 @@ No changes
 
     def test_combine_tags_deduplicates(self):
         assert combine_tags("Economic, Governance", "Governance, Lab Practice") == "Economic, Governance, Lab Practice"
+
+    @pytest.mark.parametrize(
+        "action,expected_tags",
+        [
+            ("No changes", None),
+            ("Replace with selected tags", "Governance"),
+            ("Clear all tags", ""),
+        ],
+    )
+    def test_tag_action_is_explicit(self, action, expected_tags):
+        body = f"""### Issue Number
+#123
+
+### Tags Action
+{action}
+
+### Tags
+Governance
+"""
+
+        assert parse_issue(body)["Tags"] == expected_tags
+
+    def test_update_summary_shows_field_level_changes(self):
+        summary = format_update_summary(
+            "123",
+            "999",
+            [("Description", "Current | value", "Proposed\nvalue")],
+        )
+
+        assert "Updates risk #123 from issue #999" in summary
+        assert "| Description | Current \\| value | Proposed<br>value |" in summary
 
     def test_normalise_issue_refs_deduplicates_and_formats(self):
         assert normalise_issue_refs("12, #12\n48") == "#12, #48"

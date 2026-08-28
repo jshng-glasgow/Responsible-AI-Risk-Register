@@ -42,11 +42,22 @@ class TestIssueTemplateContracts:
             "Ownership",
             "Best Practice Examples",
             "Related Risks",
+            "Tags Action",
             "Tags",
             "Other Tags",
         ]:
             assert f"label: {label}" in template
             assert f'"{label}"' in script
+
+    def test_update_risk_impact_fields_default_to_no_changes(self):
+        template = read_text(".github/ISSUE_TEMPLATE/update-risk.yml")
+
+        options = "options: [No changes, Very Low, Low, Medium, High, Very High, Unknown]"
+        assert template.count(options) == 3
+        assert template.count("default: 0") >= 4
+        assert "placeholder: Leave blank if you are not proposing a change to the mitigations." in template
+        assert "placeholder: Leave blank if you are not proposing a change to the ownership." in template
+        assert "placeholder: Leave blank if you are not proposing a change to the best practice examples." in template
 
     def test_new_resource_template_matches_resource_to_csv_parser_fields(self):
         template = read_text(".github/ISSUE_TEMPLATE/new-resource.yml")
@@ -110,3 +121,16 @@ class TestWorkflowContracts:
         assert "git add resources/resources.csv docs/index.html docs/resources.json" in workflow
         assert "peaceiris/actions-gh-pages@v3" in workflow
         assert "peter-evans/create-pull-request@v6" in workflow
+
+    def test_risk_update_workflow_includes_field_change_summary(self):
+        workflow = read_text(".github/workflows/update-csv.yml")
+
+        assert "UPDATE_SUMMARY_PATH: .github/update-summary.md" in workflow
+        assert "body-path: .github/update-summary.md" in workflow
+        assert "add-paths: register/risks.csv" in workflow
+
+    def test_register_ui_prefills_risk_update_issue_number(self):
+        app = read_text("docs/app.js")
+
+        assert 'url.searchParams.set("template", "update-risk.yml")' in app
+        assert 'url.searchParams.set("issue_number", record["Issue"])' in app

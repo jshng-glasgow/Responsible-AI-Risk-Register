@@ -71,6 +71,8 @@ class TestRenderTable:
             assert disclosure.find(class_="tag-badges") is not None
             assert [label.get_text(strip=True) for label in disclosure.select(".meta-label")] == ["Impact:", "Tags:"]
             assert disclosure.find("dl", class_="card-grid") is not None
+            assert disclosure.find("footer", class_="card-footer") is not None
+            assert disclosure.find("a", class_="update-button").get_text(strip=True) == "Propose an update"
             resource_template = soup.find("template", id="resource-card-template")
             resource_template_content = BeautifulSoup(resource_template.decode_contents(), "html.parser")
             assert resource_template_content.find(class_="resource-detail-badges") is not None
