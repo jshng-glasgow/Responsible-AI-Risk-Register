@@ -46,6 +46,9 @@ class TestRenderTable:
             assert not disclosure.has_attr("open")
             assert disclosure.find("summary", class_="card-summary") is not None
             assert disclosure.find(class_="card-title")["role"] == "heading"
+            assert disclosure.find(class_="impact-badges") is not None
+            assert disclosure.find(class_="tag-badges") is not None
+            assert [label.get_text(strip=True) for label in disclosure.select(".meta-label")] == ["Impact:", "Tags:"]
             assert disclosure.find("dl", class_="card-grid") is not None
             stylesheet = soup.find("link", rel="stylesheet")
             assert stylesheet["href"].startswith("./styles.css?v=")

@@ -90,7 +90,16 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 <summary class="card-summary">
                     <span class="card-header">
                         <span class="card-title" role="heading" aria-level="2"></span>
-                        <span class="card-meta"></span>
+                        <span class="card-meta">
+                            <span class="meta-group">
+                                <span class="meta-label">Impact:</span>
+                                <span class="badge-list impact-badges"></span>
+                            </span>
+                            <span class="meta-group">
+                                <span class="meta-label">Tags:</span>
+                                <span class="badge-list tag-badges"></span>
+                            </span>
+                        </span>
                     </span>
                     <span class="toggle-label" aria-hidden="true">
                         <span class="when-collapsed">View details</span>

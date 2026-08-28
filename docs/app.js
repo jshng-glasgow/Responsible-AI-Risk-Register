@@ -176,18 +176,19 @@ function buildRow(label, contentBuilder) {
 function renderRecord(record) {
   const fragment = template.content.cloneNode(true);
   const article = fragment.querySelector(".risk-card");
-  const meta = fragment.querySelector(".card-meta");
+  const impactBadges = fragment.querySelector(".impact-badges");
+  const tagBadges = fragment.querySelector(".tag-badges");
   const title = fragment.querySelector(".card-title");
   const grid = fragment.querySelector(".card-grid");
 
   title.textContent = record["Issue Title"] || record["Description"];
-  meta.append(
+  impactBadges.append(
     createBadge(`${record["Likelihood"] || "Unknown"} Likelihood`, record["Likelihood"] || "Unknown"),
     createBadge(`${record["Severity"] || "Unknown"} Severity`, record["Severity"] || "Unknown"),
     createBadge(`${record["Reach"] || "Unknown"} Reach`, record["Reach"] || "Unknown")
   );
   const tags = (record["Tags"] || "").split(",").map((tag) => tag.trim()).filter(Boolean);
-  tags.forEach((tag) => meta.append(createBadge(tag, "tag")));
+  tags.forEach((tag) => tagBadges.append(createBadge(tag, "tag")));
 
   const fields = [
     buildRow("Description", (container) => appendTextOrPlaceholder(container, record["Description"])),
