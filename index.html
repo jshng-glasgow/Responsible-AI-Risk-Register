@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SSI Generative AI Risk Register</title>
-    <link rel="stylesheet" href="./styles.css?v=6a19ead9ba32">
+    <link rel="stylesheet" href="./styles.css?v=c306c6c709fc">
 </head>
 <body>
     <main class="page-shell">
@@ -12,61 +12,89 @@
             <p class="eyebrow">Software Sustainability Institute</p>
             <h1>Generative AI Risk Register</h1>
             <p class="intro">
-                A community-maintained register of risks associated with AI in Research Software Engineering.
-                Browse, search, sort, and filter the current register below.
+                A community-maintained register of risks and supporting resources for responsible AI
+                in Research Software Engineering. Browse, search, sort, and filter both collections below.
             </p>
             <div class="hero-actions">
                 <a class="button button-primary" href="https://github.com/jshng-glasgow/SSI-Responsible-AI-Risk-Register/" target="_blank" rel="noreferrer">Contribute on GitHub</a>
-                <a class="button button-secondary" href="./risks.json" target="_blank" rel="noreferrer">Download JSON</a>
+                <a class="button button-secondary" href="./risks.json" target="_blank" rel="noreferrer">Download risks</a>
+                <a class="button button-secondary" href="./resources.json" target="_blank" rel="noreferrer">Download resources</a>
             </div>
         </section>
 
-        <section class="controls-panel" aria-label="Register controls">
-            <div class="control">
-                <label for="search-input">Search</label>
-                <input id="search-input" type="search" placeholder="Search titles, descriptions, mitigations, ownership, best practice examples..." />
-            </div>
-            <div class="control">
-                <label for="likelihood-filter">Likelihood</label>
-                <select id="likelihood-filter">
-                    <option value="">All</option>
-                </select>
-            </div>
-            <div class="control">
-                <label for="severity-filter">Severity</label>
-                <select id="severity-filter">
-                    <option value="">All</option>
-                </select>
-            </div>
-            <div class="control">
-                <label for="reach-filter">Reach</label>
-                <select id="reach-filter">
-                    <option value="">All</option>
-                </select>
-            </div>
-            <div class="control">
-                <label for="tag-filter">Tag</label>
-                <select id="tag-filter">
-                    <option value="">All</option>
-                </select>
-            </div>
-            <div class="control">
-                <label for="sort-select">Sort by</label>
-                <select id="sort-select">
-                    <option value="description-asc">Description (A-Z)</option>
-                    <option value="likelihood-desc">Likelihood (highest first)</option>
-                    <option value="severity-desc">Severity (highest first)</option>
-                    <option value="reach-desc">Reach (highest first)</option>
-                    <option value="issue-desc">Most recent issue</option>
-                </select>
-            </div>
+        <nav class="view-switcher" aria-label="Register sections">
+            <a id="risks-tab" class="view-tab" href="#risks" data-view="risks">Risks</a>
+            <a id="resources-tab" class="view-tab" href="#resources" data-view="resources">Resources</a>
+        </nav>
+
+        <section id="risks-view" class="view-panel" aria-labelledby="risks-tab">
+            <section class="controls-panel" aria-label="Risk controls">
+                <div class="control">
+                    <label for="search-input">Search</label>
+                    <input id="search-input" type="search" placeholder="Search titles, descriptions, mitigations, ownership, best practice examples..." />
+                </div>
+                <div class="control">
+                    <label for="likelihood-filter">Likelihood</label>
+                    <select id="likelihood-filter"><option value="">All</option></select>
+                </div>
+                <div class="control">
+                    <label for="severity-filter">Severity</label>
+                    <select id="severity-filter"><option value="">All</option></select>
+                </div>
+                <div class="control">
+                    <label for="reach-filter">Reach</label>
+                    <select id="reach-filter"><option value="">All</option></select>
+                </div>
+                <div class="control">
+                    <label for="tag-filter">Tag</label>
+                    <select id="tag-filter"><option value="">All</option></select>
+                </div>
+                <div class="control">
+                    <label for="sort-select">Sort by</label>
+                    <select id="sort-select">
+                        <option value="description-asc">Description (A-Z)</option>
+                        <option value="likelihood-desc">Likelihood (highest first)</option>
+                        <option value="severity-desc">Severity (highest first)</option>
+                        <option value="reach-desc">Reach (highest first)</option>
+                        <option value="issue-desc">Most recent issue</option>
+                    </select>
+                </div>
+            </section>
+            <section class="results-bar" aria-live="polite"><p id="results-summary">Loading risks...</p></section>
+            <section id="register-root" class="register-root" aria-live="polite"></section>
         </section>
 
-        <section class="results-bar" aria-live="polite">
-            <p id="results-summary">Loading register...</p>
+        <section id="resources-view" class="view-panel" aria-labelledby="resources-tab" hidden>
+            <section class="controls-panel resource-controls" aria-label="Resource controls">
+                <div class="control">
+                    <label for="resource-search-input">Search</label>
+                    <input id="resource-search-input" type="search" placeholder="Search titles, organisations, relevance, and notes..." />
+                </div>
+                <div class="control">
+                    <label for="resource-year-filter">Year</label>
+                    <select id="resource-year-filter"><option value="">All</option></select>
+                </div>
+                <div class="control">
+                    <label for="resource-type-filter">Type</label>
+                    <select id="resource-type-filter"><option value="">All</option></select>
+                </div>
+                <div class="control">
+                    <label for="resource-tag-filter">Tag</label>
+                    <select id="resource-tag-filter"><option value="">All</option></select>
+                </div>
+                <div class="control">
+                    <label for="resource-sort-select">Sort by</label>
+                    <select id="resource-sort-select">
+                        <option value="title-asc">Title (A-Z)</option>
+                        <option value="year-desc">Year (newest first)</option>
+                        <option value="year-asc">Year (oldest first)</option>
+                        <option value="type-asc">Type (A-Z)</option>
+                    </select>
+                </div>
+            </section>
+            <section class="results-bar" aria-live="polite"><p id="resource-results-summary">Loading resources...</p></section>
+            <section id="resources-root" class="register-root" aria-live="polite"></section>
         </section>
-
-        <section id="register-root" class="register-root" aria-live="polite"></section>
     </main>
 
     <template id="risk-card-template">
@@ -96,9 +124,36 @@
         </article>
     </template>
 
+    <template id="resource-card-template">
+        <article class="risk-card resource-card">
+            <details class="risk-details">
+                <summary class="card-summary">
+                    <span class="card-header">
+                        <span class="card-title" role="heading" aria-level="2"></span>
+                        <span class="card-meta">
+                            <span class="meta-group">
+                                <span class="meta-label">Details:</span>
+                                <span class="badge-list resource-detail-badges"></span>
+                            </span>
+                            <span class="meta-group">
+                                <span class="meta-label">Tags:</span>
+                                <span class="badge-list resource-tag-badges"></span>
+                            </span>
+                        </span>
+                    </span>
+                    <span class="toggle-label" aria-hidden="true">
+                        <span class="when-collapsed">View details</span>
+                        <span class="when-expanded">Hide details</span>
+                    </span>
+                </summary>
+                <dl class="card-grid"></dl>
+            </details>
+        </article>
+    </template>
+
     <script>
-        window.REGISTER_ASSET_VERSION = "6a19ead9ba32";
+        window.REGISTER_ASSET_VERSION = "c306c6c709fc";
     </script>
-    <script src="./app.js?v=6a19ead9ba32"></script>
+    <script src="./app.js?v=c306c6c709fc"></script>
 </body>
 </html>

@@ -28,11 +28,24 @@ const sortSelect = document.querySelector("#sort-select");
 const resultsSummary = document.querySelector("#results-summary");
 const registerRoot = document.querySelector("#register-root");
 const template = document.querySelector("#risk-card-template");
+const resourceSearchInput = document.querySelector("#resource-search-input");
+const resourceYearFilter = document.querySelector("#resource-year-filter");
+const resourceTypeFilter = document.querySelector("#resource-type-filter");
+const resourceTagFilter = document.querySelector("#resource-tag-filter");
+const resourceSortSelect = document.querySelector("#resource-sort-select");
+const resourceResultsSummary = document.querySelector("#resource-results-summary");
+const resourcesRoot = document.querySelector("#resources-root");
+const resourceTemplate = document.querySelector("#resource-card-template");
+const risksView = document.querySelector("#risks-view");
+const resourcesView = document.querySelector("#resources-view");
+const risksTab = document.querySelector("#risks-tab");
+const resourcesTab = document.querySelector("#resources-tab");
 
 let allRecords = [];
+let allResources = [];
 
-function populateFilter(select, values) {
-  const orderedValues = [...values].sort((left, right) => {
+function populateFilter(select, values, compareValues) {
+  const defaultComparison = (left, right) => {
     const leftRank = CATEGORY_ORDER[left];
     const rightRank = CATEGORY_ORDER[right];
 
@@ -41,7 +54,8 @@ function populateFilter(select, values) {
     }
 
     return left.localeCompare(right);
-  });
+  };
+  const orderedValues = [...values].sort(compareValues || defaultComparison);
 
   for (const value of orderedValues) {
     const option = document.createElement("option");
@@ -163,6 +177,20 @@ function appendIssueLinks(container, links) {
   });
 }
 
+function appendExternalLink(container, url, label) {
+  if (!url) {
+    appendTextOrPlaceholder(container, "");
+    return;
+  }
+
+  const anchor = document.createElement("a");
+  anchor.href = url;
+  anchor.target = "_blank";
+  anchor.rel = "noreferrer";
+  anchor.textContent = label;
+  container.append(anchor);
+}
+
 function buildRow(label, contentBuilder) {
   const term = document.createElement("dt");
   term.textContent = label;
@@ -234,11 +262,140 @@ function render() {
   resultsSummary.textContent = `${filteredRecords.length} of ${allRecords.length} risks shown`;
 }
 
+function matchesResourceFilters(record) {
+  if (resourceYearFilter.value && record["Year"] !== resourceYearFilter.value) {
+    return false;
+  }
+  if (resourceTypeFilter.value && record["Type"] !== resourceTypeFilter.value) {
+    return false;
+  }
+  if (resourceTagFilter.value) {
+    const tags = (record["Tags"] || "").split(",").map((tag) => tag.trim()).filter(Boolean);
+    if (!tags.includes(resourceTagFilter.value)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function sortResources(records) {
+  const [field, direction] = resourceSortSelect.value.split("-");
+  const multiplier = direction === "desc" ? -1 : 1;
+
+  return [...records].sort((left, right) => {
+    if (field === "year") {
+      const yearDifference = (Number(left["Year"]) || 0) - (Number(right["Year"]) || 0);
+      if (yearDifference !== 0) {
+        return yearDifference * multiplier;
+      }
+    }
+
+    if (field === "type") {
+      const typeDifference = (left["Type"] || "").localeCompare(right["Type"] || "") * multiplier;
+      if (typeDifference !== 0) {
+        return typeDifference;
+      }
+    }
+    return (left["Resource Title"] || "").localeCompare(right["Resource Title"] || "");
+  });
+}
+
+function renderResource(record) {
+  const fragment = resourceTemplate.content.cloneNode(true);
+  const article = fragment.querySelector(".resource-card");
+  const title = fragment.querySelector(".card-title");
+  const detailBadges = fragment.querySelector(".resource-detail-badges");
+  const tagBadges = fragment.querySelector(".resource-tag-badges");
+  const grid = fragment.querySelector(".card-grid");
+
+  title.textContent = record["Resource Title"];
+  detailBadges.append(
+    createBadge(record["Type"] || "Other", "resource"),
+    createBadge(record["Year"] || "Year unknown", "year")
+  );
+
+  const tags = (record["Tags"] || "").split(",").map((tag) => tag.trim()).filter(Boolean);
+  if (tags.length === 0) {
+    tagBadges.append(createBadge("Not tagged", "unknown"));
+  } else {
+    tags.forEach((tag) => tagBadges.append(createBadge(tag, "tag")));
+  }
+
+  const fields = [
+    buildRow("Resource", (container) => appendExternalLink(container, record["URL"], "Open resource")),
+    buildRow("Organisation / Authors", (container) => appendTextOrPlaceholder(container, record["Organisation / Authors"])),
+    buildRow("Year", (container) => appendTextOrPlaceholder(container, record["Year"])),
+    buildRow("Type", (container) => appendTextOrPlaceholder(container, record["Type"])),
+    buildRow("Relevance", (container) => appendTextOrPlaceholder(container, record["Relevance"]))
+  ];
+
+  if (record["Tags"]) {
+    fields.push(buildRow("Tags", (container) => appendTextOrPlaceholder(container, record["Tags"])));
+  }
+  if (record["related_risk_urls"].length > 0) {
+    fields.push(buildRow("Related Risks", (container) => appendIssueLinks(container, record["related_risk_urls"])));
+  }
+  if (record["Notes"]) {
+    fields.push(buildRow("Notes", (container) => appendTextOrPlaceholder(container, record["Notes"])));
+  }
+  if (record["issue_url"]) {
+    fields.push(buildRow("Issue", (container) => {
+      appendIssueLinks(container, [{ label: record["Issue"], url: record["issue_url"] }]);
+    }));
+  }
+  if (record["Maintainer Notes"]) {
+    fields.push(buildRow("Maintainer Notes", (container) => appendTextOrPlaceholder(container, record["Maintainer Notes"])));
+  }
+
+  for (const [term, description] of fields) {
+    grid.append(term, description);
+  }
+  resourcesRoot.append(article);
+}
+
+function renderResources() {
+  const query = resourceSearchInput.value.trim().toLowerCase();
+  const filteredResources = sortResources(
+    allResources.filter((record) => matchesSearch(record, query) && matchesResourceFilters(record))
+  );
+
+  resourcesRoot.replaceChildren();
+  if (filteredResources.length === 0) {
+    const emptyState = document.createElement("p");
+    emptyState.className = "empty-state";
+    emptyState.textContent = "No resources match the current filters.";
+    resourcesRoot.append(emptyState);
+  } else {
+    filteredResources.forEach(renderResource);
+  }
+  resourceResultsSummary.textContent = `${filteredResources.length} of ${allResources.length} resources shown`;
+}
+
+function activateView() {
+  const showingResources = window.location.hash === "#resources";
+  risksView.hidden = showingResources;
+  resourcesView.hidden = !showingResources;
+  if (showingResources) {
+    resourcesTab.setAttribute("aria-current", "page");
+    risksTab.removeAttribute("aria-current");
+  } else {
+    risksTab.setAttribute("aria-current", "page");
+    resourcesTab.removeAttribute("aria-current");
+  }
+}
+
 async function init() {
   try {
     const assetVersion = window.REGISTER_ASSET_VERSION || "dev";
-    const response = await fetch(`./risks.json?v=${encodeURIComponent(assetVersion)}`, { cache: "no-store" });
-    allRecords = await response.json();
+    const [riskResponse, resourceResponse] = await Promise.all([
+      fetch(`./risks.json?v=${encodeURIComponent(assetVersion)}`, { cache: "no-store" }),
+      fetch(`./resources.json?v=${encodeURIComponent(assetVersion)}`, { cache: "no-store" })
+    ]);
+    if (!riskResponse.ok || !resourceResponse.ok) {
+      throw new Error("Unable to load register data");
+    }
+    allRecords = await riskResponse.json();
+    allResources = await resourceResponse.json();
 
     populateFilter(likelihoodFilter, new Set(allRecords.map((record) => record["Likelihood"]).filter(Boolean)));
     populateFilter(severityFilter, new Set(allRecords.map((record) => record["Severity"]).filter(Boolean)));
@@ -252,18 +409,43 @@ async function init() {
           .filter(Boolean)
       )
     );
+    populateFilter(
+      resourceYearFilter,
+      new Set(allResources.map((record) => record["Year"]).filter(Boolean)),
+      (left, right) => Number(right) - Number(left)
+    );
+    populateFilter(resourceTypeFilter, new Set(allResources.map((record) => record["Type"]).filter(Boolean)));
+    populateFilter(
+      resourceTagFilter,
+      new Set(
+        allResources
+          .flatMap((record) => (record["Tags"] || "").split(","))
+          .map((tag) => tag.trim())
+          .filter(Boolean)
+      )
+    );
 
     [searchInput, likelihoodFilter, severityFilter, reachFilter, tagFilter, sortSelect].forEach((element) => {
       element.addEventListener("input", render);
       element.addEventListener("change", render);
     });
+    [resourceSearchInput, resourceYearFilter, resourceTypeFilter, resourceTagFilter, resourceSortSelect].forEach((element) => {
+      element.addEventListener("input", renderResources);
+      element.addEventListener("change", renderResources);
+    });
 
     render();
+    renderResources();
+    activateView();
   } catch (error) {
     resultsSummary.textContent = "Unable to load the register data.";
     registerRoot.textContent = "Please try again later.";
+    resourceResultsSummary.textContent = "Unable to load the resource data.";
+    resourcesRoot.textContent = "Please try again later.";
     console.error(error);
   }
 }
 
+window.addEventListener("hashchange", activateView);
+activateView();
 init();
