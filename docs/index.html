@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SSI Generative AI Risk Register</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css?v=4c90a170acf1">
 </head>
 <body>
     <main class="page-shell">
@@ -71,17 +71,25 @@
 
     <template id="risk-card-template">
         <article class="risk-card">
-            <div class="card-header">
-                <div class="card-meta"></div>
-                <h2 class="card-title"></h2>
-            </div>
-            <dl class="card-grid"></dl>
+            <details class="risk-details">
+                <summary class="card-summary">
+                    <span class="card-header">
+                        <span class="card-title" role="heading" aria-level="2"></span>
+                        <span class="card-meta"></span>
+                    </span>
+                    <span class="toggle-label" aria-hidden="true">
+                        <span class="when-collapsed">View details</span>
+                        <span class="when-expanded">Hide details</span>
+                    </span>
+                </summary>
+                <dl class="card-grid"></dl>
+            </details>
         </article>
     </template>
 
     <script>
-        window.REGISTER_ASSET_VERSION = "b9d1cc217b3c";
+        window.REGISTER_ASSET_VERSION = "4c90a170acf1";
     </script>
-    <script src="./app.js?v=b9d1cc217b3c"></script>
+    <script src="./app.js?v=4c90a170acf1"></script>
 </body>
 </html>

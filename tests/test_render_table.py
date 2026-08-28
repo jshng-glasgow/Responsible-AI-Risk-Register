@@ -39,6 +39,16 @@ class TestRenderTable:
             assert soup.find(id="register-root") is not None
             assert soup.find(id="search-input") is not None
             assert soup.find(id="tag-filter") is not None
+            card_template = soup.find("template", id="risk-card-template")
+            template_content = BeautifulSoup(card_template.decode_contents(), "html.parser")
+            disclosure = template_content.find("details", class_="risk-details")
+            assert disclosure is not None
+            assert not disclosure.has_attr("open")
+            assert disclosure.find("summary", class_="card-summary") is not None
+            assert disclosure.find(class_="card-title")["role"] == "heading"
+            assert disclosure.find("dl", class_="card-grid") is not None
+            stylesheet = soup.find("link", rel="stylesheet")
+            assert stylesheet["href"].startswith("./styles.css?v=")
             app_script = soup.find("script", src=lambda src: src and src.startswith("./app.js?v="))
             assert app_script is not None
             assert "REGISTER_ASSET_VERSION" in html_content
