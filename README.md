@@ -5,7 +5,7 @@ Research Software Engineering, maintained by the SSI Responsible AI Study Group.
 
 ## What is this?
 
-This register has been developed by the Software Sustainability Institute's Responsible AI in RSE study group for Collaboration Workshop 2026. It is designed to encourage continual contribution from the RSE community, and allow them to identify the AI risks that are most pertinent to them. As the AI landscape continues to evolve, it is crucial that we develop guidelines which are relevant, adaptable, and actionable. This risk register will allow us to achieve that.
+This register has been developed by the Software Sustainability Institute's Responsible AI in RSE study group for Collaboration Workshop 2026. It is designed to encourage continual contribution from the RSE community, allow them to identify the AI risks that are most pertinent to them, and curate resources that can help the community understand or manage those risks. As the AI landscape continues to evolve, it is crucial that we develop guidelines which are relevant, adaptable, and actionable. This risk register will allow us to achieve that.
 
 ## Scope
 
@@ -19,15 +19,20 @@ Details of how to contribute are in [CONTRIBUTING.md](CONTRIBUTING.md). Contribu
 
 To propose a new risk, go to the "Issues" tab and select "New issue" and "Propose new risk". See below for detailed information about each field. If you don't have a GitHub account, then a risk can be added manually using this [Microsoft form](https://forms.office.com/e/NAYjcGiF7i).
 
-To suggest a supporting resource, use the "Propose a new resource" issue form. Resource submissions are stored in [resources/resources.csv](resources/resources.csv) and displayed in the Resources section of the live register.
+To suggest a supporting resource, use the "Propose a new resource" issue form. Resource submissions are stored in [resources/resources.csv](resources/resources.csv) and displayed in the [Resources section of the live register](https://jshng-glasgow.github.io/SSI-Responsible-AI-Risk-Register/#resources).
 
 If you would like to be recognised as a contributor to the register, please add your name to [CONTRIBUTORS.md](CONTRIBUTORS.md) via a pull request.
 
 ## The Register
 
-The live register can be viewed [here](https://jshng-glasgow.github.io/SSI-Responsible-AI-Risk-Register/). Risk data is stored in [register/risks.csv](register/risks.csv), and supporting resource data is stored in [resources/resources.csv](resources/resources.csv).
+The live register brings together two connected collections:
 
-### Fields
+* **Risks** document potential harms associated with using generative AI in Research Software Engineering, along with their impact, mitigations, ownership, and related information.
+* **Resources** collect policies, guidance, position papers, case studies, and reports that can help the community understand or manage those risks.
+
+Both collections can be browsed, searched, sorted, and filtered in the [live register](https://jshng-glasgow.github.io/SSI-Responsible-AI-Risk-Register/). Risk data is stored in [register/risks.csv](register/risks.csv), and resource data is stored in [resources/resources.csv](resources/resources.csv).
+
+### Risk fields
 
 The register contains:
 
@@ -95,6 +100,16 @@ The current standard tags are:
 **Maintainer Notes**: (Maintainer only) Editorial notes used to record synthesis decisions, conflicting assessments, and links back to related issues when multiple submissions are combined.
 
 This field is intended to help maintainers preserve provenance when risks are merged or revised. For example, it may be used to note that an entry was synthesised from multiple issues, that contributors disagreed on severity or likelihood, or that a conservative editorial judgement was applied when combining overlapping submissions.
+
+### Resources
+
+The Resources section contains supporting policies, guidance, position papers, case studies, reports, and other material relevant to responsible use of AI in Research Software Engineering.
+
+To propose a resource, open a GitHub issue and select **Propose a new resource**. Submissions should include a stable link to the original resource and a short explanation of its relevance to the register. Contributors can also assign topic tags and identify specific risks that the resource helps address.
+
+Resource submissions are reviewed through the same contribution workflow as risks. Accepted submissions are stored in [resources/resources.csv](resources/resources.csv) and appear in the searchable [Resources view](https://jshng-glasgow.github.io/SSI-Responsible-AI-Risk-Register/#resources).
+
+The repository normally links to third-party resources rather than storing local copies. Files should only be included directly when preservation is necessary, stable linking is unavailable, and redistribution is permitted.
 
 ## Governance
 
