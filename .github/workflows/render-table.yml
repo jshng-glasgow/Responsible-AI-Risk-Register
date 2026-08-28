@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'register/risks.csv'
+      - 'resources/resources.csv'
       - '.github/scripts/render_table.py'
       - 'docs/app.js'
       - 'docs/styles.css'
@@ -24,6 +25,11 @@ jobs:
 
       - name: Install dependencies
         run: pip install pandas
+
+      - name: Validate data
+        run: |
+          python .github/scripts/validate_csv.py
+          python .github/scripts/validate_resources.py
 
       - name: Generate HTML
         run: python .github/scripts/render_table.py

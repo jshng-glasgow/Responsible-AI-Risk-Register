@@ -48,18 +48,20 @@ class TestIssueTemplateContracts:
             assert f"label: {label}" in template
             assert f'"{label}"' in script
 
-    def test_new_resource_template_matches_resource_to_readme_parser_fields(self):
+    def test_new_resource_template_matches_resource_to_csv_parser_fields(self):
         template = read_text(".github/ISSUE_TEMPLATE/new-resource.yml")
-        script = read_text(".github/scripts/resource_to_readme.py")
+        script = read_text(".github/scripts/resource_to_csv.py")
 
         for label in [
             "Resource Title",
             "URL",
-            "Organisation / authors",
+            "Organisation / Authors",
             "Year",
             "Type",
             "Relevance",
             "Tags",
+            "Other Tags",
+            "Related Risks",
             "Notes",
         ]:
             assert f"label: {label}" in template
@@ -81,6 +83,7 @@ class TestWorkflowContracts:
 
         for path in [
             "register/risks.csv",
+            "resources/resources.csv",
             ".github/scripts/render_table.py",
             "docs/app.js",
             "docs/styles.css",
@@ -97,10 +100,13 @@ class TestWorkflowContracts:
             assert dependency in requirements
 
     def test_resource_issue_workflow_uses_prs_except_in_workshop_mode(self):
-        workflow = read_text(".github/workflows/resource-to-readme.yml")
+        workflow = read_text(".github/workflows/resource-to-csv.yml")
 
         assert "github.event.label.name == 'new resource'" in workflow
         assert "WORKSHOP_AUTO_PUBLISH_NEW_RISKS == 'true'" in workflow
-        assert "python .github/scripts/resource_to_readme.py" in workflow
-        assert "git add resources/README.md" in workflow
+        assert "python .github/scripts/resource_to_csv.py" in workflow
+        assert "python .github/scripts/validate_resources.py" in workflow
+        assert "python .github/scripts/render_table.py" in workflow
+        assert "git add resources/resources.csv docs/index.html docs/resources.json" in workflow
+        assert "peaceiris/actions-gh-pages@v3" in workflow
         assert "peter-evans/create-pull-request@v6" in workflow

@@ -19,13 +19,13 @@ Details of how to contribute are in [CONTRIBUTING.md](CONTRIBUTING.md). Contribu
 
 To propose a new risk, go to the "Issues" tab and select "New issue" and "Propose new risk". See below for detailed information about each field. If you don't have a GitHub account, then a risk can be added manually using this [Microsoft form](https://forms.office.com/e/NAYjcGiF7i).
 
-To suggest a supporting resource, use the "Propose a new resource" issue form. Resource submissions are added to [resources/README.md](resources/README.md) as links with short notes.
+To suggest a supporting resource, use the "Propose a new resource" issue form. Resource submissions are stored in [resources/resources.csv](resources/resources.csv) and displayed in the Resources section of the live register.
 
 If you would like to be recognised as a contributor to the register, please add your name to [CONTRIBUTORS.md](CONTRIBUTORS.md) via a pull request.
 
 ## The Register
 
-The live register can be viewed [here](https://jshng-glasgow.github.io/SSI-Responsible-AI-Risk-Register/). The data is stored in [/register/risks.csv](/register/risks.csv)
+The live register can be viewed [here](https://jshng-glasgow.github.io/SSI-Responsible-AI-Risk-Register/). Risk data is stored in [register/risks.csv](register/risks.csv), and supporting resource data is stored in [resources/resources.csv](resources/resources.csv).
 
 ### Fields
 
