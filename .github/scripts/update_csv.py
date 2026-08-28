@@ -17,12 +17,24 @@ FIELDS = [
     "Ownership",
     "Best Practice Examples",
     "Related Risks",
+    "Tags Action",
     "Tags",
     "Other Tags",
 ]
 LEGACY_FIELD_NAMES = {"Examples": "Best Practice Examples"}
 CSV_PATH = "register/risks.csv"
 ISSUE_REF_PATTERN = re.compile(r"#?\d+")
+EDITABLE_FIELDS = [
+    "Description",
+    "Likelihood",
+    "Severity",
+    "Reach",
+    "Mitigations",
+    "Ownership",
+    "Best Practice Examples",
+    "Related Risks",
+    "Tags",
+]
 
 
 def split_tags(raw_value):
@@ -67,13 +79,57 @@ def parse_issue(body):
         field = LEGACY_FIELD_NAMES.get(lines[0].strip(), lines[0].strip())
         content = lines[1].strip() if len(lines) > 1 else ""
         if field in FIELDS:
-            values[field] = None if content in ("_No response_", "", "None", "No changes") else content
+            if field == "Tags Action":
+                values[field] = content
+            else:
+                values[field] = None if content in ("_No response_", "", "None", "No changes") else content
 
     values["Related Risks"] = normalise_issue_refs(values.get("Related Risks"))
     combined_tags = combine_tags(values.get("Tags"), values.get("Other Tags"))
-    values["Tags"] = combined_tags if combined_tags else None
+    tags_action = values.get("Tags Action")
+    if tags_action == "No changes":
+        values["Tags"] = None
+    elif tags_action == "Clear all tags":
+        values["Tags"] = ""
+    else:
+        values["Tags"] = combined_tags if combined_tags else None
+    values.pop("Tags Action", None)
     values.pop("Other Tags", None)
     return values
+
+
+def normalise_cell(value):
+    """Convert a dataframe cell into text suitable for comparisons."""
+    return "" if pd.isna(value) else str(value)
+
+
+def markdown_cell(value):
+    """Escape a value for a compact Markdown comparison table."""
+    text = normalise_cell(value)
+    if not text:
+        return "_(empty)_"
+    return text.replace("|", r"\|").replace("\r\n", "<br>").replace("\n", "<br>")
+
+
+def format_update_summary(source_issue, update_issue, changes):
+    """Build a field-level before/after summary for the generated pull request."""
+    lines = [
+        f"Updates risk #{source_issue} from issue #{update_issue}.",
+        "",
+        "Only explicitly submitted fields are changed; blank fields preserve their existing values.",
+        "",
+        "## Proposed field changes",
+        "",
+    ]
+    if not changes:
+        lines.append("No contributor-editable field values differ; only update provenance changes.")
+    else:
+        lines.extend(["| Field | Current value | Proposed value |", "| --- | --- | --- |"])
+        for field, current_value, proposed_value in changes:
+            lines.append(
+                f"| {field} | {markdown_cell(current_value)} | {markdown_cell(proposed_value)} |"
+            )
+    return "\n".join(lines) + "\n"
 
 
 def update_csv_row(values, issue_number):
@@ -92,18 +148,13 @@ def update_csv_row(values, issue_number):
 
     row_index = risk_register[row_mask].index[0]
 
-    for field in [
-        "Description",
-        "Likelihood",
-        "Severity",
-        "Reach",
-        "Mitigations",
-        "Ownership",
-        "Best Practice Examples",
-        "Related Risks",
-        "Tags",
-    ]:
+    changes = []
+    for field in EDITABLE_FIELDS:
         if values.get(field) is not None:
+            current_value = normalise_cell(risk_register.loc[row_index, field])
+            proposed_value = normalise_cell(values[field])
+            if current_value != proposed_value:
+                changes.append((field, current_value, proposed_value))
             risk_register.loc[row_index, field] = values[field]
 
     update_issue = f"#{issue_number}"
@@ -116,6 +167,11 @@ def update_csv_row(values, issue_number):
         risk_register.loc[row_index, "Updates"] = update_issue
 
     risk_register.to_csv(CSV_PATH, index=False)
+    summary_path = os.environ.get("UPDATE_SUMMARY_PATH")
+    if summary_path:
+        with open(summary_path, "w", encoding="utf-8", newline="\n") as summary_file:
+            summary_file.write(format_update_summary(updated_issue, issue_number, changes))
+    return changes
 
 
 if __name__ == "__main__":

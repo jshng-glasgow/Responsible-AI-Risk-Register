@@ -137,6 +137,9 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                     </span>
                 </summary>
                 <dl class="card-grid"></dl>
+                <footer class="card-footer">
+                    <a class="update-button" target="_blank" rel="noreferrer">Propose an update</a>
+                </footer>
             </details>
         </article>
     </template>
