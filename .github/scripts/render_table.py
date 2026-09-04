@@ -20,14 +20,15 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSI Generative AI Risk Register</title>
+    <title>Responsible AI Risk Register</title>
     <link rel="stylesheet" href="./styles.css?v={asset_version}">
 </head>
 <body>
     <main class="page-shell">
         <section class="hero">
-            <p class="eyebrow">Software Sustainability Institute</p>
-            <h1>Generative AI Risk Register</h1>
+            <img class="hero-logo" src="../assets/Primary%20logo%20-%20White.png" alt="Institute for Research Software" />
+            <p class="eyebrow">Institute for Research Software</p>
+            <h1>Responsible AI Risk Register</h1>
             <p class="intro">
                 A community-maintained register of risks and supporting resources for responsible AI
                 in Research Software Engineering. Browse, search, sort, and filter both collections below.

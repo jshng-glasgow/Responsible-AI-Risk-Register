@@ -1,11 +1,13 @@
-# SSI Generative AI Risk Register
+# Responsible AI Risk Register
+
+![Institute for Research Software logo](assets/Primary%20logo%20-%20Dark%20Navy.png)
 
 A community-maintained register of risks associated with the use of AI in 
-Research Software Engineering, maintained by the SSI Responsible AI Study Group.
+Research Software Engineering, maintained by the Institute for Research Software's Responsible AI Study Group.
 
 ## What is this?
 
-This register has been developed by the Software Sustainability Institute's Responsible AI in RSE study group for Collaboration Workshop 2026. It is designed to encourage continual contribution from the RSE community, allow them to identify the AI risks that are most pertinent to them, and curate resources that can help the community understand or manage those risks. As the AI landscape continues to evolve, it is crucial that we develop guidelines which are relevant, adaptable, and actionable. This risk register will allow us to achieve that.
+This register has been developed by the Institute for Research Software's Responsible AI in RSE study group. The Institute was previously known as the Software Sustainability Institute (SSI). The register is designed to encourage continual contribution from the research software engineering (RSE) community, allow them to identify the AI risks that are most pertinent to them, and curate resources that can help the community understand or manage those risks. As the AI landscape continues to evolve, it is crucial that we develop guidelines which are relevant, adaptable, and actionable. This risk register will allow us to achieve that.
 
 ## Scope
 
@@ -113,7 +115,7 @@ The repository normally links to third-party resources rather than storing local
 
 ## Governance
 
-The register is maintained by the SSI's Responsible AI in RSE study group. All edits to the register (e.g., new risks, updates to existing risks) are reviewed by the study group. The register is periodically reviewed to merge similar risks and remove redundancy.
+The register is maintained by the Institute for Research Software's Responsible AI in RSE study group. All edits to the register (e.g., new risks, updates to existing risks) are reviewed by the study group. The register is periodically reviewed to merge similar risks and remove redundancy.
 
 For workshop facilitation, maintainers can temporarily set the GitHub Actions repository variable `WORKSHOP_AUTO_PUBLISH_NEW_RISKS=true`. When enabled, issues labelled `new risk` or `new resource` are written directly to the default branch instead of opening a pull request. Issues labelled `risk update` continue to create pull requests for manual review.
 
@@ -125,16 +127,22 @@ Contributions to this register are made publicly under CC BY 4.0 and may be used
 
 This repository was developed with assistance from OpenAI Codex. AI-assisted contributions, including code, tests, and documentation, have been reviewed, tested, and approved by an experienced human software engineer for correctness, security, and fitness for purpose.
 
+## Funding
+
+This work was supported through the UKRI Metascience Unit "Metascience AI" fellowship programme.
+
+![UKRI and Metascience Unit logos](assets/metascience_UKRI.webp)
+
 ## Citation
 
 Please cite as:
 
 ```text
 @misc{ssi_ai_risk_register_2026,
-  author       = {Shingleton, Joseph and {SSI Responsible AI Study Group}},
-  title        = {{SSI Generative AI Risk Register}},
+  author       = {Shingleton, Joseph and {Institute for Research Software Responsible AI Study Group}},
+  title        = {{Responsible AI Risk Register}},
   year         = {2026},
-  publisher    = {Software Sustainability Institute},
+  publisher    = {Institute for Research Software},
   howpublished = {\url{https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/}}
 }
 ```

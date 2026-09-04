@@ -52,7 +52,7 @@ class TestRenderTable:
                 resource_json_content = json.load(f)
 
             soup = BeautifulSoup(html_content, 'html.parser')
-            assert soup.title.string == "SSI Generative AI Risk Register"
+            assert soup.title.string == "Responsible AI Risk Register"
             assert soup.find(id="register-root") is not None
             assert soup.find(id="search-input") is not None
             assert soup.find(id="tag-filter") is not None

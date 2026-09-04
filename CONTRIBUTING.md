@@ -1,10 +1,10 @@
-# Contributing to the SSI Generative AI Risk Register
+# Contributing to the Responsible AI Risk Register
 
 Thank you for contributing to this register. This document explains how to propose new risks, suggest updates to existing risks, suggest resources, take part in discussion, and how contributions are reviewed.
 
 ## Who can contribute?
 
-Anyone is welcome to contribute. You do not need to be a member of the SSI to suggest a risk.
+Anyone is welcome to contribute. You do not need to be a member of the Institute for Research Software to suggest a risk.
 
 Contributions can be made either:
 
@@ -125,7 +125,7 @@ Good first contributions include:
 
 ## Review and editorial process
 
-All contributions are reviewed by the [Responsible AI Study Group](#) before being added to the register.
+All contributions are reviewed by the Institute for Research Software's [Responsible AI Study Group](#) before being added to the register.
 
 During review, maintainers may:
 

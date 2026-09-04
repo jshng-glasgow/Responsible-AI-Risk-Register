@@ -1,1 +1,1 @@
-# Test package for SSI Responsible AI Risk Register
+# Test package for the Responsible AI Risk Register

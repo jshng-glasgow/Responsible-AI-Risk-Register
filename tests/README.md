@@ -1,4 +1,4 @@
-# Test Suite for SSI Responsible AI Risk Register
+# Test Suite for the Responsible AI Risk Register
 
 This directory contains the test suite for the project scripts.
 

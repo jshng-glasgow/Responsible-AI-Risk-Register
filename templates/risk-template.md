@@ -1,6 +1,6 @@
 # Register Submission Template
 
-Use this template to propose a new risk for the SSI Generative AI Risk Register.
+Use this template to propose a new risk for the Responsible AI Risk Register.
 
 ## Issue Title
 [Provide a short title for the issue]
