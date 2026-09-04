@@ -2,9 +2,9 @@
 
 Supporting policies, guidance, position papers, case studies, and reports are maintained as structured data alongside the risk register.
 
-- [Browse and filter resources in the live register](https://jshng-glasgow.github.io/responsible-ai-risk-register/#resources)
+- [Browse and filter resources in the live register](https://jshng-glasgow.github.io/Responsible-AI-Risk-Register/#resources)
 - [View the resource data](resources.csv)
-- [Propose a new resource](https://github.com/jshng-glasgow/responsible-ai-risk-register/issues/new/choose)
+- [Propose a new resource](https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/new/choose)
 
 Resource contributions are submitted through the **Propose a new resource** GitHub issue form. Accepted submissions are added to `resources.csv`; this README is not a second catalogue.
 
