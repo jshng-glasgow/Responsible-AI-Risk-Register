@@ -158,5 +158,21 @@
     "related_risk_refs": [],
     "related_risk_urls": [],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/200"
+  },
+  {
+    "Resource Title": "Debian General Resolution: Responsible use of AI",
+    "URL": "https://www.debian.org/vote/2026/vote_002.en.html",
+    "Organisation / Authors": "Debian",
+    "Year": "2026",
+    "Type": "Report",
+    "Relevance": "A report on a poll of the Debian community on the use of AI in development. Debian chose neither prohibition nor special evidential rules: AI-assisted contributions must satisfy its existing standards for correctness, maintainability and legal compliance, with contributors expected to understand, review and test them. Disclosure is encouraged but optional, while bulk agentic actions require prior discussion and human oversight",
+    "Tags": "Software Sustainability, Governance, Debian, Open Source",
+    "Related Risks": "",
+    "Notes": "",
+    "Issue": "#204",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/204"
   }
 ]
