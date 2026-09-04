@@ -5,7 +5,7 @@
 A community-maintained register of risks associated with the use of AI in 
 Research Software Engineering, maintained by the Institute for Research Software's Responsible AI Study Group.
 
-> **[Open the Responsible AI Risk Register →](https://jshng-glasgow.github.io/Responsible-AI-Risk-Register/)**
+[![Open the Responsible AI Risk Register](assets/open-register-button.svg)](https://jshng-glasgow.github.io/Responsible-AI-Risk-Register/)
 
 ## What is this?
 
