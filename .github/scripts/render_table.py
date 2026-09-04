@@ -34,7 +34,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
                 in Research Software Engineering. Browse, search, sort, and filter both collections below.
             </p>
             <div class="hero-actions">
-                <a class="button button-primary" href="https://github.com/jshng-glasgow/SSI-Responsible-AI-Risk-Register/" target="_blank" rel="noreferrer">Contribute on GitHub</a>
+                <a class="button button-primary" href="https://github.com/jshng-glasgow/responsible-ai-risk-register/" target="_blank" rel="noreferrer">Contribute on GitHub</a>
                 <a class="button button-secondary" href="./risks.json" target="_blank" rel="noreferrer">Download risks</a>
                 <a class="button button-secondary" href="./resources.json" target="_blank" rel="noreferrer">Download resources</a>
             </div>
@@ -185,7 +185,7 @@ def build_issue_url(issue_ref):
     """Return the GitHub issue URL for a ``#123`` style reference."""
     if not issue_ref or not isinstance(issue_ref, str) or not issue_ref.startswith("#"):
         return None
-    return f"https://github.com/jshng-glasgow/SSI-Responsbile-AI-Risk-Register/issues/{issue_ref[1:]}"
+    return f"https://github.com/jshng-glasgow/responsible-ai-risk-register/issues/{issue_ref[1:]}"
 
 
 def normalise_text(value):
