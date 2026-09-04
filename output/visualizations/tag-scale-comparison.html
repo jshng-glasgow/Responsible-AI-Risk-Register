@@ -1,0 +1,172 @@
+<div id="rairr-tag-scale">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Geologica:wght@500&family=Work+Sans:wght@500&display=swap");
+
+    #rairr-tag-scale {
+      color: #262d3d;
+      font-family: "Work Sans", sans-serif;
+    }
+
+    #rairr-tag-scale .comparison-title {
+      margin: 0 0 18px;
+      color: #262d3d;
+      font-family: Geologica, "Work Sans", sans-serif;
+      font-weight: 500;
+    }
+
+    #rairr-tag-scale .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    #rairr-tag-scale .variant {
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid #c3beb6;
+      border-radius: 18px;
+      background: #f0eee9;
+    }
+
+    #rairr-tag-scale .variant h3 {
+      margin: 0 0 6px;
+      color: #262d3d;
+      font-family: Geologica, "Work Sans", sans-serif;
+      font-weight: 500;
+    }
+
+    #rairr-tag-scale .variant-note {
+      min-height: 42px;
+      margin: 0 0 18px;
+      color: #355a7b;
+    }
+
+    #rairr-tag-scale .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    #rairr-tag-scale .tag-row + .tag-row {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid #c3beb6;
+    }
+
+    #rairr-tag-scale .impact-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 6px 13px;
+      border: 2px solid;
+      border-radius: 999px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    #rairr-tag-scale .very-low {
+      background: #ffffff;
+      color: #d2232a;
+      border-color: #d2232a;
+    }
+
+    #rairr-tag-scale .low {
+      background: #fbe9ea;
+      color: #d2232a;
+      border-color: #d2232a;
+    }
+
+    #rairr-tag-scale .navy-medium {
+      background: #efb2b4;
+      color: #262d3d;
+      border-color: #262d3d;
+    }
+
+    #rairr-tag-scale .red-medium {
+      background: #efb2b4;
+      color: #d2232a;
+      border-color: #d2232a;
+    }
+
+    #rairr-tag-scale .high {
+      background: #d52e35;
+      color: #ffffff;
+      border-color: #ffffff;
+      box-shadow: 0 0 0 1px #d52e35;
+    }
+
+    #rairr-tag-scale .very-high {
+      background: #d2232a;
+      color: #ffffff;
+      border-color: #ffffff;
+      box-shadow: 0 0 0 2px #d2232a;
+    }
+
+    #rairr-tag-scale .unknown {
+      background: #c3beb6;
+      color: #262d3d;
+      border-color: #c3beb6;
+    }
+
+    #rairr-tag-scale .category {
+      background: #355a7b;
+      color: #ffffff;
+      border-color: #355a7b;
+    }
+
+    #rairr-tag-scale .secondary-label {
+      width: 100%;
+      color: #262d3d;
+      font-weight: 500;
+    }
+
+    @media (max-width: 680px) {
+      #rairr-tag-scale .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #rairr-tag-scale .variant-note {
+        min-height: 0;
+      }
+    }
+  </style>
+
+  <h2 class="comparison-title">Impact tag scale comparison</h2>
+  <div class="comparison-grid">
+    <section class="variant" aria-labelledby="navy-medium-title">
+      <h3 id="navy-medium-title">A. Dark Navy at Medium</h3>
+      <p class="variant-note">The midpoint acts as a visual bridge before the scale flips to white.</p>
+      <div class="tag-row" aria-label="Impact scale with a Dark Navy Medium tag">
+        <span class="impact-tag very-low">Very Low</span>
+        <span class="impact-tag low">Low</span>
+        <span class="impact-tag navy-medium">Medium</span>
+        <span class="impact-tag high">High</span>
+        <span class="impact-tag very-high">Very High</span>
+      </div>
+      <div class="tag-row" aria-label="Shared tags">
+        <span class="secondary-label">Shared supporting styles</span>
+        <span class="impact-tag unknown">Unknown</span>
+        <span class="impact-tag category">Research Integrity</span>
+      </div>
+    </section>
+
+    <section class="variant" aria-labelledby="red-white-title">
+      <h3 id="red-white-title">B. Red and white only</h3>
+      <p class="variant-note">A purer progression, with weaker text contrast around the midpoint.</p>
+      <div class="tag-row" aria-label="Impact scale using only red and white text and outlines">
+        <span class="impact-tag very-low">Very Low</span>
+        <span class="impact-tag low">Low</span>
+        <span class="impact-tag red-medium">Medium</span>
+        <span class="impact-tag high">High</span>
+        <span class="impact-tag very-high">Very High</span>
+      </div>
+      <div class="tag-row" aria-label="Shared tags">
+        <span class="secondary-label">Shared supporting styles</span>
+        <span class="impact-tag unknown">Unknown</span>
+        <span class="impact-tag category">Research Integrity</span>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 # Responsible AI Risk Register
 
-![Institute for Research Software logo](assets/Primary%20logo%20-%20Dark%20Navy.png)
+![Institute for Research Software logo on a Paper White background](assets/Primary%20logo%20-%20Paper%20White.png)
 
 A community-maintained register of risks associated with the use of AI in 
 Research Software Engineering, maintained by the Institute for Research Software's Responsible AI Study Group.
@@ -133,7 +133,7 @@ This repository was developed with assistance from OpenAI Codex. AI-assisted con
 
 This work was supported through the UKRI Metascience Unit "Metascience AI" fellowship programme.
 
-![UKRI and Metascience Unit logos](assets/metascience_UKRI.webp)
+![UKRI and Metascience Unit logos on a white background](assets/metascience_UKRI_white.png)
 
 ## Citation
 
