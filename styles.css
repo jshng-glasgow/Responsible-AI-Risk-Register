@@ -331,30 +331,42 @@ a {
   border: 1px solid transparent;
 }
 
-.tone-very-low,
+.tone-very-low {
+  background: #fff;
+  color: var(--institute-red);
+  border-color: var(--institute-red);
+}
+
 .tone-low {
-  background: rgba(46, 125, 50, 0.12);
-  color: #256029;
-  border-color: #256029;
+  background: #fbe9ea;
+  color: var(--institute-red);
+  border-color: var(--institute-red);
 }
 
 .tone-medium {
-  background: rgba(194, 127, 46, 0.14);
-  color: #8c5314;
-  border-color: #8c5314;
+  background: #efb2b4;
+  color: var(--institute-red);
+  border-color: var(--institute-red);
 }
 
-.tone-high,
+.tone-high {
+  background: #d52e35;
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 0 1px #d52e35;
+}
+
 .tone-very-high {
-  background: rgba(176, 58, 46, 0.12);
-  color: #9f3024;
-  border-color: #9f3024;
+  background: var(--institute-red);
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 0 2px var(--institute-red);
 }
 
 .tone-unknown {
-  background: rgba(82, 96, 109, 0.12);
-  color: #52606d;
-  border-color: #52606d;
+  background: var(--stone-grey);
+  color: var(--dark-navy);
+  border-color: var(--stone-grey);
 }
 
 .tone-tag {
