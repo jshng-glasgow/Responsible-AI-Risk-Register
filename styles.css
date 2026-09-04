@@ -333,26 +333,28 @@ a {
 
 .tone-very-low,
 .tone-low {
-  background: var(--paper-white);
-  color: var(--dark-navy);
-  border-color: var(--stone-grey);
+  background: rgba(46, 125, 50, 0.12);
+  color: #256029;
+  border-color: #256029;
 }
 
 .tone-medium {
-  background: var(--stone-grey);
-  color: var(--dark-navy);
+  background: rgba(194, 127, 46, 0.14);
+  color: #8c5314;
+  border-color: #8c5314;
 }
 
 .tone-high,
 .tone-very-high {
-  background: var(--paper-white);
-  color: var(--institute-red);
-  border-color: var(--institute-red);
+  background: rgba(176, 58, 46, 0.12);
+  color: #9f3024;
+  border-color: #9f3024;
 }
 
 .tone-unknown {
-  background: var(--stone-grey);
-  color: var(--dark-navy);
+  background: rgba(82, 96, 109, 0.12);
+  color: #52606d;
+  border-color: #52606d;
 }
 
 .tone-tag {
