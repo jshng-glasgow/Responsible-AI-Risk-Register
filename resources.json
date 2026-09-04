@@ -160,6 +160,22 @@
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/200"
   },
   {
+    "Resource Title": "Microsoft Responsible AI Transparency Report 2026",
+    "URL": "https://www.microsoft.com/en-us/corporate-responsibility/topics/responsible-ai/reports/transparency-report/",
+    "Organisation / Authors": "Microsoft",
+    "Year": "2026",
+    "Type": "Report",
+    "Relevance": "A report on the responsible use of AI from Microsoft. Microsoft describes moving agent governance toward system-level controls covering agent identity, tool permissions, approval points, action monitoring and phased deployment, including its use of GitHub Copilot.",
+    "Tags": "Software Sustainability, Governance, Agents",
+    "Related Risks": "",
+    "Notes": "",
+    "Issue": "#206",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/206"
+  },
+  {
     "Resource Title": "Debian General Resolution: Responsible use of AI",
     "URL": "https://www.debian.org/vote/2026/vote_002.en.html",
     "Organisation / Authors": "Debian",
