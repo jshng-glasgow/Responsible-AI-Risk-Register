@@ -192,7 +192,7 @@ function appendExternalLink(container, url, label) {
 }
 
 function buildRiskUpdateUrl(record) {
-  const url = new URL("https://github.com/jshng-glasgow/SSI-Responsible-AI-Risk-Register/issues/new");
+  const url = new URL("https://github.com/jshng-glasgow/responsible-ai-risk-register/issues/new");
   url.searchParams.set("template", "update-risk.yml");
   url.searchParams.set("issue_number", record["Issue"]);
   url.searchParams.set("title", `Update risk ${record["Issue"]}: ${record["Issue Title"]}`);
