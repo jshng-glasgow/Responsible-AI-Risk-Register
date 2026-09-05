@@ -84,6 +84,7 @@ class TestWorkflowContracts:
         workflow = read_text(".github/workflows/issue-to-csv.yml")
 
         assert "WORKSHOP_AUTO_PUBLISH_NEW_RISKS == 'true'" in workflow
+        assert "queue: max" in workflow
         assert "python .github/scripts/issue_to_csv.py" in workflow
         assert "python .github/scripts/render_table.py" in workflow
         assert "git add register/risks.csv docs/index.html docs/risks.json" in workflow
@@ -128,6 +129,24 @@ class TestWorkflowContracts:
         assert "UPDATE_SUMMARY_PATH: .github/update-summary.md" in workflow
         assert "body-path: .github/update-summary.md" in workflow
         assert "add-paths: register/risks.csv" in workflow
+
+    def test_risk_update_workflow_uses_prs_except_in_workshop_mode(self):
+        workflow = read_text(".github/workflows/update-csv.yml")
+
+        assert "github.event.label.name == 'risk update'" in workflow
+        assert "WORKSHOP_AUTO_PUBLISH_NEW_RISKS == 'true'" in workflow
+        assert "WORKSHOP_AUTO_PUBLISH_NEW_RISKS != 'true'" in workflow
+        assert "queue: max" in workflow
+        assert "ref: ${{ github.event.repository.default_branch }}" in workflow
+        assert "fetch-depth: 0" in workflow
+        assert "git pull --ff-only origin" in workflow
+        assert "python .github/scripts/update_csv.py" in workflow
+        assert "python .github/scripts/validate_csv.py" in workflow
+        assert "python .github/scripts/render_table.py" in workflow
+        assert "git add register/risks.csv docs/index.html docs/risks.json" in workflow
+        assert "git push origin HEAD:${{ github.event.repository.default_branch }}" in workflow
+        assert "peaceiris/actions-gh-pages@v3" in workflow
+        assert "peter-evans/create-pull-request@v6" in workflow
 
     def test_register_ui_prefills_risk_update_issue_number(self):
         app = read_text("docs/app.js")

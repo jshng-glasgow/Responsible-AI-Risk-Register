@@ -7,6 +7,8 @@ on:
 concurrency:
   group: csv-update
   cancel-in-progress: false
+  # See .github/WORKSHOP_MODE.md for workshop queueing and recovery guidance.
+  queue: max
 
 jobs:
   add-to-register-direct:

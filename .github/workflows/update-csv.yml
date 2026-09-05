@@ -7,10 +7,71 @@ on:
 concurrency:
   group: csv-update
   cancel-in-progress: false
+  # See .github/WORKSHOP_MODE.md for workshop queueing and recovery guidance.
+  queue: max
 
 jobs:
-  add-to-register:
-    if: github.event.label.name == 'risk update'
+  update-register-direct:
+    if: github.event.label.name == 'risk update' && vars.WORKSHOP_AUTO_PUBLISH_NEW_RISKS == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Synchronise with latest default branch
+        run: git pull --ff-only origin "${{ github.event.repository.default_branch }}"
+
+      - name: Debug issue body
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: echo "$ISSUE_BODY"
+
+      - name: Parse issue and update csv
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: python .github/scripts/update_csv.py
+
+      - name: Validate and regenerate site data
+        run: |
+          python .github/scripts/validate_csv.py
+          python .github/scripts/render_table.py
+
+      - name: Commit directly to default branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add register/risks.csv docs/index.html docs/risks.json
+          if git diff --cached --quiet; then
+            echo "No CSV changes detected"
+            exit 0
+          fi
+          git commit -m "Update risk from issue #${{ github.event.issue.number }}"
+          git push origin HEAD:${{ github.event.repository.default_branch }}
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+
+  update-register-pr:
+    if: github.event.label.name == 'risk update' && vars.WORKSHOP_AUTO_PUBLISH_NEW_RISKS != 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
