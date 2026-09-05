@@ -97,20 +97,25 @@
     "Ownership": "The researcher or clinician are responsible in principle, held to account by their research insitute or department heads.",
     "Best Practice Examples": "This kind of risk is difficult to monitor as it could happen silently without any party involved being aware. The frequency is therefore difficult to determine, and examples are sparse (but will be added to the list in the future).",
     "Related Risks": "",
-    "Tags": "Privacy and Security, Research Integrity, People and Professional Practice",
+    "Tags": "Research Integrity, Privacy and Security, Professional, GDPR, medical data, personally identifiable data",
     "Issue": "#185",
-    "Updates": "#185",
+    "Updates": "#185, #209",
     "Maintainer Notes": "",
     "related_risk_refs": [],
     "related_risk_urls": [],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/185",
     "update_refs": [
-      "#185"
+      "#185",
+      "#209"
     ],
     "update_urls": [
       {
         "label": "#185",
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/185"
+      },
+      {
+        "label": "#209",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/209"
       }
     ]
   },
