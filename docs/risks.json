@@ -489,5 +489,32 @@
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/196"
       }
     ]
+  },
+  {
+    "Issue Title": "Responsibility to sustainable computing",
+    "Description": "Research software engineers have a responsibility to work in a way which is environmentally sustainable and to minimize potential harm to the planet. The use of AI may challenge this responsibility. Most modern IA models are extremely resource hungry, and using them for simple tasks that could otherwise have been completed by a human is wasteful. This might lead to wider problems including damage to the public perception of science, particularly in disciplines which are understood to be more conscious of environmental harms.",
+    "Likelihood": "High",
+    "Severity": "Medium",
+    "Reach": "High",
+    "Mitigations": "Researchers should only use AI as and when needed, and should work to prompt in a way which minimizes token consumption. Where possible, researchers should look to use smaller, locally hosted models which have reduced power consumption. It may also be possible to offset the environmental damage of AI use by investing in green projects and renewable energy sources.",
+    "Ownership": "Practitioners, institutions, tool developers.",
+    "Best Practice Examples": "Green DiSK have some great resources on green computing https://www.software.ac.uk/GreenDiSC",
+    "Related Risks": "",
+    "Tags": "Environmental, Wider Societal Impacts",
+    "Issue": "#208",
+    "Updates": "#208",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/208",
+    "update_refs": [
+      "#208"
+    ],
+    "update_urls": [
+      {
+        "label": "#208",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/208"
+      }
+    ]
   }
 ]
