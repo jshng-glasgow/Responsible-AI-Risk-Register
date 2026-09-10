@@ -312,17 +312,17 @@
   },
   {
     "Issue Title": "AI-generated code can lead to a reduced logical development and design thinking ability of the author",
-    "Description": "Some software must be understandable or maintainable by humans, for example for legal or policy reasons. Research software developed with AI may not be understood by members of the software’s maintenance team. This means that the code will be very difficult to debug and build upon if AI becomes unavailable or cannot do the debugging. Also, if no one understands exactly how the code is built, researchers cannot be sure what the code is doing, and therefore cannot be sure that any results produced with the software are valid.",
-    "Likelihood": "Very High",
-    "Severity": "Very High",
-    "Reach": "Unknown",
-    "Mitigations": "- Have regular code reviews and ensure that the code is understood\n- RSEs continue to develop software engineering skills rather than relying on AI in place of this\n- Write documentation, explaining how the code works. If AI is used to generate the docs, a human should ensure they are correct regularly.\n- Institutions should introduce rules or guidance about ensuring understanding of research code, and the use of generative AI in developing it. This could also be required by funders.\n- Storing the AI’s instructions/specifications - e.g. plan.md and/or original prompts - in text files alongside the software’s code.",
+    "Description": "AI-generated code can lead to a reduced agency of the author due to lesser mental involvement in the software design decision-making process.",
+    "Likelihood": "Medium",
+    "Severity": "Medium",
+    "Reach": "High",
+    "Mitigations": "Get user testing often, use rubberducking, and initiate a project after having a discussion with people working in those domains.",
     "Ownership": "educators, institutions, and tool developers",
-    "Best Practice Examples": "The inability to understand code also applies to proprietary closed-source software (regardless of the use of generative AI). The same mitigation strategies for managing proprietary code can also be applied to AI generated code.",
+    "Best Practice Examples": "For example, when someone is developing a software that is assisted by GenAI, and the GenAI LLM offers them multiple options to go ahead with as a next step, the developer might use something that feels easy or intuitive, familiar, or something for which the GenAI gives a complete code.",
     "Related Risks": "#181, #183",
     "Tags": "Training and Development",
     "Issue": "#175",
-    "Updates": "#175, #222",
+    "Updates": "#175, #222, #227",
     "Maintainer Notes": "",
     "related_risk_refs": [
       "#181",
@@ -341,7 +341,8 @@
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/175",
     "update_refs": [
       "#175",
-      "#222"
+      "#222",
+      "#227"
     ],
     "update_urls": [
       {
@@ -351,6 +352,10 @@
       {
         "label": "#222",
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/222"
+      },
+      {
+        "label": "#227",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/227"
       }
     ]
   },
