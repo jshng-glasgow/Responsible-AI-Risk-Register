@@ -641,5 +641,39 @@
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/224"
       }
     ]
+  },
+  {
+    "Issue Title": "High-resource personalised digital twins lead to inequity in healthcare provision",
+    "Description": "The use of AI models for healthcare, for example through the use of digital twins, is leading to increasingly personalised healthcare, where an AI model may be fine-tuned or generate outputs that are specific to an individual. Data to support the process may be collected over a prolonged period of time. This has potential to greatly improve healthcare provision, but if it relies on the availability of large-scale accelerated compute in order to provide individual treatment, there's a risk that availability is restricted only to those who can afford, or have local access to, the compute needed. This could lead to inequality in healthcare provision.",
+    "Likelihood": "Medium",
+    "Severity": "Medium",
+    "Reach": "Medium",
+    "Mitigations": "Ensuring due considering is given to the compute requirements of healthcare approaches based on AI and digital twins. Ensuring that appropriate consideration is given for optimising approaches, ensuring resulting models are only as large as needed and can be run in resource-constrained compute environments.",
+    "Ownership": "Medical practitioners, researchers and RSEs working in the area of digital twins, AI-based medical research. Funding bodies in ensuring resources are provided for optimisation of outputs.",
+    "Best Practice Examples": "",
+    "Related Risks": "#182",
+    "Tags": "Equity and Fairness, Medical Data, RSECon26, Economic",
+    "Issue": "#225",
+    "Updates": "#225",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#182"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#182",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/182"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/225",
+    "update_refs": [
+      "#225"
+    ],
+    "update_urls": [
+      {
+        "label": "#225",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/225"
+      }
+    ]
   }
 ]
