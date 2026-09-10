@@ -312,17 +312,17 @@
   },
   {
     "Issue Title": "AI-generated code can lead to a reduced logical development and design thinking ability of the author",
-    "Description": "Some software must be understandable or maintainable by humans, for example for legal or policy reasons. Research software developed with AI may not be understood by members of the software’s maintenance team. This means that the code will be very difficult to debug and build upon if AI becomes unavailable or cannot do the debugging. Also, if no one understands exactly how the code is built, researchers cannot be sure what the code is doing, and therefore cannot be sure that any results produced with the software are valid.",
-    "Likelihood": "Very High",
-    "Severity": "Very High",
-    "Reach": "Unknown",
-    "Mitigations": "- Have regular code reviews and ensure that the code is understood\n- RSEs continue to develop software engineering skills rather than relying on AI in place of this\n- Write documentation, explaining how the code works. If AI is used to generate the docs, a human should ensure they are correct regularly.\n- Institutions should introduce rules or guidance about ensuring understanding of research code, and the use of generative AI in developing it. This could also be required by funders.\n- Storing the AI’s instructions/specifications - e.g. plan.md and/or original prompts - in text files alongside the software’s code.",
+    "Description": "AI-generated code can lead to a reduced agency of the author due to lesser mental involvement in the software design decision-making process.",
+    "Likelihood": "Medium",
+    "Severity": "Medium",
+    "Reach": "High",
+    "Mitigations": "Get user testing often, use rubberducking, and initiate a project after having a discussion with people working in those domains.",
     "Ownership": "educators, institutions, and tool developers",
-    "Best Practice Examples": "The inability to understand code also applies to proprietary closed-source software (regardless of the use of generative AI). The same mitigation strategies for managing proprietary code can also be applied to AI generated code.",
+    "Best Practice Examples": "For example, when someone is developing a software that is assisted by GenAI, and the GenAI LLM offers them multiple options to go ahead with as a next step, the developer might use something that feels easy or intuitive, familiar, or something for which the GenAI gives a complete code.",
     "Related Risks": "#181, #183",
     "Tags": "Training and Development",
     "Issue": "#175",
-    "Updates": "#175, #222",
+    "Updates": "#175, #222, #227",
     "Maintainer Notes": "",
     "related_risk_refs": [
       "#181",
@@ -341,7 +341,8 @@
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/175",
     "update_refs": [
       "#175",
-      "#222"
+      "#222",
+      "#227"
     ],
     "update_urls": [
       {
@@ -351,6 +352,10 @@
       {
         "label": "#222",
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/222"
+      },
+      {
+        "label": "#227",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/227"
       }
     ]
   },
@@ -618,9 +623,9 @@
     "Ownership": "AI model developers, AI service providers, IT departments, providers of training in good research practices.",
     "Best Practice Examples": "No easy way to deal with this risk as it requires retraining (or fine tuning) models with low resource languages, which may require producing new training data, for example by scanning analog resources like printed books and magazines. \nUser need to be aware of the capabilities of the models they are using and select newer models that are better at low resource languages.",
     "Related Risks": "#182",
-    "Tags": "Equity and Fairness, #RSECon26, GlobalSouth, Language",
+    "Tags": "Equity and Fairness, RSECon26, Language, GlobalSouth",
     "Issue": "#224",
-    "Updates": "#224",
+    "Updates": "#224, #226",
     "Maintainer Notes": "",
     "related_risk_refs": [
       "#182"
@@ -633,12 +638,78 @@
     ],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/224",
     "update_refs": [
-      "#224"
+      "#224",
+      "#226"
     ],
     "update_urls": [
       {
         "label": "#224",
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/224"
+      },
+      {
+        "label": "#226",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/226"
+      }
+    ]
+  },
+  {
+    "Issue Title": "High-resource personalised digital twins lead to inequity in healthcare provision",
+    "Description": "The use of AI models for healthcare, for example through the use of digital twins, is leading to increasingly personalised healthcare, where an AI model may be fine-tuned or generate outputs that are specific to an individual. Data to support the process may be collected over a prolonged period of time. This has potential to greatly improve healthcare provision, but if it relies on the availability of large-scale accelerated compute in order to provide individual treatment, there's a risk that availability is restricted only to those who can afford, or have local access to, the compute needed. This could lead to inequality in healthcare provision.",
+    "Likelihood": "Medium",
+    "Severity": "Medium",
+    "Reach": "Medium",
+    "Mitigations": "Ensuring due considering is given to the compute requirements of healthcare approaches based on AI and digital twins. Ensuring that appropriate consideration is given for optimising approaches, ensuring resulting models are only as large as needed and can be run in resource-constrained compute environments.",
+    "Ownership": "Medical practitioners, researchers and RSEs working in the area of digital twins, AI-based medical research. Funding bodies in ensuring resources are provided for optimisation of outputs.",
+    "Best Practice Examples": "",
+    "Related Risks": "#182",
+    "Tags": "Equity and Fairness, Medical Data, RSECon26, Economic",
+    "Issue": "#225",
+    "Updates": "#225",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#182"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#182",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/182"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/225",
+    "update_refs": [
+      "#225"
+    ],
+    "update_urls": [
+      {
+        "label": "#225",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/225"
+      }
+    ]
+  },
+  {
+    "Issue Title": "AI generated code can exacerbate existing biases",
+    "Description": "There is existing evidence of software tools that use AI exacerbating bias.  This is because the AI element is trained on biased datasets.",
+    "Likelihood": "Very High",
+    "Severity": "Very High",
+    "Reach": "Very High",
+    "Mitigations": "Ensure that there is provenance of the original dataset so that if any bias becomes apparent, the source of the bias is understood.  Make sure that the code is open-source so that the system is not a black-box and ensure that there is a feedback loop so that there is a way to address any biases found.  Ensure there is meaningful ways to have humans in the feedback loop.",
+    "Ownership": "",
+    "Best Practice Examples": "",
+    "Related Risks": "",
+    "Tags": "Wider Societal Impacts, RSECon26",
+    "Issue": "#229",
+    "Updates": "#229",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/229",
+    "update_refs": [
+      "#229"
+    ],
+    "update_urls": [
+      {
+        "label": "#229",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/229"
       }
     ]
   }
