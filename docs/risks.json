@@ -607,5 +607,39 @@
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/218"
       }
     ]
+  },
+  {
+    "Issue Title": "People speaking minority or \"low resource\" languages make get inferior results from AI as there is less training data in those languages",
+    "Description": "Many large language models are trained on data in the main global languages (e.g. English, Chinese). Minority or under-resourced or low resource languages typically have far less representation in LLM training data.  Although LLMs can process other languages their results may be of lower quality in low resource languages, so speakers of these languages may be getting less benefit from AI.",
+    "Likelihood": "Low",
+    "Severity": "Medium",
+    "Reach": "Medium",
+    "Mitigations": "Make AI users aware of the issues around using AI with different languages. Develop best practices for using LLMs, which could include translating prompt into english as an initial step and then asking question in english, and then translating back.",
+    "Ownership": "AI model developers, AI service providers, IT departments, providers of training in good research practices.",
+    "Best Practice Examples": "No easy way to deal with this risk as it requires retraining (or fine tuning) models with low resource languages, which may require producing new training data, for example by scanning analog resources like printed books and magazines. \nUser need to be aware of the capabilities of the models they are using and select newer models that are better at low resource languages.",
+    "Related Risks": "#182",
+    "Tags": "Equity and Fairness, #RSECon26, GlobalSouth, Language",
+    "Issue": "#224",
+    "Updates": "#224",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#182"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#182",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/182"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/224",
+    "update_refs": [
+      "#224"
+    ],
+    "update_urls": [
+      {
+        "label": "#224",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/224"
+      }
+    ]
   }
 ]
