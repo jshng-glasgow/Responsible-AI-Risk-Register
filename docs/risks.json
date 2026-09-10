@@ -717,5 +717,39 @@
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/229"
       }
     ]
+  },
+  {
+    "Issue Title": "Speed of LLM adoption",
+    "Description": "The increasing speed and breadth of LLM adoptions in existing workflows can force low-skilled users to to interact with AI tools without sufficient training, guardrails, or supervision. This can lead to data breaches, unethical or irresponsible use.",
+    "Likelihood": "Medium",
+    "Severity": "Medium",
+    "Reach": "High",
+    "Mitigations": "Reducing pressure in workplaces by adopting AI tools into existing workflows only when it is recommended, and after proper training.",
+    "Ownership": "Team leads and institutions have the responsibility to reduce pressure on staff and ensure they are properly trained before recommending LLM adoption in existing workflows.",
+    "Best Practice Examples": "",
+    "Related Risks": "#185",
+    "Tags": "Privacy and Security, People and professional practice, Training and development, Governance, RSECon26",
+    "Issue": "#231",
+    "Updates": "#231",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#185"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#185",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/185"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/231",
+    "update_refs": [
+      "#231"
+    ],
+    "update_urls": [
+      {
+        "label": "#231",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/231"
+      }
+    ]
   }
 ]
