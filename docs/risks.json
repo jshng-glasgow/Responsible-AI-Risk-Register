@@ -531,5 +531,32 @@
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/212"
       }
     ]
+  },
+  {
+    "Issue Title": "Rising electricity prices",
+    "Description": "Datacentres built around residential areas are causing electricity prices to rise in said areas.",
+    "Likelihood": "High",
+    "Severity": "High",
+    "Reach": "Medium",
+    "Mitigations": "The mitigation can affect other risks. For example, upgrading the grid leads to electricity prices decreasing, but it could also lead to environmental problems. Perhaps another mitigation is to make sure datacentres are using more sustainable technology that requires less power.",
+    "Ownership": "Governments, technology companies.",
+    "Best Practice Examples": "ResponsibleAi, Ada Lovelace Institute",
+    "Related Risks": "",
+    "Tags": "Economic, Environmental, Governance",
+    "Issue": "#216",
+    "Updates": "#216",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/216",
+    "update_refs": [
+      "#216"
+    ],
+    "update_urls": [
+      {
+        "label": "#216",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/216"
+      }
+    ]
   }
 ]
