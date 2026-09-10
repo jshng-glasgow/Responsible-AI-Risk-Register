@@ -237,16 +237,16 @@
   {
     "Issue Title": "Accidental reuse of licensed code",
     "Description": "AI tools are trained on large collections of open-source software projects, and may reuse functions contained within libraries with incompatible licenses. For example, code may be pulled from a library licensed under GPL3, while the user's library is under MIT. It will not be clear that the code was AI-generated rather than derived directly from another work, which may place the code owners in legal jeopardy.",
-    "Likelihood": "Unknown",
+    "Likelihood": "Medium",
     "Severity": "Very High",
-    "Reach": "Unknown",
-    "Mitigations": "Avoid direct reuse of AI-generated code. Document when any code has been AI-generated.",
+    "Reach": "Very High",
+    "Mitigations": "Avoid direct reuse of AI-generated code. Document when any code has been AI-generated. Use features of AI systems where available that suppress responses similar to third-party materials or flag similarity to copyrighted code.",
     "Ownership": "RSEs, institutions, code owners, external stakeholders",
-    "Best Practice Examples": "",
+    "Best Practice Examples": "https://www.linuxfoundation.org/legal/generative-ai",
     "Related Risks": "#173, #180",
     "Tags": "Equity and Fairness, People and Professional Practice, Wider Societal Impacts, Research Integrity, Economic, Governance",
     "Issue": "#178",
-    "Updates": "#178",
+    "Updates": "#178, #213",
     "Maintainer Notes": "",
     "related_risk_refs": [
       "#173",
@@ -264,12 +264,17 @@
     ],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/178",
     "update_refs": [
-      "#178"
+      "#178",
+      "#213"
     ],
     "update_urls": [
       {
         "label": "#178",
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/178"
+      },
+      {
+        "label": "#213",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/213"
       }
     ]
   },
