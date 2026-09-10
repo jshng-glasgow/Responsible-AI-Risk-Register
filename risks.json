@@ -618,9 +618,9 @@
     "Ownership": "AI model developers, AI service providers, IT departments, providers of training in good research practices.",
     "Best Practice Examples": "No easy way to deal with this risk as it requires retraining (or fine tuning) models with low resource languages, which may require producing new training data, for example by scanning analog resources like printed books and magazines. \nUser need to be aware of the capabilities of the models they are using and select newer models that are better at low resource languages.",
     "Related Risks": "#182",
-    "Tags": "Equity and Fairness, #RSECon26, GlobalSouth, Language",
+    "Tags": "Equity and Fairness, RSECon26, Language, GlobalSouth",
     "Issue": "#224",
-    "Updates": "#224",
+    "Updates": "#224, #226",
     "Maintainer Notes": "",
     "related_risk_refs": [
       "#182"
@@ -633,12 +633,17 @@
     ],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/224",
     "update_refs": [
-      "#224"
+      "#224",
+      "#226"
     ],
     "update_urls": [
       {
         "label": "#224",
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/224"
+      },
+      {
+        "label": "#226",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/226"
       }
     ]
   },
