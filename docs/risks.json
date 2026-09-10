@@ -701,20 +701,25 @@
     "Ownership": "",
     "Best Practice Examples": "",
     "Related Risks": "",
-    "Tags": "Wider Societal Impacts, RSECon26",
+    "Tags": "Equity",
     "Issue": "#229",
-    "Updates": "#229",
+    "Updates": "#229, #232",
     "Maintainer Notes": "",
     "related_risk_refs": [],
     "related_risk_urls": [],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/229",
     "update_refs": [
-      "#229"
+      "#229",
+      "#232"
     ],
     "update_urls": [
       {
         "label": "#229",
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/229"
+      },
+      {
+        "label": "#232",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/232"
       }
     ]
   },
