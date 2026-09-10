@@ -158,5 +158,53 @@
     "related_risk_refs": [],
     "related_risk_urls": [],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/200"
+  },
+  {
+    "Resource Title": "Microsoft Responsible AI Transparency Report 2026",
+    "URL": "https://www.microsoft.com/en-us/corporate-responsibility/topics/responsible-ai/reports/transparency-report/",
+    "Organisation / Authors": "Microsoft",
+    "Year": "2026",
+    "Type": "Report",
+    "Relevance": "A report on the responsible use of AI from Microsoft. Microsoft describes moving agent governance toward system-level controls covering agent identity, tool permissions, approval points, action monitoring and phased deployment, including its use of GitHub Copilot.",
+    "Tags": "Software Sustainability, Governance, Agents",
+    "Related Risks": "",
+    "Notes": "",
+    "Issue": "#206",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/206"
+  },
+  {
+    "Resource Title": "Debian General Resolution: Responsible use of AI",
+    "URL": "https://www.debian.org/vote/2026/vote_002.en.html",
+    "Organisation / Authors": "Debian",
+    "Year": "2026",
+    "Type": "Report",
+    "Relevance": "A report on a poll of the Debian community on the use of AI in development. Debian chose neither prohibition nor special evidential rules: AI-assisted contributions must satisfy its existing standards for correctness, maintainability and legal compliance, with contributors expected to understand, review and test them. Disclosure is encouraged but optional, while bulk agentic actions require prior discussion and human oversight",
+    "Tags": "Software Sustainability, Governance, Debian, Open Source",
+    "Related Risks": "",
+    "Notes": "",
+    "Issue": "#204",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/204"
+  },
+  {
+    "Resource Title": "Emerging Processes for Frontier AI Safety",
+    "URL": "https://www.gov.uk/government/publications/emerging-processes-for-frontier-ai-safety",
+    "Organisation / Authors": "Department for Science, Innovation & Technology",
+    "Year": "2023",
+    "Type": "Guidance",
+    "Relevance": "Intended as a guide for readers of frontier AI companies’ AI safety policies to better understand what good policy might look like.",
+    "Tags": "Governance",
+    "Related Risks": "",
+    "Notes": "",
+    "Issue": "#220",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/220"
   }
 ]
