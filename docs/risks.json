@@ -97,20 +97,25 @@
     "Ownership": "The researcher or clinician are responsible in principle, held to account by their research insitute or department heads.",
     "Best Practice Examples": "This kind of risk is difficult to monitor as it could happen silently without any party involved being aware. The frequency is therefore difficult to determine, and examples are sparse (but will be added to the list in the future).",
     "Related Risks": "",
-    "Tags": "Privacy and Security, Research Integrity, People and Professional Practice",
+    "Tags": "Research Integrity, Privacy and Security, Professional, GDPR, medical data, personally identifiable data",
     "Issue": "#185",
-    "Updates": "#185",
+    "Updates": "#185, #209",
     "Maintainer Notes": "",
     "related_risk_refs": [],
     "related_risk_urls": [],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/185",
     "update_refs": [
-      "#185"
+      "#185",
+      "#209"
     ],
     "update_urls": [
       {
         "label": "#185",
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/185"
+      },
+      {
+        "label": "#209",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/209"
       }
     ]
   },
@@ -492,7 +497,7 @@
   },
   {
     "Issue Title": "Responsibility to sustainable computing",
-    "Description": "Research software engineers have a responsibility to work in a way which is environmentally sustainable and to minimize potential harm to the planet. The use of AI may challenge this responsibility. Most modern IA models are extremely resource hungry, and using them for simple tasks that could otherwise have been completed by a human is wasteful. This might lead to wider problems including damage to the public perception of science, particularly in disciplines which are understood to be more conscious of environmental harms.",
+    "Description": "Correct type \"IA\" in description to \"AI\"",
     "Likelihood": "High",
     "Severity": "Medium",
     "Reach": "High",
@@ -502,18 +507,23 @@
     "Related Risks": "",
     "Tags": "Environmental, Wider Societal Impacts",
     "Issue": "#208",
-    "Updates": "#208",
+    "Updates": "#208, #212",
     "Maintainer Notes": "",
     "related_risk_refs": [],
     "related_risk_urls": [],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/208",
     "update_refs": [
-      "#208"
+      "#208",
+      "#212"
     ],
     "update_urls": [
       {
         "label": "#208",
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/208"
+      },
+      {
+        "label": "#212",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/212"
       }
     ]
   }
