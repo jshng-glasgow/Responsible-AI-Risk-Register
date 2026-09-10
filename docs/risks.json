@@ -552,20 +552,25 @@
     "Ownership": "Governments, technology companies.",
     "Best Practice Examples": "ResponsibleAi, Ada Lovelace Institute",
     "Related Risks": "",
-    "Tags": "Economic, Environmental, Governance",
+    "Tags": "Economic, Environmental, Governance, RSECon26",
     "Issue": "#216",
-    "Updates": "#216",
+    "Updates": "#216, #223",
     "Maintainer Notes": "",
     "related_risk_refs": [],
     "related_risk_urls": [],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/216",
     "update_refs": [
-      "#216"
+      "#216",
+      "#223"
     ],
     "update_urls": [
       {
         "label": "#216",
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/216"
+      },
+      {
+        "label": "#223",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/223"
       }
     ]
   },
