@@ -558,5 +558,39 @@
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/216"
       }
     ]
+  },
+  {
+    "Issue Title": "Climate change due to AI use",
+    "Description": "If the energy used for running data centres that host AI models emits carbon in being produced, then use of AI will emit greenhouse gases that contribute to climate change.",
+    "Likelihood": "High",
+    "Severity": "High",
+    "Reach": "Very High",
+    "Mitigations": "Researchers should only use AI as and when needed, and should work to prompt in a way which minimizes token consumption. Users should select the smallest model that is capable of performing the tasks. Users should be aware of the energy use of the compute platform and consider carbon emissions per token in selecting the platform.",
+    "Ownership": "Practitioners, institutions, tool developers, infrastructure engineers.",
+    "Best Practice Examples": "Green DiSK have some great resources on green computing https://www.software.ac.uk/GreenDiSC",
+    "Related Risks": "#208",
+    "Tags": "Environmental, RSECon26, ClimateChange",
+    "Issue": "#218",
+    "Updates": "#218",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#208"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#208",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/208"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/218",
+    "update_refs": [
+      "#218"
+    ],
+    "update_urls": [
+      {
+        "label": "#218",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/218"
+      }
+    ]
   }
 ]
