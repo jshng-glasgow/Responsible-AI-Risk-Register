@@ -10,7 +10,7 @@ body:
         **This is a patch form:** only fields you explicitly change will be updated. Blank fields and **No changes** selections preserve the current register values.
 
         The safest route is to open this form using **Propose an update** on the expanded risk card. The register entry will remain open in the original browser tab for comparison.
-  - type: textarea
+  - type: input
     id: issue_number
     attributes:
       label: Issue Number
@@ -20,7 +20,7 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: Description
+      label: Risk Description
       description: If you want to change the wording, describe the risk in practical terms. What could go wrong, who might be affected, and what the consequences could be?
       placeholder: Leave blank if you are not proposing a change to the description.
     validations:
@@ -110,4 +110,10 @@ body:
       label: Other Tags
       description: If needed, add any other tags not listed above. Separate multiple entries with commas.
       placeholder: Leave blank unless you are replacing the current tags and need an additional tag.
+  - type: input
+    id: change_description
+    attributes:
+      label: "Change Description"
+      description: Describe the changes you are proposing, e.g., what motivated them.
+      placeholder: This field is optional.
 

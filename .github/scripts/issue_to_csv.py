@@ -7,7 +7,7 @@ import sys
 
 
 FIELDS = [
-    "Description",
+    "Risk Description",
     "Likelihood",
     "Severity",
     "Reach",
@@ -18,7 +18,7 @@ FIELDS = [
     "Tags",
     "Other Tags",
 ]
-LEGACY_FIELD_NAMES = {"Examples": "Best Practice Examples"}
+LEGACY_FIELD_NAMES = {"Examples": "Best Practice Examples", "Description": "Risk Description"}
 CSV_PATH = "register/risks.csv"
 ISSUE_REF_PATTERN = re.compile(r"#?\d+")
 
@@ -77,7 +77,7 @@ def upsert_csv(values, issue_number, issue_title):
     issue_ref = f"#{issue_number}"
     fieldnames = [
         "Issue Title",
-        "Description",
+        "Risk Description",
         "Likelihood",
         "Severity",
         "Reach",
@@ -99,7 +99,7 @@ def upsert_csv(values, issue_number, issue_title):
     row_data = {
         field: values.get(field, "")
         for field in [
-            "Description",
+            "Risk Description",
             "Likelihood",
             "Severity",
             "Reach",
@@ -142,7 +142,7 @@ if __name__ == "__main__":
 
     values = parse_issue(body)
 
-    if not values.get("Description"):
+    if not values.get("Risk Description"):
         print("Could not parse description from issue body - skipping")
         sys.exit(1)
 

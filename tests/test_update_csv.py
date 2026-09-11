@@ -15,7 +15,7 @@ class TestUpdateCSV:
         body = """### Issue Number
 #123
 
-### Description
+### Risk Description
 Updated risk description
 
 ### Likelihood
@@ -48,7 +48,7 @@ Lab Practice
 """
         values = parse_issue(body)
         assert values["Issue Number"] == "#123"
-        assert values["Description"] == "Updated risk description"
+        assert values["Risk Description"] == "Updated risk description"
         assert values["Likelihood"] == "High"
         assert values["Severity"] == "Medium"
         assert values["Reach"] == "Low"
@@ -62,7 +62,7 @@ Lab Practice
         body = """### Issue Number
 #123
 
-### Description
+### Risk Description
 Updated risk
 
 ### Likelihood
@@ -92,7 +92,7 @@ No changes
 """
         values = parse_issue(body)
         assert values["Issue Number"] == "#123"
-        assert values["Description"] == "Updated risk"
+        assert values["Risk Description"] == "Updated risk"
         assert values["Likelihood"] is None
         assert values["Severity"] is None
         assert values["Reach"] is None
@@ -149,7 +149,7 @@ Governance
         existing_df = pd.DataFrame(
             {
                 "Issue Title": ["Original issue title"],
-                "Description": ["Original risk"],
+                "Risk Description": ["Original risk"],
                 "Likelihood": ["Low"],
                 "Severity": ["High"],
                 "Reach": ["Medium"],
@@ -168,7 +168,7 @@ Governance
         with patch("update_csv.CSV_PATH", str(test_csv)):
             values = {
                 "Issue Number": "#123",
-                "Description": "Updated risk",
+                "Risk Description": "Updated risk",
                 "Likelihood": None,
                 "Severity": "Medium",
                 "Reach": "Very High",
@@ -182,7 +182,7 @@ Governance
 
             df = pd.read_csv(str(test_csv))
             assert len(df) == 1
-            assert df.iloc[0]["Description"] == "Updated risk"
+            assert df.iloc[0]["Risk Description"] == "Updated risk"
             assert df.iloc[0]["Issue Title"] == "Original issue title"
             assert df.iloc[0]["Likelihood"] == "Low"
             assert df.iloc[0]["Severity"] == "Medium"
@@ -200,7 +200,7 @@ Governance
         existing_df = pd.DataFrame(
             {
                 "Issue Title": ["Original issue title"],
-                "Description": ["Original risk"],
+                "Risk Description": ["Original risk"],
                 "Likelihood": ["Low"],
                 "Severity": ["High"],
                 "Reach": ["Medium"],
@@ -217,7 +217,7 @@ Governance
         existing_df.to_csv(str(test_csv), index=False)
 
         with patch("update_csv.CSV_PATH", str(test_csv)):
-            values = {"Issue Number": "#999", "Description": "Updated risk"}
+            values = {"Issue Number": "#999", "Risk Description": "Updated risk"}
             with pytest.raises(SystemExit):
                 update_csv_row(values, "888")
 
@@ -225,7 +225,7 @@ Governance
         test_csv = tmp_path / "nonexistent.csv"
 
         with patch("update_csv.CSV_PATH", str(test_csv)):
-            values = {"Issue Number": "#123", "Description": "Updated risk"}
+            values = {"Issue Number": "#123", "Risk Description": "Updated risk"}
             with pytest.raises(SystemExit):
                 update_csv_row(values, "777")
 
@@ -234,7 +234,7 @@ Governance
         existing_df = pd.DataFrame(
             {
                 "Issue Title": ["Original issue title"],
-                "Description": ["Original risk"],
+                "Risk Description": ["Original risk"],
                 "Likelihood": ["Low"],
                 "Severity": ["High"],
                 "Reach": ["Medium"],
@@ -253,7 +253,7 @@ Governance
         with patch("update_csv.CSV_PATH", str(test_csv)):
             values = {
                 "Issue Number": "#123",
-                "Description": None,
+                "Risk Description": None,
                 "Likelihood": None,
                 "Severity": None,
                 "Reach": None,
@@ -275,7 +275,7 @@ Governance
         existing_df = pd.DataFrame(
             {
                 "Issue Title": ["Test issue title"],
-                "Description": ["Test risk"],
+                "Risk Description": ["Test risk"],
                 "Likelihood": ["High"],
                 "Severity": ["Medium"],
                 "Reach": ["Low"],
@@ -294,7 +294,7 @@ Governance
         with patch("update_csv.CSV_PATH", str(test_csv)):
             values_1 = {
                 "Issue Number": "#50",
-                "Description": "Test risk updated",
+                "Risk Description": "Test risk updated",
                 "Likelihood": None,
                 "Severity": None,
                 "Reach": None,
@@ -308,7 +308,7 @@ Governance
 
             values_2 = {
                 "Issue Number": "#50",
-                "Description": "Test risk updated again",
+                "Risk Description": "Test risk updated again",
                 "Likelihood": None,
                 "Severity": None,
                 "Reach": None,
@@ -323,14 +323,14 @@ Governance
             df = pd.read_csv(str(test_csv))
             assert len(df) == 1
             assert df.iloc[0]["Updates"] == "#50, #100, #200"
-            assert df.iloc[0]["Description"] == "Test risk updated again"
+            assert df.iloc[0]["Risk Description"] == "Test risk updated again"
 
     def test_updates_column_not_duplicated_on_rerun(self, tmp_path):
         test_csv = tmp_path / "risks.csv"
         existing_df = pd.DataFrame(
             {
                 "Issue Title": ["Test issue title"],
-                "Description": ["Test risk"],
+                "Risk Description": ["Test risk"],
                 "Likelihood": ["High"],
                 "Severity": ["Medium"],
                 "Reach": ["Low"],
@@ -349,7 +349,7 @@ Governance
         with patch("update_csv.CSV_PATH", str(test_csv)):
             values = {
                 "Issue Number": "#50",
-                "Description": "Test risk updated",
+                "Risk Description": "Test risk updated",
                 "Likelihood": None,
                 "Severity": None,
                 "Reach": None,

@@ -5,7 +5,7 @@ Use this template to propose a new risk for the Responsible AI Risk Register.
 ## Issue Title
 [Provide a short title for the issue]
 
-## Description
+## Risk Description
 [Describe the nature of the risk — who does it affect? What are the potential outcomes?]
 
 ## Likelihood
