@@ -19,7 +19,7 @@ def write_resource_csv(tmp_path):
 
 class TestRenderTable:
     def test_render_table_creates_html_and_json(self, tmp_path):
-        csv_content = """Issue Title,Description,Likelihood,Severity,Reach,Mitigations,Ownership,Best Practice Examples,Related Risks,Tags,Issue,Updates,Maintainer Notes
+        csv_content = """Issue Title,Risk Description,Likelihood,Severity,Reach,Mitigations,Ownership,Best Practice Examples,Related Risks,Tags,Issue,Updates,Maintainer Notes
 "Issue one","Test risk",High,Medium,Low,"Mitigation text","Owner","Examples","#3, #4","environmental, research integrity","#1","#1",""
 "Issue two","Another risk",Low,High,Very High,"Another mitigation","Another owner","Another examples","","training and skills","#2","#2, #5","Synthesised from issues #2 and #5"
 """
@@ -85,7 +85,7 @@ class TestRenderTable:
 
             assert len(json_content) == 2
             assert json_content[0]["Issue Title"] == "Issue one"
-            assert json_content[0]["Description"] == "Test risk"
+            assert json_content[0]["Risk Description"] == "Test risk"
             assert json_content[0]["Related Risks"] == "#3, #4"
             assert json_content[0]["Tags"] == "environmental, research integrity"
             assert json_content[0]["issue_url"].endswith("/issues/1")
@@ -101,7 +101,7 @@ class TestRenderTable:
             os.chdir(original_cwd)
 
     def test_render_table_with_newlines(self, tmp_path):
-        csv_content = """Issue Title,Description,Likelihood,Severity,Reach,Mitigations,Ownership,Best Practice Examples,Related Risks,Tags,Issue,Updates,Maintainer Notes
+        csv_content = """Issue Title,Risk Description,Likelihood,Severity,Reach,Mitigations,Ownership,Best Practice Examples,Related Risks,Tags,Issue,Updates,Maintainer Notes
 "Issue one","Test risk\nwith newline",High,Medium,Low,"Mitigation\ntext","Owner","Examples","","environmental","#1","#1",""
 """
         csv_file = tmp_path / "register" / "risks.csv"
@@ -126,7 +126,7 @@ class TestRenderTable:
                 json_content = json.load(f)
 
             assert "register-root" in html_content
-            assert "with newline" in json_content[0]["Description"]
+            assert "with newline" in json_content[0]["Risk Description"]
             assert json_content[0]["Mitigations"].replace("\r\n", "\n") == "Mitigation\ntext"
         finally:
             os.chdir(original_cwd)

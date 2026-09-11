@@ -11,7 +11,7 @@ from issue_to_csv import combine_tags, normalise_issue_refs, parse_issue, split_
 
 class TestIssueToCSV:
     def test_parse_issue_complete(self):
-        body = """### Description
+        body = """### Risk Description
 Test risk description
 
 ### Likelihood
@@ -42,7 +42,7 @@ Economic, Environmental
 Local Practice
 """
         values = parse_issue(body)
-        assert values["Description"] == "Test risk description"
+        assert values["Risk Description"] == "Test risk description"
         assert values["Likelihood"] == "High"
         assert values["Severity"] == "Medium"
         assert values["Reach"] == "Low"
@@ -53,7 +53,7 @@ Local Practice
         assert values["Tags"] == "Economic, Environmental, Local Practice"
 
     def test_parse_issue_no_response(self):
-        body = """### Description
+        body = """### Risk Description
 Test risk
 
 ### Likelihood
@@ -83,7 +83,7 @@ _No response_
 ### Other Tags
 """
         values = parse_issue(body)
-        assert values["Description"] == "Test risk"
+        assert values["Risk Description"] == "Test risk"
         assert values["Likelihood"] == ""
         assert values["Severity"] == "Medium"
         assert values["Reach"] == "Unknown"
@@ -94,7 +94,7 @@ _No response_
         assert values["Tags"] == ""
 
     def test_parse_issue_accepts_legacy_examples_label(self):
-        values = parse_issue("### Description\nTest risk\n\n### Examples\nLegacy example")
+        values = parse_issue("### Risk Description\nTest risk\n\n### Examples\nLegacy example")
 
         assert values["Best Practice Examples"] == "Legacy example"
 
@@ -112,7 +112,7 @@ _No response_
 
         with patch("issue_to_csv.CSV_PATH", str(test_csv)):
             values = {
-                "Description": "Test risk",
+                "Risk Description": "Test risk",
                 "Likelihood": "High",
                 "Severity": "Medium",
                 "Reach": "Low",
@@ -126,7 +126,7 @@ _No response_
 
             df = pd.read_csv(str(test_csv))
             assert len(df) == 1
-            assert df.iloc[0]["Description"] == "Test risk"
+            assert df.iloc[0]["Risk Description"] == "Test risk"
             assert df.iloc[0]["Issue Title"] == "Test issue title"
             assert df.iloc[0]["Issue"] == "#123"
             assert df.iloc[0]["Updates"] == "#123"
@@ -140,7 +140,7 @@ _No response_
         existing_df = pd.DataFrame(
             {
                 "Issue Title": [""],
-                "Description": ["Existing risk"],
+                "Risk Description": ["Existing risk"],
                 "Likelihood": ["Low"],
                 "Severity": ["High"],
                 "Reach": ["Medium"],
@@ -158,7 +158,7 @@ _No response_
 
         with patch("issue_to_csv.CSV_PATH", str(test_csv)):
             values = {
-                "Description": "Existing risk revised",
+                "Risk Description": "Existing risk revised",
                 "Likelihood": "High",
                 "Severity": "Medium",
                 "Reach": "Very High",
@@ -172,7 +172,7 @@ _No response_
 
             df = pd.read_csv(str(test_csv))
             assert len(df) == 1
-            assert df.iloc[0]["Description"] == "Existing risk revised"
+            assert df.iloc[0]["Risk Description"] == "Existing risk revised"
             assert df.iloc[0]["Issue Title"] == "Existing issue title"
             assert df.iloc[0]["Issue"] == "#124"
             assert df.iloc[0]["Updates"] == "#124"

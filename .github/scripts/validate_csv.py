@@ -7,7 +7,7 @@ import pandas as pd
 
 REQUIRED_COLUMNS = [
     "Issue Title",
-    "Description",
+    "Risk Description",
     "Likelihood",
     "Severity",
     "Reach",
@@ -45,7 +45,7 @@ def validate():
     if missing:
         errors.append(f"Missing columns: {missing}")
 
-    for col in ["Issue Title", "Description", "Likelihood", "Severity", "Reach"]:
+    for col in ["Issue Title", "Risk Description", "Likelihood", "Severity", "Reach"]:
         if col in df.columns and df[col].isnull().any():
             errors.append(f"Column '{col}' has empty values")
 
