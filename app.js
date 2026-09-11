@@ -110,7 +110,7 @@ function sortRecords(records) {
 
   return [...records].sort((left, right) => {
     if (field === "description") {
-      return left["Description"].localeCompare(right["Description"]) * multiplier;
+      return left["Risk Description"].localeCompare(right["Description"]) * multiplier;
     }
 
     if (field === "issue") {
@@ -218,7 +218,7 @@ function renderRecord(record) {
   const grid = fragment.querySelector(".card-grid");
   const updateLink = fragment.querySelector(".update-button");
 
-  title.textContent = record["Issue Title"] || record["Description"];
+  title.textContent = record["Issue Title"] || record["Risk Description"];
   updateLink.href = buildRiskUpdateUrl(record);
   impactBadges.append(
     createBadge(`${record["Likelihood"] || "Unknown"} Likelihood`, record["Likelihood"] || "Unknown"),
@@ -229,7 +229,7 @@ function renderRecord(record) {
   tags.forEach((tag) => tagBadges.append(createBadge(tag, "tag")));
 
   const fields = [
-    buildRow("Description", (container) => appendTextOrPlaceholder(container, record["Description"])),
+    buildRow("Description", (container) => appendTextOrPlaceholder(container, record["Risk Description"])),
     buildRow("Likelihood", (container) => appendTextOrPlaceholder(container, record["Likelihood"])),
     buildRow("Severity", (container) => appendTextOrPlaceholder(container, record["Severity"])),
     buildRow("Reach", (container) => appendTextOrPlaceholder(container, record["Reach"])),
