@@ -9,7 +9,7 @@ import pandas as pd
 
 FIELDS = [
     "Issue Number",
-    "Description",
+    "Risk Description",
     "Likelihood",
     "Severity",
     "Reach",
@@ -21,11 +21,11 @@ FIELDS = [
     "Tags",
     "Other Tags",
 ]
-LEGACY_FIELD_NAMES = {"Examples": "Best Practice Examples"}
+LEGACY_FIELD_NAMES = {"Examples": "Best Practice Examples", "Description": "Risk Description"}
 CSV_PATH = "register/risks.csv"
 ISSUE_REF_PATTERN = re.compile(r"#?\d+")
 EDITABLE_FIELDS = [
-    "Description",
+    "Risk Description",
     "Likelihood",
     "Severity",
     "Reach",

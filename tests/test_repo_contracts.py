@@ -14,7 +14,7 @@ class TestIssueTemplateContracts:
         script = read_text(".github/scripts/issue_to_csv.py")
 
         for label in [
-            "Description",
+            "Risk Description",
             "Likelihood",
             "Severity",
             "Reach",
@@ -34,7 +34,7 @@ class TestIssueTemplateContracts:
 
         for label in [
             "Issue Number",
-            "Description",
+            "Risk Description",
             "Likelihood",
             "Severity",
             "Reach",
