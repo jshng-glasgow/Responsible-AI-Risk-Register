@@ -126,28 +126,33 @@
   },
   {
     "Issue Title": "Developing research software code that only AI understands",
-    "Description": "Some research software developed with AI may not be understood by any humans.  This means that the code will be very difficult to debug and build upon if AI becomes unavailable or cannot do the debugging. Also, if no one understands exactly how the code is built, researchers cannot be 100% sure what the code is doing, and therefore cannot be 100% sure that any results produced with the software are valid.",
+    "Description": "Some software must be understandable or maintainable by humans, for example for legal or policy reasons. Research software developed with AI may not be understood by members of the software’s maintenance team. This means that the code will be very difficult to debug and build upon if AI becomes unavailable or cannot do the debugging. Also, if no one understands exactly how the code is built, researchers cannot be sure what the code is doing, and therefore cannot be sure that any results produced with the software are valid.",
     "Likelihood": "Very High",
     "Severity": "Very High",
     "Reach": "Unknown",
-    "Mitigations": "- Have regular code reviews and ensure that the code is understood\n- RSEs continue to develop software engineering skills rather than relying on AI in place of this\n- Write documentation, explaining how the code works.  If AI is used to generate the docs, a human should ensure they are correct regularly.\n- Institutions should introduce rules or guidance about ensuring understanding of research code.  This could also be required by funders.",
+    "Mitigations": "- Have regular code reviews and ensure that the code is understood\n- RSEs continue to develop software engineering skills rather than relying on AI in place of this\n- Write documentation, explaining how the code works. If AI is used to generate the docs, a human should ensure they are correct regularly.\n- Institutions should introduce rules or guidance about ensuring understanding of research code, and the use of generative AI in developing it. This could also be required by funders.\n- Storing the AI’s instructions/specifications - e.g. plan.md and/or original prompts - in text files alongside the software’s code.",
     "Ownership": "RSEs, researchers, team leads, institutions, funders",
-    "Best Practice Examples": "",
+    "Best Practice Examples": "The inability to understand code also applies to proprietary closed-source software (regardless of the use of generative AI). The same mitigation strategies for managing proprietary code can also be applied to AI generated code.",
     "Related Risks": "",
     "Tags": "People and Professional Practice, Software Sustainability, Research Integrity, Privacy and Security",
     "Issue": "#183",
-    "Updates": "#183",
+    "Updates": "#183, #230",
     "Maintainer Notes": "",
     "related_risk_refs": [],
     "related_risk_urls": [],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/183",
     "update_refs": [
-      "#183"
+      "#183",
+      "#230"
     ],
     "update_urls": [
       {
         "label": "#183",
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/183"
+      },
+      {
+        "label": "#230",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/230"
       }
     ]
   },
@@ -696,20 +701,93 @@
     "Ownership": "",
     "Best Practice Examples": "",
     "Related Risks": "",
-    "Tags": "Wider Societal Impacts, RSECon26",
+    "Tags": "Equity",
     "Issue": "#229",
-    "Updates": "#229",
+    "Updates": "#229, #232",
     "Maintainer Notes": "",
     "related_risk_refs": [],
     "related_risk_urls": [],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/229",
     "update_refs": [
-      "#229"
+      "#229",
+      "#232"
     ],
     "update_urls": [
       {
         "label": "#229",
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/229"
+      },
+      {
+        "label": "#232",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/232"
+      }
+    ]
+  },
+  {
+    "Issue Title": "Speed of LLM adoption",
+    "Description": "The increasing speed and breadth of LLM adoptions in existing workflows can force low-skilled users to to interact with AI tools without sufficient training, guardrails, or supervision. This can lead to data breaches, unethical or irresponsible use.",
+    "Likelihood": "Medium",
+    "Severity": "Medium",
+    "Reach": "High",
+    "Mitigations": "Reducing pressure in workplaces by adopting AI tools into existing workflows only when it is recommended, and after proper training.",
+    "Ownership": "Team leads and institutions have the responsibility to reduce pressure on staff and ensure they are properly trained before recommending LLM adoption in existing workflows.",
+    "Best Practice Examples": "",
+    "Related Risks": "#185",
+    "Tags": "Privacy and Security, People and professional practice, Training and development, Governance, RSECon26",
+    "Issue": "#231",
+    "Updates": "#231",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#185"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#185",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/185"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/231",
+    "update_refs": [
+      "#231"
+    ],
+    "update_urls": [
+      {
+        "label": "#231",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/231"
+      }
+    ]
+  },
+  {
+    "Issue Title": "Data leakage from LLM tool use within a Trusted Research Environment",
+    "Description": "Trusted Research Environments allow sensitive data to be handled in a secure way. Such environments allow researchers to work on such sensitive data, but often there's a desire for LLM use within these environments for research support and coding. Using an external LLM or HPC services could lead to unintentional data leaking outside of the TRE.",
+    "Likelihood": "Medium",
+    "Severity": "Medium",
+    "Reach": "Medium",
+    "Mitigations": "Ensuring suitable contracts are in place for any external services used. Design the TRE carefully to ensure data leakage can't take place (e.g. by restricting access to only safe services). Running LLMs locally inside the TRE or as part of the TRE environment.",
+    "Ownership": "Developers, deployers and maintainers of TRE environments.",
+    "Best Practice Examples": "Projects like [SATRE](https://satre-specification.readthedocs.io/en/stable/) that are developing standards for TREs or [AIRR-BRIDGE](https://dareuk.org.uk/how-we-work/ongoing-activities/dare-uk-research-exemplars/airr-bridge/) that are developing methods for bridging between TREs and HPC systems.",
+    "Related Risks": "#185",
+    "Tags": "Privacy and Security, Governance, Medical Data, RSECon26",
+    "Issue": "#233",
+    "Updates": "#233",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#185"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#185",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/185"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/233",
+    "update_refs": [
+      "#233"
+    ],
+    "update_urls": [
+      {
+        "label": "#233",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/233"
       }
     ]
   }
