@@ -206,5 +206,21 @@
     "related_risk_refs": [],
     "related_risk_urls": [],
     "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/220"
+  },
+  {
+    "Resource Title": "RELEASE-AI: A Lifecycle Framework for Artificial Intelligence Development and Disclosure Control in Trusted Research Environments",
+    "URL": "https://doi.org/10.5281/zenodo.17159192",
+    "Organisation / Authors": "Crespi-Boixader, A., Li, S., Liley, J., Ward, L., Cole, C., Smith, J.",
+    "Year": "2025",
+    "Type": "Guidance",
+    "Relevance": "A framework for managing AI models trained on sensitive data in Trusted Research Environments (TREs). This includes guidance for the entire project lifecycle starting from initial design of the project and suggested mitigations, all the way through to disclosure control and how the model may be used.",
+    "Tags": "Equity and Fairness, Governance, Research Integrity, People and Professional Practice",
+    "Related Risks": "",
+    "Notes": "",
+    "Issue": "#235",
+    "Maintainer Notes": "",
+    "related_risk_refs": [],
+    "related_risk_urls": [],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/235"
   }
 ]
