@@ -790,5 +790,39 @@
         "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/233"
       }
     ]
+  },
+  {
+    "Issue Title": "Unavailability of access to AI at some point in future",
+    "Risk Description": "It isn't guaranteed that any one individual or group/organisation will always be able to access and use generative AI, or at least to do so to the extent that they wish to. This poses an issue if an over-reliance on such tools has been developed, only for access to be reduced or even removed through circumstances out of their control.\n\nMost notably, major AI tools owned by private companies could at any point raise costs of tool usage considerably, pricing some out, and while non-profit and academic/research communities etc. may build AI tools they are often only available to select communities or require institutional access etc. Or, there may be some circumstance causing temporary unavailability, for example through cyber-attack on major AI tool providers.",
+    "Likelihood": "Very Low",
+    "Severity": "Medium",
+    "Reach": "High",
+    "Mitigations": "Monitor the pricing and availability of GenAI tools in use over time and compare with available funding to cover use and with typical working patterns. Estimate the cost in productivity terms for periods of potential lack of access to GenAI tooling and include this in appropriate risk assessments.",
+    "Ownership": "Team leads and management, institutions, funders",
+    "Best Practice Examples": "",
+    "Related Risks": "#182",
+    "Tags": "People and Professional Practice, Economic",
+    "Issue": "#236",
+    "Updates": "#236",
+    "Maintainer Notes": "",
+    "related_risk_refs": [
+      "#182"
+    ],
+    "related_risk_urls": [
+      {
+        "label": "#182",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/182"
+      }
+    ],
+    "issue_url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/236",
+    "update_refs": [
+      "#236"
+    ],
+    "update_urls": [
+      {
+        "label": "#236",
+        "url": "https://github.com/jshng-glasgow/Responsible-AI-Risk-Register/issues/236"
+      }
+    ]
   }
 ]
